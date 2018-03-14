@@ -1,0 +1,44 @@
+doctype html
+html
+
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="./assets/styles/reg.min.css")
+
+    body
+        // header
+        include com/no-nav-header
+
+        //containner
+        div.container.gray_box
+
+            //process
+            .t-c
+                .progress
+                    .p_line
+                        div
+                    .p_text
+                        div
+                            div.circle.active 1
+                            div.c_282828 注册
+                            div.ok
+                        div
+                            div.circle 2
+                            div.c_282828 完善资料
+                            div.ok2.fail2
+                        div
+                            div.circle 3
+                            div.c_282828 完成
+                            div.ok.fail
+
+            div.reg_over.t-c 您注册成功,还未完善资料,
+                a(href="#") 先看看
+        // footer
+        include com/footer
+
+        script(type="text/javascript") seajs.use("./assets/scripts/base/common.js");
+

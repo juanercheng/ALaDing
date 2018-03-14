@@ -1,0 +1,105 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/training.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        span 培训
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            .input.t-l
+                                label 培训平台&nbsp;*&nbsp;: &nbsp;
+                                select#positionPlace(name="positionPlace")
+                            .input.t-l
+                                label 培训角色&nbsp;*&nbsp;: &nbsp;
+                                select#positionRole(name="positionRole" )
+                                    option(value="司机") 司机
+                                    option(value="押运员") 押运员
+
+                            .input.t-l
+                                label 货物名称&nbsp;*&nbsp;: &nbsp;
+                                input#productName(name='shoppingName' maxlength='20'  placeholder='请输入货物名称')
+
+                            .input.file.driver.drvLicenseImg
+                                label 行驶证照片&nbsp;&nbsp; &nbsp;
+                                .file_upload
+                                    //img(src='../../assets/image/uplode.png')
+                                    img(src="")
+                                    input(type="file" id='drvLicenseImg')
+                                    input(type="hidden",name="drvLicenseImg",value="")
+
+                            .input.file.driver.carImg
+                                label 驾驶证照片&nbsp;&nbsp;  &nbsp;
+                                .file_upload
+                                    img(src='')
+                                    input(type="file" id="carImg")
+                                    input(type="hidden",name="carImg",value="")
+
+                            .input.file.driver.operatingImg
+                                label 营运证照片&nbsp;&nbsp;  &nbsp;
+                                .file_upload
+                                    img(src=' ')
+                                    input(type="file" id="operatingImg")
+                                    input(type="hidden",name="operatingImg",value="")
+
+                            .input.file.driver.seniorityImg
+                                label 从业资格证照片&nbsp;&nbsp;  &nbsp;
+                                .file_upload
+                                    img(src=' ')
+                                    input(type="file" id="seniorityImg")
+                                    input(type="hidden",name="seniorityImg",value="" )
+
+                             //押运员
+                            .input.file.supercargo.IDImg
+                                label 身份证照片&nbsp;&nbsp;  &nbsp;
+                                .file_upload
+                                    img(src=' ')
+                                    input(type="file" id="IDImg")
+                                    input(type="hidden", name="IDImg", value="" )
+                            .input.file.supercargo.supercargoImg
+                                label 押运员证照片&nbsp;&nbsp;  &nbsp;
+                                .file_upload
+                                    img(src=' ')
+                                    input(type="file" id="supercargoImg")
+                                    input(type="hidden", name="supercargoImg", value="" )
+
+                            .t-c.bottomBox(style="margin-top: 40px;")
+                                input(type="submit", class="orange_btn save_btn save_btn1",value="培训资料")
+                                input(type="submit", class="pink_btn save_btn save_btn3",value="开始考试")
+
+
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/training/training.js");
+        script(type="text/javascript", src="/assets/scripts/laydate/laydate.js")
+
+
+        script(type="text/html",id="seqrch-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].Id]-->"><!--[=list[i].PlatformName]--></option>
+            | <!--[}]-->
+

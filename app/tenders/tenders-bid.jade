@@ -1,0 +1,127 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/tenders/bid.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container
+
+            //localtion
+            p.local_nav 当前位置：
+                a(href="tenders-index.html") 招投标信息
+                span.splite >
+                a(href="tenders-detail.html",id="a_detail") 招投标详情
+                span.splite >
+                span 我要竞标
+
+            .content.gray_box
+                #data-detail
+
+
+                .t-c
+                    include ../com/page
+
+
+        // footer
+        include ../com/footer
+        include ../com/page-tmpl
+
+        script(type="text/javascript") seajs.use("../assets/scripts/tenders/tenders-bid.js");
+
+        script(type="text/html",id="list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            |<div class="input">
+            |    <label><!--[=list[i].basicName]-->&nbsp;*&nbsp;: &nbsp;</label>
+            |    <select class="select">
+            |        <!--[for(j=0;j<list[i].basicinfo.length;j++){]-->
+            |            <option value="<!--[=list[i].basicinfo[j].basicId]-->"><!--[=list[i].basicinfo[j].name]--></option>
+            |        <!--[}]-->
+            |    </select>
+            |</div>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-detail-tmpl")
+            | <div class="product">
+            | <div class="product_info fl">
+
+            | <div class="product_modal">
+            | 【<!--[=tenderCompany]-->】<!--[=tenderTitle]-->
+            | </div>
+
+            | <div class="product_detail c_282828">
+
+            | <div>联系人：<!--[=tenderName]--> <!--[=tenderPhone]--></div>
+
+            | <div>招标结束日期：<!--[=$DateFormat(endTime,'yyyy-MM-dd')]--> 
+            | </div>
+
+            | <div>
+            | <!--[=isTechnical=='false'?"非技术标":"技术标"]-->
+            | <!--[if(isTechnical=="true"){]--> 【<!--[=techScore]-->分】 <!--[}]-->
+            | <!--[=wonBasic=='0'?"最低价中标":"平均价中标"]-->【<!--[=basicScore]-->分】
+            | 购买标书金额：<!--[=tenderAmount]-->元
+            | </div>
+
+            | <div>最低要求：<!--[=minRequire]--></div>
+            | <div>地址：<!--[=tenderADD]--></div>
+
+            .hr
+
+            div.t-c#tc
+                form.reg_form#publish-order
+
+                    .input
+                        label 公司名称&nbsp;*&nbsp;: &nbsp;
+                        input(maxlength="50",type="text",name="companyName",data-rule="required;length[1~50]")
+
+                    .input
+                        label 招标联系人姓名&nbsp;*&nbsp;: &nbsp;
+                        input(maxlength="20",type="text",name="bidName",data-rule="required;length[1~20]")
+
+                    .input
+                        label 招标联系人手机&nbsp;*&nbsp;: &nbsp;
+                        input(maxlength="11",id="bidPhone",type="text",name="bidPhone",data-rule="required;mobile;length[1~11]")
+
+                    .input.file
+                        label 上传竞标文件&nbsp;*&nbsp;: &nbsp;
+                        .file_upload
+                            img
+                            input.bidDoc(type="file")
+                            input(type="hidden",name="bidDoc",value="",data-rule="required")
+                    
+                    .input.file
+                        label 上传汇款票据&nbsp;*&nbsp;: &nbsp;
+                        .file_upload
+                            img
+                            input.remitterBill(type="file")
+                            input(type="hidden",name="remitterBill",value="",data-rule="required")
+                    
+                    .tlist
+                        table#tenderLine
+                            thead
+                                tr
+                                    td 起运地
+                                    td 目的地
+                                    td 货物名称
+                                    td 现执行价(元/吨)
+                                    td 运量/单位
+                                    td 备注
+                                    td 报价(元)
+                            tbody
+
+                    .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+
+            | </div></div></div>
+
+

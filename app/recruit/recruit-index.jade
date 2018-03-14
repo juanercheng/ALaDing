@@ -1,0 +1,149 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/order/index.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container
+
+            //localtion
+            p.local_nav 当前位置：人员招聘
+
+            //c_center
+            div.clearfix.c_center
+
+                //车源详情
+                .article.fl.order_list
+                    .gray_box
+                        form.c_282828#list_search
+                            p
+                                label 职位分类：
+                                    select#positionType(name="positionType")
+                                label 工资待遇：
+                                    select#price(name="price")
+                                label 职位名称：
+                                    input(type="text",name="recruitPosition",maxlength="50")
+                            p
+                                label 性别要求：
+                                    select#sex(name="sex")
+                                label 招聘地区：
+                                    select.province(name="province")
+                                    select.city(name="city")
+                                    select.area(name="area")
+                                label 工作地址：
+                                    input(type="text",name="workPlace",maxlength="100")
+                            p.t-c
+                                button(class="pink_btn search_btn") 搜索
+
+                    .article_head
+                        .article_title.clearfix
+                            span.fl#count 共0条
+                            .orderby.c_282828
+                                //a.d_order(data-order="true") 默认排序
+                                //a.o_order(data-order="") 好评率
+                                //a.t_order(data-order="") 成交次数
+                        .article_line
+                            span
+                    ul.article_content#data-list
+                        //for i in [1,2,3,4,5,6,7,8]
+                        //    li
+                        //        div.fz-16.c_282828.clearfix
+                        //            a.fl 江苏省南京市白下区—>浙江省杭州市下城区
+                        //            span.fr.fc_e67b09 已有24人报价
+                        //        div
+                        //            a 沪D96702、冷藏、高栏车、载重5吨、长x宽x高:3m x 4m x 5m沪D96702
+                        //        div.c_282828
+                        //            span 杜晗 &nbsp;
+                        //            span 18066722251 &nbsp;
+                        //
+                        //        div.c_282828
+                        //            ul.rating-level
+                        //                li
+                        //                    a.one-star(href="#")
+                        //                li
+                        //                    a.two-stars(href="#")
+                        //                li
+                        //                    a.three-stars(href="#")
+                        //                li
+                        //                    a.four-stars(href="#")
+                        //                li
+                        //                    a.five-stars(href="#")
+                        //            span 好评率：
+                        //            span 87% &nbsp;&nbsp;
+                        //            span 成交次数：
+                        //            span 89
+                        //        div.clearfix
+                        //            span.fr 2015-12-12 12:00 发布
+
+                    .t-c
+                        include ../com/page
+
+                  //活动广告
+                .article.fr.ad
+                    .article_head
+                        .article_title.clearfix
+                            span.fl 广告活动
+                        .article_line
+                            span
+
+                    include ../com/ad-tmpl
+
+        // footer
+        include ../com/footer
+
+        script(type="text/javascript") seajs.use("../assets/scripts/recruit/recruit-index.js");
+
+        include ../com/page-tmpl
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li data-id="<!--[=list[i].recruitId]-->">
+            | <div class="fz-16 c_282828 clearfix">
+            | <a class="fl">
+            |   <!--[=list[i].recruitTitle]-->
+            | </a>
+            | </div>
+
+            | <div class="fz-16 c_282828 clearfix">
+            | <a class="fl">
+            |   职位分类：<!--[=list[i].positionTypeName]-->、<!--[=list[i].recruitPosition]-->
+            | </a>
+            | </div>
+
+            | <div class="fz-16 c_282828 clearfix">
+            | <a class="fl">
+            |   待遇：<!--[=list[i].priceName]-->
+            | </a>
+            | </div>
+
+            | <div class="fz-16 c_282828 clearfix">
+            | <a class="fl">
+            |   公司名称：<!--[=list[i].cmpName]-->
+            | </a>
+            | </div>
+
+            | <div class="fz-16 c_282828 clearfix">
+            | <a class="fl">
+            |   联系人：<!--[=list[i].reallyName]--> <!--[=$isLogin(list[i].cellPhone)]-->
+            | </a>
+            | </div>
+
+            | </li>
+            | <!--[}]-->
+
+
+        script(type="text/html",id="seqrch-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+

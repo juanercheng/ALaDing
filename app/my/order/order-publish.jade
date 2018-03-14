@@ -1,0 +1,200 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/order-publish.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 发布订单
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            .input.t-l
+                                label 装货起运地&nbsp;*&nbsp;: &nbsp;
+                                select.select.province(name="loadPlacePro")
+                                select.select.city(name="loadPlaceCity")
+                                select.select.area(name="loadPlaceArea")
+
+                            .input
+                                label 详细地址&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="loadPlace",data-rule="length[1~20]")
+
+                            .input
+                                label 装货时间&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",id="start",class="datepicker",name="loadTime",readonly="readonly",data-rule="required;")
+
+                            .input.t-l
+                                label 卸货目的地&nbsp;*&nbsp;: &nbsp;
+                                select.select.province(name="unloadPlacePro")
+                                select.select.city(name="unloadPlaceCity")
+                                select.select.area(name="unloadPlaceArea")
+
+                            .input
+                                label 详细地址&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="unloadPlace",data-rule="length[1~20]")
+
+                            .input
+                                label 卸货时间&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",id="end",class="datepicker",name="unloadTime",readonly="readonly",data-rule="required;")
+
+                            .input
+                                label 货长(米)&nbsp;: &nbsp;
+                                input(type="text",name="goodLong",data-rule="number2;length[1~10]")
+
+                            .input
+                                label 货高(米)&nbsp;: &nbsp;
+                                input(type="text",name="goodHigh",data-rule="number2;length[1~10]")
+
+                            .input
+                                label 货宽(米)&nbsp;: &nbsp;
+                                input(type="text",name="goodWidth",data-rule="number2;length[1~10]")
+
+                            .input.t-l
+                                label 业务类型&nbsp;*&nbsp;: &nbsp;
+                                select#businesstype(name="businessType",data-rule="required;")
+
+                            .input.t-l
+                                label 货物类型&nbsp;*&nbsp;: &nbsp;
+                                select#goodtype(name="goodType",data-rule="required;")
+
+                            .input.t-l
+                                label 所需车型&nbsp;*&nbsp;: &nbsp;
+                                select#vehicletypeenum(name="vehicleType",data-rule="required;")
+
+                            .input
+                                label 货物重量(吨)&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="weight",data-rule="required;number2;length[1~10]")
+
+                            .input
+                                label 货物体积(m³)&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="cubage",data-rule="required;number2;length[1~10]")
+
+                            .input.t-l
+                                label 货物性质&nbsp;*&nbsp;: &nbsp;
+                                select#goodkind(name="goodKind",data-rule="required;")
+
+                            .input
+                                label 货物名称&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="goodName",data-rule="required;length[1~10]")
+
+                            .input
+                                label 货物备注&nbsp;: &nbsp;
+                                input(type="text",name="nodes",data-rule="length[1~50]")
+
+                            .input
+                                label 货物数量&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="goodCount",data-rule="number3;")
+
+                            .input
+                                label 装货次数&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="loadCount",data-rule=";number3;")
+
+                            .input
+                                label 卸货次数&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="unLoadCount",data-rule="number3;")
+
+                            .input.file
+                                label 货物图片&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="goodImg" value="")
+
+                            .input
+                                label 付款方式&nbsp;*&nbsp;: &nbsp;
+                                label
+                                    input(type="radio",name="payType",checked="true",value="topay")
+                                    span 到付
+                                label
+                                    input(type="radio",name="payType",value="nowpay")
+                                    span 现付
+                                label
+                                    input(type="radio",name="payType",value="planpay")
+                                    span 月付
+                            .input
+                                label 保证金&nbsp;*&nbsp;: &nbsp;
+                                label
+                                    input(type="radio",name="bondMoney",value="300",checked="true")
+                                    span ￥300
+                                label
+                                    input(type="radio",name="bondMoney",value="500")
+                                    span ￥500
+                                label
+                                    input(type="radio",name="bondMoney",value="800")
+                                    span ￥800
+                            .input(class="clearfix2")
+                                label(style="float:left") 保险&nbsp;&nbsp;: &nbsp;
+                                label(style="float:left;margin-left: 30px;")
+                                    input(type="checkbox",id="IsInsurance")
+                                    span 是否购买保险
+                                    
+                            .input#insurancetypeenum(class="clearfix2")
+
+                            .input.t-l
+                                label 支付佣金&nbsp;*&nbsp;: &nbsp;
+                                label
+                                    input(type="radio",name="isCommission",value="true",checked="true")
+                                    span 是
+                                label
+                                    input(type="radio",name="isCommission",value="false")
+                                    span 否
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+                                    
+                            .t-c.readWarning
+                                br
+                                label *请注意填写货物信息，以免发生纠纷<br/>保险金额以实际抵扣为准
+
+
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/order-publish.js");
+        script(type="text/javascript",src="/assets/scripts/laydate/laydate.js")
+
+        script(type="text/html",id="businesstype-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="goodkind-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+        script(type="text/html",id="goodtype-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+        script(type="text/html",id="insurancetypeenum-tmpl")
+            | <label style="visibility:hidden;float:left;">保险&nbsp;*&nbsp;: &nbsp;</label>
+            | <div>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            |  <label><input type="radio" name="insuranceType" value="<!--[=list[i].code]-->" <!--[=i==0?'checked="checked"':'']--> /><span><!--[=list[i].name]--></span> </label><br/>
+            | <!--[}]-->
+            | </div>
+
+

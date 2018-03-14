@@ -1,0 +1,53 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/my/my-record.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 交易记录
+                    span 【您目前的可用余额: 0元 ，
+                    span  赠送金额: 0元
+                    span  冻结金额: 0元】
+
+                .content.c_282828
+                    ul.record.t-c#data-list
+                        li
+                            span 序号
+                            span 金额
+                            span 收/支
+                            span 交易类型
+                            span 时间
+
+                    .t-c
+                        include ../com/page
+
+        // footer
+        include ../com/footer
+        include ../com/page-tmpl
+
+        script(type="text/javascript") seajs.use("../assets/scripts/my/my-record.js");
+        script(type="text/html",id="data-list-tmpl")
+            | <li><span>序号</span><span>金额</span><span>收/支</span><span>交易类型</span><span>时间</span></li>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><span><!--[=i+1]--></span><span>￥<!--[=list[i].money || 0]--></span><span><!--[=list[i].getOrPay]--></span><span><!--[=list[i].tradeType]--></span><span><!--[=list[i].tradeDate]--></span></li>
+            | <!--[}]-->
+
+

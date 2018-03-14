@@ -1,0 +1,263 @@
+@import './val'
+@import '../utils/fun'
+
+a:hover,a:visited,a:active
+  color #6c6c6c
+  text-decoration none
+
+.fr
+  float right
+.fl
+  float left
+
+body
+  font-family:'Helvetica Neue', Helvetica, Arial, sans-serif
+  color:$GlobalBg
+  background-color:$GlobalBg
+  font-size 14px
+
+select
+  color: #000
+
+.header,.footer
+  position relative
+  background $HeaderAndFooterBg
+  min-width 1300px
+
+// container
+.container
+  width:$MaxContainerWidth
+  max-width:@width
+  margin:auto
+  background-color:$GlobalBg
+
+.clearfix
+  overflow hidden
+
+
+.clearfix2:after {
+    content: '.';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.clearfix2 {
+    *zoom: 1
+}
+
+.container::selection
+  background #333
+  color $GlobalBg
+
+//灰色背景
+.gray_box
+  border 1px solid $cl_grayboxborder
+  background-color $cl_grayboxbg
+
+.pink_btn
+  color #fff
+  btn = 100% 45px $btn_b_pink 5px "/assets/image/bg_pink_btn.png"
+  F_create_btn(btn)
+
+.gray_btn
+  btn = 100% 45px $btn_b_gray 5px "/assets/image/bg_gray_btn.png"
+  F_create_btn(btn)
+
+.white_btn
+  btn = 100% 30px $btn_b_d4d4d4 3px "/assets/image/bg_gray_white1.png"
+  F_create_btn(btn)
+  color $LogoBg
+  outline none
+  &.active
+    color $GlobalBg
+    background url("/assets/image/bg_gray_btn.png")
+    cursor not-allowed
+
+.orange_btn
+  btn = 100% 30px $btn_b_d4d4d4 3px "/assets/image/bg_orange_btn.png"
+  F_create_btn(btn)
+  &.active
+    background url("/assets/image/bg_gray_btn.png")
+
+form .input_group
+  border 1px solid $cl_grayboxborder
+  padding 5px
+  margin 17px 0
+  position relative
+
+.input_group span.icon
+  display block
+  background-repeat no-repeat
+  float left
+  border-right 1px solid #d3d3d3
+  padding-right 10px
+  width: 36px;
+  height: 33px;
+
+.input_group input
+  border none
+  outline none
+  height 31px
+  color #000000
+  padding-left: 10px;
+  width 96%
+  background #ffffff
+
+.username_icon
+  background-image url("/assets/image/login_from_icon.png")
+  background-position: 8px 6px
+
+.pwd_icon
+  background-image url("/assets/image/login_from_icon.png")
+  background-position: 8px -59px
+
+//首页 文章 组件
+.article
+  min-width 150px
+
+.article .article_title,
+.article .article_line
+  position relative
+  & a:hover
+    text-decoration underline
+  
+.article .article_line
+  height 2px
+  background: #cfcfcf
+  margin-top 7px
+  margin-bottom 15px
+
+.article_line span
+  background #e14b4d
+  position absolute
+  top 0
+  display block
+  height 2px
+  width 80px
+
+.article .article_head .article_title .fl,
+.article .article_head .article_title
+  color #e94546
+  font-size 17px
+
+.article .article_head .article_title .fr
+  color: #6c6c6c
+  position: absolute
+  bottom 0
+  right: 0
+
+.article .article_head .article_title .orderby
+  float right
+  font-size 14px
+  & a
+    margin 5px
+    //&:after
+    //  content ''
+    //  background url("/assets/image/icons.png")
+    //&:first-child:after
+    //  background none
+
+.article_content
+  color: #6c6c6c
+  padding 5px
+  & li
+    overflow hidden
+    & img
+      width 100%
+
+.tc
+  F_ellipsis(inherit)
+  text-align center
+
+.t-c
+  text-align center
+
+.t-l
+  text-align left
+
+.c_282828
+  color #282828
+
+.c_pink
+  color $LogoBg
+
+.c_ea7914
+  color #ea7914
+
+.c_6c6c6c
+  color #6c6c6c
+
+.fz-16
+  font-size 16px
+
+.icons
+  background-position 0 0
+  background-repeat no-repeat
+  background-size auto
+  background-image url("/assets/image/icons.png")
+  width 30px
+  height 30px
+  display block
+
+.container .local_nav
+  color #6c6c6c
+  font-size 12px
+  & a
+    text-decoration none
+    color #6c6c6c
+  & a:hover
+    text-decoration underline
+  & span.splite
+    display inline-block
+    margin 0 5px
+
+.fc_e67b09
+  color #e67b09
+
+input[type="radio"].radio
+  width: 20px;
+  height: 20px;
+  border: none;
+  background-image: url("/assets/image/icons.png");
+  background-repeat: no-repeat;
+  background-position: -35px 0;
+  outline: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+
+input[type="radio"].radio:checked
+  background-image: url("/assets/image/icons.png");
+  background-position -35px -24px
+
+.pager
+  color #333333
+  & a,.p_center
+    display inline-block
+    & .current
+      color $LogoBg
+  & a
+    padding 10px
+    &.next,&.pre,&.disable
+      padding 6px
+      border 1px solid #d3d3d3
+      background $GlobalBg
+    &.disable
+      cursor not-allowed
+  & .splite
+    margin 30px 0 20px 0
+    border-bottom 0 solid #d3d3d3
+
+
+
+
+.input_group.select
+  color #000000
+  font-size 16px
+  cursor pointer
+
+#ads p
+  margin 0
+  text-align center

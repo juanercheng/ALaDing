@@ -1,0 +1,109 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-rec.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 招聘信息
+
+                .content
+                    .order_list
+                        form
+                            .select
+                                label 审核状态&nbsp;: &nbsp;
+                                select(id="state")
+                                label 职位分类&nbsp;: &nbsp;
+                                select(id="positionType")
+                            .o_header
+                                span#count 共0条
+                        ul.o_data#data-list
+                            //-var n = 0
+                            //while n < 10
+                            //    li
+                            //        div.clearfix
+                            //            .c_282828
+                            //                a
+                            //                    p.clearfix
+                            //                        span.fl 江苏省南京市白下区—>浙江省杭州市下城区
+                            //                        span.fr.c_ea7914 正在报价
+                            //                    p.clearfix
+                            //                        span.fl.c_6c6c6c 蔬菜水果、普通货物、普通业务、预估体积21m³、重量3吨、保证金：¥500、现付…
+                            //                        span.fr 已报价24人
+                            //                p 崔休民  18701735673
+                            //                .o_r_t.clearfix
+                            //                    ul.rating-level.fl
+                            //                        li
+                            //                            a.one-star(href="#")
+                            //                        li
+                            //                            a.two-stars(href="#")
+                            //                        li
+                            //                            a.three-stars(href="#")
+                            //                        li
+                            //                            a.four-stars(href="#")
+                            //                        li
+                            //                            a.five-stars(href="#")
+                            //
+                            //                    span 好评率：
+                            //                    span 87% &nbsp;&nbsp;
+                            //                    span 成交次数：
+                            //                    span=n++
+                            //        div.clearfix
+                            //            .fr 2015-12-12 10:10
+                    .t-c
+                        include ../../com/page
+
+
+        // footer
+        include ../../com/footer
+        include ../../com/page-tmpl
+        script(type="text/javascript") seajs.use("/assets/scripts/my/my-rec.js");
+        script(type="text/html",id="state-tmpl")
+            | <option value="">全部</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="positionType-tmpl")
+            | <option value="">全部</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <div class="clearfix">
+            | <div class="c_282828"><a href="#" recruitId="<!--[=list[i].recruitId]-->">
+            | <p class="clearfix"><span class="fl">标题：<!--[=list[i].recruitTitle || '']--></span></p>
+            | <p class="clearfix" ><span class="fl">职位分类：<!--[=list[i].positionTypeName || '']--> 、 <!--[=list[i].recruitPosition]-->(<!--[=list[i].sexName || '']-->) </span></p>
+
+            | <p class="clearfix">待遇：<!--[=list[i].priceName||'']--></p>
+
+            | <p>公司名称：<!--[=list[i].cmpName || '']--></p>
+            | <p>联系人：<!--[=list[i].reallyName || '']--> <!--[=list[i].cellPhone || '']--></p></a>
+            | <p>审核状态：<!--[=list[i].recruitStatusName || '']--></p>
+           
+            | </div>
+            | </div>
+            | </li>
+            | <!--[}]-->
+
+

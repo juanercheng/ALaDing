@@ -1,0 +1,255 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+@import '../reg-step2'
+
+.reg_form
+  display inline-block
+
+.reg_form .save_btn{
+margin-top: 20px;
+}
+form .input>label, .select {
+  width: 120px;
+}
+.select {
+  width: 105px;
+}
+
+.textarea{
+	width:340px;
+	padding:10px;
+	border: 1px solid #e3e3e3;
+	color: #000;
+	height:100px;
+}
+form .input>label.readWarning{
+	color:red;
+	width: auto;
+}
+
+form .input input.checkbox{
+	width:auto;
+}
+
+form .input.tal{
+	text-align: left;
+}
+form .file .file_upload{
+  left: 125px;
+  overflow: visible;
+}
+form .input{
+	color:#333;
+}
+select.scale,input.scale{
+	width: 50px;
+}
+
+div.hr{
+	height:1px;
+	border-bottom:1px solid #ccc;
+}
+
+.tlist{
+	width:100%;
+	color:#333;
+}
+
+.tlist>table{
+	width: 100%;
+	border:solid #ccc; 
+	border-width:1px 0px 0px 1px;
+}
+
+.tlist td{
+  width: 79px;
+	border:solid #ccc; 
+	border-width:0px 1px 1px 0px;
+	padding: 8px;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.tlist td.delete{
+  position: relative;  
+}
+
+.tlist td span.delete{
+  position: absolute;
+  right: -56px;
+  height: 14px;
+  padding: 8px;
+  border: 1px solid #d4d4d4;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: url("/assets/image/bg_gray_white1.png") repeat-x;
+  color: #e94546;
+  outline: none;
+  top: 2px;
+  cursor: pointer;
+}
+
+#add_tenderbasic,#add_tenderLine,#add_invitations{
+	width: 127px;
+	margin-bottom: 10px;
+	height: 20px;
+	font-size: 15px;
+}
+
+
+.dialog{
+  position: fixed;
+  width: 500px;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  margin-left: -250px;
+  margin-top: -150px;
+  z-index: 9999;
+  border: 1px solid #ccc;
+  color:#333;
+  display:none;
+}
+.dialog h1{
+  border-bottom: 1px solid #ccc;
+  padding-left: 30px;
+}
+.dialog textarea{
+  width: 90%;
+  height: 150px;
+  margin-left: 5%;
+}
+.dialog .pink_btn{
+  width: 100px;
+  display: inline-block;
+  margin-left: 70px;
+}
+.dialog .pink_btn.dfail_btn{
+  width: 100px;
+  display: inline-block;
+  margin-left: 57px;
+  margin-right: 88px;
+}
+.dialogbg{
+  display:none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9998;
+  background-color: black;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+
+#tenderbasic_dialog{
+	padding: 10px;
+
+  width: 430px;
+  height: 228px;
+  margin-left: -225px;
+  margin-top: -125px;
+}
+#tenderbasic_dialog .text{
+	border: 1px solid #ccc;
+	outline: none;
+	padding:3px;
+}
+
+.dialog .scale{
+	margin-left: 5px;
+}
+
+#tenderbasic_dialog .ml{
+  margin-left: 61px;
+}
+#tenderbasic_dialog .mlt{
+  margin-bottom:10px;
+}
+
+#tenderLine td{
+  width:66px;
+}
+
+#tenderLine_dialog{
+  padding:10px;
+  width: 380px;
+  margin-left:-200px;
+  margin-top:-161px;
+  height: 302px;
+}
+#tenderLine_dialog label{
+  margin-right: 10px;
+  width: 121px;
+  text-align: right;
+  display: inline-block;
+}
+#tenderLine_dialog input.text,#tenderLine_dialog select{
+  margin-bottom: 10px;
+  padding: 3px 5px;
+}
+#tenderLine_dialog .pink_btn{
+  margin-left: 54px;
+}
+
+#deviation{
+  position: relative;
+}
+#deviation span.tip{
+  position: absolute;
+  margin-left: 10px;
+  margin-top: -10px;
+  color: red;
+}
+
+
+#invitations_dialog{
+  padding: 10px;
+  width:70%;
+  height: 80%;
+  left:15%;
+  top:10%;
+  margin-left: 0;
+  margin-top: 0;
+}
+#invitations_dialog .article{
+  width: 100%;
+}
+#invitations_dialog .article .gray_box{
+  padding: 5px;
+}
+#invitations_dialog .article #data-list{
+  overflow: auto;
+}
+#invitations_dialog .article #data-list>li{
+  border-bottom: 1px solid #d3d3d3;
+  padding: 8px 3px;
+  line-height: 20px;
+  position: relative;
+}
+#invitations_dialog .article #data-list>li>div{
+  margin-left:20px;
+}
+#invitations_dialog .article .chbox_invitations{
+  left:0;
+  top: 45%;
+  position: absolute;
+}
+.rating-level a.two-stars{
+  cursor: default;
+}
+.invitations_btn{
+  height: 35px;
+}
+#invitations{
+  margin-bottom: 20px;
+}
+#invitations td{
+  position: relative;
+}
+#add_invitations,#add_invitations_tlist{
+  display:none;
+}

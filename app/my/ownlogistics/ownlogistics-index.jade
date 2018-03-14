@@ -1,0 +1,127 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/ownlogistics-index.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 推荐物流公司
+
+                .content
+                    .order_list
+                        form#list_search
+                            .select
+                                label 起运地&nbsp;: &nbsp;
+                                    select.province(name="provinceFrom")
+                                    select.city(name="cityFrom")
+                                    select.area(name="areaFrom")
+                                label 目的地&nbsp;: &nbsp;
+                                    select.province(name="provinceTo")
+                                    select.city(name="cityTo")
+                                    select.area(name="areaTo")
+                            .o_header
+                                span#count
+                                    span#count1 共0条
+                                    .orderby.c_282828
+                                        a.d_order(data-order="true") 默认排序
+                                        a.o_order(data-order="") 好评率
+                                        a.t_order(data-order="") 成交次数
+                        ul.o_data#data-list
+                            //-var n = 0
+                            //while n < 10
+                            //    li
+                            //        div.clearfix
+                            //            .c_282828
+                            //                a
+                            //                    p.clearfix
+                            //                        span.fl 江苏省南京市白下区—>浙江省杭州市下城区
+                            //                        span.fr.c_ea7914 正在报价
+                            //                    p.clearfix
+                            //                        span.fl.c_6c6c6c 蔬菜水果、普通货物、普通业务、预估体积21m³、重量3吨、保证金：¥500、现付…
+                            //                        span.fr 已报价24人
+                            //                p 崔休民  18701735673
+                            //                .o_r_t.clearfix
+                            //                    ul.rating-level.fl
+                            //                        li
+                            //                            a.one-star(href="#")
+                            //                        li
+                            //                            a.two-stars(href="#")
+                            //                        li
+                            //                            a.three-stars(href="#")
+                            //                        li
+                            //                            a.four-stars(href="#")
+                            //                        li
+                            //                            a.five-stars(href="#")
+                            //
+                            //                    span 好评率：
+                            //                    span 87% &nbsp;&nbsp;
+                            //                    span 成交次数：
+                            //                    span=n++
+                            //        div.clearfix
+                            //            .fr 2015-12-12 10:10
+                    .t-c
+                        include ../../com/page
+
+
+        // footer
+        include ../../com/footer
+        include ../../com/page-tmpl
+        script(type="text/javascript") seajs.use("/assets/scripts/my/ownlogistics/ownlogistics-index.js");
+        script(type="text/html",id="state-tmpl")
+            | <option value="">全部</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li><a href="#" data-id="<!--[=list[i].cmpMemberId]-->">
+            | <div class="clearfix">
+            | <div class="c_282828">
+            
+            | <div class="fl">
+            | <p><img class="carImg" src="<!--[=list[i].userPhotoImg || '']-->" /></p>
+            | </div>
+
+            | <div class="fl">
+            | <p class="clearfix"><span class="fl"><!--[=list[i].fromProvince || '']--><!--[=list[i].fromCity || '']--><!--[=list[i].fromArea || '']-->—&gt;<!--[=list[i].toProvince || '']--><!--[=list[i].toCity || '']--><!--[=list[i].toArea || '']--></span></p>
+           
+            | <p><!--[=list[i].cmpName || '']--></p>
+          
+            | <p>联系人：<!--[=list[i].reallyName || '']--> <!--[=list[i].cellPhone || '']--></p>
+
+            <div class="c_282828">
+            |                 <ul class="rating-level" data-level="<!--[=$printStar(list[i].praiseRate)]-->">
+            |                   <li><a href="#" class="one-star"></a></li>
+            |                   <li><a href="#" class="two-stars"></a></li>
+            |                   <li><a href="#" class="three-stars"></a></li>
+            |                   <li><a href="#" class="four-stars"></a></li>
+            |                   <li><a href="#" class="five-stars"></a></li>
+            |                 </ul><span>好评率：</span><span><!--[=list[i].praiseRate]-->% &nbsp;&nbsp;</span><span>成交次数：</span><span><!--[=list[i].doneNum]--></span>
+            |               </div>
+            
+            | </div>
+            
+            | </div>
+            | </div>
+            | </a></li>
+            | <!--[}]-->
+
+

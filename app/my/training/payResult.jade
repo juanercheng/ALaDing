@@ -1,0 +1,56 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/payResult.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        a(href="/my/training/training.html")
+                            span 培训
+                        span.splite >
+                        a(href="/my/training/payTest.html")
+                            span 付款
+                        span.splite >
+                            span 付款详情
+                .content
+                    div
+                        form
+                            div.success
+                                div.resultBox
+                                    img.resultImg(src='/assets/image/payok.png')
+                                div.result
+                                    p 恭喜您成功付款
+                                      span
+                                button.pink_btn.btn 开始考试
+                            div.failed
+                                div.resultBox
+                                    img.resultImg(src='/assets/image/payNot.png')
+                                div.result
+                                    p 抱歉，您支付失败，请重新支付
+
+
+        include ../../com/footer
+
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/training/payResult.js");
+
+
+
+

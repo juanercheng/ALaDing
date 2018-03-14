@@ -1,0 +1,70 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+@import '../common/reg-common'
+
+.content
+  position relative
+  padding-bottom 30px
+
+.order_list
+  width 830px
+  margin auto
+  margin-top 30px
+  & .o_header
+    position relative
+    height 33px
+    border-bottom 1px solid #aaa8a9
+    & span
+      color #333333
+      position absolute
+      bottom 5px
+    & .fr
+      color $LogoBg
+  & ul.o_data
+    padding 0 20px
+    & li
+      padding 10px 0
+      border-bottom 1px solid #d3d3d3
+      &:last-child
+        margin-bottom 40px
+    color #333333
+    & .c_282828
+      line-height 23px
+      & a:hover
+        text-decoration underline
+      & p
+        margin 0
+        &:first-child
+          font-size 16px
+        & span:first-child
+          F_ellipsis(546px)
+    & .rating-level
+      margin-right 30px
+    & .o_r_b button
+      width 86px
+      color $GlobalBg
+      margin 20px 0 15px 0
+      outline none
+
+//.select select
+//  background #d3d3d3
+//  padding-right 30px
+//  F_borderRadius(0)
+
+.content .pager .splite
+  border-bottom none
+  margin 0
+
+#data-list a
+  color #333
+  text-decoration none
+
+.carImg{
+  height:auto;
+  max-height:112px;
+  margin-right: 10px;
+}
+.select{
+  color:#333;
+}

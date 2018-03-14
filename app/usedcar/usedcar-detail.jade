@@ -1,0 +1,137 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/usedcar/detail.min.css")
+    body
+        // header
+        include ../com/header
+        //containner
+        div.container
+            //localtion
+            p.local_nav 当前位置：
+                a(href="/usedcar/usedcar-index.html") 二手车
+                span.splite >
+                span 二手车详情
+            .content.gray_box
+                #data-detail
+                    //.product
+                    //    img(width="284",height="284",src="http://www.w3school.com.cn/i/eg_tulip.jpg")
+                    //    .product_info.fr
+                    //        .product_modal 货源编号：00000
+                    //        p.product_title 江苏省南京市白下区—>浙江省杭州市下城区
+                    //        .product_detail.c_282828
+                    //            div 蔬菜水果、保险品、重量2吨、体积20m³
+                    //            div 装货次数：2次        卸货次数：2次
+                    //            div 单件尺寸：长1.0m、高2.0m、宽3.0m
+                    //            div 货物数量：20件
+                    //            div 保证金：￥500
+                    //            div 付款方式：现付
+                    //            div 货源类型：普通
+                    //            div 备注：长期有效
+                    //            .clearfix
+                    //                .fl
+                    //                    div 装货信息：
+                    //                    div 2014年11月09日12点 上海市闸北区陆家嘴45号盛昌大厦
+                    //                    div 卸货信息：
+                    //                    div 2014年11月09日12点 湖北武汉市汉口区岳家嘴145号
+                    //
+                    //section.c_282828
+                    //    .title 车主信息
+                    //    .info
+                    //        div 蔬菜水果、保险品、重量2吨、体积20m³
+                    //        div 装货次数：2次        卸货次数：2次
+                    //        div 单件尺寸：长1.0m、高2.0m、宽3.0m
+                    //        div 货物数量：20件
+                    //        div 保证金：￥500
+                    //        div 付款方式：现付
+                    //        div 货源类型：普通
+
+
+                section.c_282828
+                    //.title
+                        //span 评价信息
+                        //ul.tab
+                           //li.active(data-type="") 全部
+                           //     span (0)
+                           // li(data-type="good") 好评
+                           //     span (0)
+                           // li(data-type="bad") 差评
+                           //     span (0)
+                    ul.list#data-list
+                        //for i in [1,2,3,4,5,6,7,1,1,1,1]
+                        //    li
+                        //        .clearfix.top
+                        //            .user_img
+                        //                img.fl(src="http://115.28.131.95:8011/aladingImg/20150526/24e8df77-282f-473a-8844-265d9685fbf1.jpg",width="100%",height="100%")
+                        //                .user-info
+                        //                    div dwadw
+                        //                    div dwadw
+                        //
+                        //            .tags.fr.c_282828
+                        //                span dwadwa
+                        //                span dwawadwaddwa
+                        //                span dwadwadawdawdawdwa
+                        //        .text 东西很好，很不错，我还想买。
+                        //        .clearfix
+                        //            span.fr 2015-12-12
+                .t-c
+                    include ../com/page
+        // footer
+        include ../com/footer
+        include ../com/page-tmpl
+        script(type="text/javascript") seajs.use("../assets/scripts/usedcar/usedcar-detail.js");
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <div class="clearfix top">
+            | <div class="user_img"><img src="<!--[=list[i].userPhotoImg]-->" width="100%" height="100%" class="fl">
+            | <div class="user-info">
+            | <div><!--[=list[i].memberTypeName]--></div>
+            | <!--[if($ifLogin()){]-->
+            | <div><!--[=$isNoName(list[i].isAnon,list[i].cellPhone)]--></div>
+            | <!--[}else{]-->
+            | <div><!--[=$isLogin(list[i].cellPhone)]--></div>
+            | <!--[}]-->
+            | </div>
+            | </div>
+            | <div class="tags fr c_282828">
+            | <!--[if(list[i].tagList || list[i].tagList.length){]-->
+            | <!--[for(j=0;j<list[i].tagList.length;j++){]-->
+            | <span><!--[=list[i].tagList[j].tagContent]--></span>
+            | <!--[}]-->
+            | <!--[}]-->
+            | </div>
+            | </div>
+            | <div class="text"><!--[=list[i].appraiseContent]--></div>
+            | <div class="clearfix"><span class="fr"><!--[=list[i].createTime]--></span></div>
+            | </li>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-detail-tmpl")
+            | <div class="product">
+            | <div class="product_info fl">
+            |<!-- <div class="product_modal"><!--[=recruitTitle]--></div>-->
+            | <div class="fl carImg"><img src="<!--[=carImg]-->"></div>
+            | <div class="product_detail c_282828 fl">
+            | <div>【<!--[=carBrand]-->】<!--[=oldcarTitle]--></div>
+            | <div>预计卖价：<!--[=price]--></div>
+            | <div>联系人：<!--[=reallyName]--></div>
+            | <div>电话：<!--[=$isLogin(cellPhone)]--></div>
+            | <div>行驶里程：<!--[=travelMileage]--></div>
+            | <div>购车时间：<!--[=buyTime]--></div>
+            | <div>马力：<!--[=displacement]-->匹</div>
+            | <div>配置亮点：<!--[=$replaceRN(configuration)]--></div>
+            | <div>备注：<!--[=$replaceRN(remark)]--></div>
+            | <div>看车地点：<!--[=provinceName]--><!--[=cityName]--><!--[=areaName]--><!--[=lookPlace]--></div>
+            | </div>
+
+            | <!--[if($isImg(drvLicenseImg)){]--><div class="clearfix drvLicenseImg"><img src="<!--[=drvLicenseImg]-->"></div><!--[}]-->
+
+            | </div>
+            | </div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html><html><head><title>丁丁物流</title><mate charset="utf-8"></mate><mate came="description" content=""></mate><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><mate name="viewport" content="width=device-width, initial-scale=1"></mate><link type="text/css" rel="stylesheet" href="/assets/styles/my/tenders-publish.min.css"><link type="text/css" rel="stylesheet" href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css"><link charset="utf-8" rel="stylesheet" href="/assets/scripts/module/star/star.css"></head><body><!-- header--><div class="header"><div class="clearfix"><a href="/index.html" class="logo"></a><ul class="nav clearfix"><li>首页</li><li>货源信息</li><li>车源信息</li><li>物流信息</li><li>人员招聘</li><li>招投标</li><li>二手车</li><li>订单中心</li><li>联系我们</li></ul><div class="header_right"><div class="search_form"><div id="search_type" class="type"><span data-type="good" class="active">货源</span><span data-type="car">车源</span><span data-type="express">物流</span></div><form id="search_all"><input type="text" name="key" placeholder="货源、车源、物流公司" maxlength="10"><input type="submit" value=""></form></div><ul class="btn_group clearfix"><li><a id="l_u">登录</a></li><li class="line"><a>|</a></li><li><a id="r_l">注册</a></li></ul></div></div></div><!--containner--><div class="container clearfix"><div class="my_nav fl"><div class="article"><div class="article_head"><div class="article_title"><span>个人中心</span></div><div class="article_line"><span></span><!-- dri-司机  good-货主  logis-物流--></div></div><ul id="my_nav" class="nav my"><li class="dri good logis"><a href="/my/my-index.html">个人资料</a></li><li class="dri good logis"><a href="/my/information/information.html">认证信息</a></li><li class="dri good logis"><a href="/my/training/training.html">培训</a></li><li class="dri good logis"><a href="/my/my-recharge.html">充值</a></li><li class="dri good logis"><a href="/my/my-cash.html">提现申请</a></li><li class="dri good logis"><a href="/my/my-record.html">交易记录</a></li><li class="good logis"><a href="/my/order/my-order.html">我的订单</a></li><li class="good logis"><a href="/my/my-overdue-order.html">过期订单</a></li><li class="good logis"><a href="/my/order/order-publish.html">发布订单</a></li><li class="logis"><a href="/my/my-route.html">路线管理</a></li><li class="good logis"><a href="/my/recruitment/my-rec.html">招聘信息</a></li><li class="good logis"><a href="/my/recruitment/rec-publish.html">我要招人</a></li><li class="dri good logis"><a href="/my/oldcar/my-car.html">卖车信息</a></li><li class="dri good logis"><a href="/my/oldcar/my-car-publish.html">我要卖车</a></li><li class="good"><a href="/my/ownlogistics/ownlogistics-index.html">推荐物流公司</a></li><li class="dri logis"><a href="/my/owngoods/owngoods-index.html">推荐货源</a></li><li class="good logis"><a href="/my/owncars/owncars-index.html">推荐车源</a></li><li class="good logis"><a href="/my/tenders/tenders-publish.html">发布标书</a></li><li class="good logis"><a href="/my/tenders/my-tenders.html">我的招标</a></li><li class="dri good logis"><a href="/my/tenders/my-bid-tenders.html">我的竞标</a></li><li class="dri good logis"><a href="/my/loan/loan-publish.html">申请贷款</a></li><li class="dri good logis"><a href="/my/loan/my-loan.html">贷款信息</a></li><li class="dri good logis"><a href="/my/mytools/mytools.html">我的工具</a></li><li class="dri good logis"><a href="/my/my-suggest.html">意见反馈</a></li><li class="dri logis"><a href="/my/my-price.html">我的报价</a></li></ul></div></div><div class="my_right fr"><div><p class="local_nav">当前位置：<a href="/my/my-index.html">个人中心</a><span class="splite">></span><span>发布标书</span></p></div><div class="content"><div class="t-c"><form id="publish-order" class="reg_form"><div class="input"><label>标题&nbsp;*&nbsp;: &nbsp;</label><input type="text" name="tenderTitle" data-rule="required;length[1~50]"></div><div class="input"><label>结束时间&nbsp;*&nbsp;: &nbsp;</label><input type="text" id="end" name="endTime" readonly="readonly" data-rule="required;" class="datepicker"></div><div class="input"><label>招标公司&nbsp;*&nbsp;: &nbsp;</label><input type="text" name="tenderCompany" data-rule="required;length[1~50]"></div><div class="input"><label>地址&nbsp;*&nbsp;: &nbsp;</label><input type="text" name="tenderADD" data-rule="required;length[1~100]"></div><div class="input"><label>联系人&nbsp;*&nbsp;: &nbsp;</label><input type="text" name="tenderName" data-rule="required;length[1~20]"></div><div class="input"><label>联系方式&nbsp;*&nbsp;: &nbsp;</label><input maxlength="11" type="text" name="tenderPhone" data-rule="required;mobile"></div><div class="input"><label>招标最低要求&nbsp;*&nbsp;: &nbsp;</label><input type="text" name="minRequire" data-rule="required;length[1~200]"></div><div class="input tal"><label>商务标控制系数&nbsp;&nbsp;: &nbsp;</label><select name="bussinessCoefficient" class="select scale"><option value="0">0</option><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option></select></div><div id="deviation" class="input tal"><label>设置偏离度&nbsp;&nbsp;: &nbsp;</label><input type="radio" name="deviation" value="0" checked="checked" class="radio"><span>是</span><input type="radio" name="deviation" value="1" class="radio"><span>否</span><select class="select scale"><option value="0">0</option><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option></select><span class="tip">偏离度是指投标价格与平均价格或最低价格的偏离比例，超过偏离度的价格将显示为红色。</span></div><div class="input tal"><label>是否技术标&nbsp;&nbsp;: &nbsp;</label><input type="checkbox" name="isTechnical" value="true" class="checkbox"><span>是</span><select name="techScore" class="select scale"><option value="0">0</option><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option></select><span>(所占分值)</span></div><div class="input tal"><label>中标依据&nbsp;&nbsp;: &nbsp;</label><input type="radio" name="wonBasic" value="0" checked="checked" class="radio"><span>最低价中标</span><input type="radio" name="wonBasic" value="1" class="radio"><span>平均价中标</span><select name="basicScore" class="select scale"><option value="0">0</option><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option><option value="60">60</option><option value="70">70</option><option value="80">80</option><option value="90">90</option><option value="100">100</option></select><span>(所占分值)</span></div><div class="input"><label>购买标书金额&nbsp;*&nbsp;: &nbsp;</label><input type="text" name="tenderAmount" data-rule="required;number4;length[1~10]"></div><div class="input tal"><label>招标方式&nbsp;&nbsp;: &nbsp;</label><input type="radio" name="isOpen" value="true" checked="checked" class="radio"><span>公开招标</span><input type="radio" name="isOpen" value="false" class="radio"><span>邀请招标</span></div><div id="invitaBid" class="input"><label>邀标公司名称&nbsp;&nbsp;: &nbsp;</label><input type="text" name="invitaBid" data-rule="length[1~200]"><br><label class="readWarning">*如多家则用逗号,分割</label></div><button id="add_invitations" class="white_btn">添加邀标公司</button><div id="add_invitations_tlist" class="tlist"><input type="hidden" name="invitations"><table id="invitations"><thead><tr><td>邀标公司名称</td></tr></thead><tbody></tbody></table></div><button id="add_tenderbasic" style="display:none;" class="white_btn">新增技术标依据</button><div style="display:none;" class="tlist"><table id="tenderbasic"><thead><tr><td>技术标依据</td><td>评分依据A</td><td>评分依据B</td><td>评分依据C</td><td>评分依据D</td></tr></thead><tbody></tbody></table></div><div class="input file"><label>上传招标通知书&nbsp;*&nbsp;: &nbsp;</label><div class="file_upload"><img><input type="file" class="notice"><input type="hidden" name="notice" value="" data-rule="required"></div></div><div class="input file"><label>招标格式文件&nbsp;*&nbsp;: &nbsp;</label><div class="file_upload"><img><input type="file" class="bidDoc"><input type="hidden" name="bidDoc" value="" data-rule="required"></div></div><button id="add_tenderLine" class="white_btn">新增线路</button><div class="tlist"><table id="tenderLine"><thead><tr><td>起运地</td><td>目的地</td><td>货物名称</td><td>现执行价（元/吨）</td><td>运量/单位</td><td>备注</td></tr></thead><tbody></tbody></table></div><div class="t-c"><input type="submit" value="保存" class="pink_btn save_btn"></div></form></div></div></div></div><!-- footer--><div class="footer"><div class="footer_content clearfix"><a href="/index.html" class="logo"></a><div class="copyright"><div class="footer_nav"><a href="/index.html">网站首页</a><a href="/ours/company-info.html">公司简介</a><a href="/ours/contact.html">联系我们</a><a href="/ours/help.html">使用帮助</a></div><div class="footer_com_name">南通阿拉丁网络科技有限公司</div><div class="footer_copyright"><div>备案号：苏ICP备10027778号-1</div><div>版权所有 ©2010-2014 dingding56.com</div></div></div><a href="#" class="android_app"></a></div></div><!-- seajs--><script type="text/javascript" src="/assets/scripts/module/sea/sea.js"></script><script type="text/javascript" src="/assets/scripts/module/sea/sea-config.js"></script><div class="dialogbg" id="invitations_dialogbg"></div>
+<div class="dialog" id="invitations_dialog">
+<div class="article fl order_list">
+         <div class="gray_box">
+           <form id="list_search" class="c_282828">
+             <p>
+               <label>起运地：
+                 <select name="provinceFrom" class="province"></select>
+                 <select name="cityFrom" class="city"></select>
+                 <select name="areaFrom" class="area"></select>
+               </label>
+               <label>目的地：
+                 <select name="provinceTo" class="province"><option value=""></select>
+                 <select name="cityTo" class="city"></select>
+                 <select name="areaTo" class="area"></select>
+               </label>
+             </p>
+             <p>
+               <label>公司名称：
+                 <input type="text" name="nodes" maxlength="10">
+               </label>
+             </p>
+             <p class="t-c">
+               <button class="pink_btn search_btn">搜索</button>
+             </p>
+           </form>
+         </div>
+         <div class="article_head">
+           <div class="article_title clearfix"><span id="count" class="fl">共0条</span><div class="orderby c_282828"><button class="pink_btn invitations_btn">确认</button></div>
+           </div>
+           <div class="article_line"><span></span></div>
+         </div>
+         <ul id="data-list" class="article_content">
+     </ul>
+       </div>
+</div>
+<div class="dialogbg" id="tenderbasic_dialogbg"></div>
+<div class="dialog" id="tenderbasic_dialog">
+  <label>技术标依据：</label><input type="text" maxlength="50" class="text" name="basicName" /><input class="text scale" type="text" name="basicScore" maxlength="3"/>(所占分值)<br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;<label>评分依据：</label><br/>
+  <label class="ml">A：</label><input name="name1" maxlength="50" type="text" class="text mlt" /><input class="text scale" type="text" name="score1" maxlength="3"/>(所占分值)<br/>
+  <label class="ml">B：</label><input name="name2" maxlength="50" type="text" class="text mlt" /><input class="text scale" type="text" name="score2" maxlength="3"/>(所占分值)<br/>
+  <label class="ml">C：</label><input name="name3" maxlength="50" type="text" class="text mlt" /><input class="text scale" type="text" name="score3" maxlength="3"/>(所占分值)<br/>
+  <label class="ml">D：</label><input name="name4" maxlength="50" type="text" class="text mlt" /><input class="text scale" type="text" name="score4" maxlength="3"/>(所占分值)<br/>
+  <input type="button" class="pink_btn gray_btn save_btn" value="保存" />
+  <input type="button" class="pink_btn gray_btn cannel" value="取消" />
+</div>
+<div class="dialogbg" id="tenderLine_dialogbg"></div>
+<div class="dialog" id="tenderLine_dialog">
+  <label>起运地&nbsp;&nbsp;*：</label><input type="text" maxlength="100" class="text" name="fromAdd" /><br/>
+  <label>目的地&nbsp;&nbsp;*：</label><input type="text" maxlength="100" class="text" name="toAdd" /><br/>
+  <label>货物名称&nbsp;&nbsp;*：</label><input type="text" maxlength="50" class="text" name="goodName" /><br/>
+  <label>现执行价(元/吨)&nbsp;&nbsp;：</label><input type="text" maxlength="7" class="text" name="nowPrice" /><br/>
+  <label>运量(吨)&nbsp;&nbsp;：</label><input type="text" maxlength="10" class="text" name="load" /><br/>
+  <label>单位&nbsp;&nbsp;：</label><select name="unit"><option value="月">月</option><option value="年">年</option></select><br/>
+  <label>备注&nbsp;&nbsp;：</label><input type="text" maxlength="500" class="text" name="remark" /><br/>
+  <input type="button" class="pink_btn gray_btn save_btn" value="保存" />
+  <input type="button" class="pink_btn gray_btn cannel" value="取消" />
+</div><script type="text/html" id="data-list-tmpl"><!--[for(i=0;i<list.length;i++){]-->
+<li data-id="<!--[=list[i].cmpMemberId]-->"> <div class="fz-16 c_282828 clearfix">
+<!--[=list[i].fromProvince || '']--><!--[=list[i].fromCity || '']--><!--[=list[i].fromArea || '']-->—&gt;<!--[=list[i].toProvince || '']--><!--[=list[i].toCity || '']--><!--[=list[i].toArea || '']-->
+</div>
+              <div><!--[=list[i].cmpName]--></div>
+              <div class="c_282828"><span><!--[=list[i].reallyName]--> &nbsp;</span><span><!--[=$isLogin(list[i].cellPhone)]--> &nbsp;</span></div>
+              <div class="c_282828">
+                <ul class="rating-level" data-level="<!--[=$printStar(list[i].praiseRate)]-->">
+                  <li><a href="#" class="one-star"></a></li>
+                  <li><a href="#" class="two-stars"></a></li>
+                  <li><a href="#" class="three-stars"></a></li>
+                  <li><a href="#" class="four-stars"></a></li>
+                  <li><a href="#" class="five-stars"></a></li>
+                </ul><span>好评率：</span><span><!--[=list[i].praiseRate]-->% &nbsp;&nbsp;</span><span>成交次数：</span><span><!--[=list[i].doneNum]--></span>
+              </div>
+<input type="checkbox" vt="<!--[=list[i].cmpName]-->" value="<!--[=list[i].cmpMemberId]-->" class="chbox_invitations" />
+            </li>
+<!--[}]--></script><script type="text/javascript">seajs.use("/assets/scripts/my/tenders/tenders-publish.js");</script><script type="text/javascript" src="/assets/scripts/laydate/laydate.js"></script></body></html>

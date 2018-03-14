@@ -1,0 +1,105 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-tenders-detail-bidcompany.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/common/panel.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="my-tenders.html") 我的招标
+                    span.splite >
+                    a(href="my-tenders-detail.html",id="my-tenders-detail") 我的招标详情
+                    span.splite >
+                    span 竞标公司信息
+
+                .content
+                    .product#order-detail
+
+                    div
+                        .operate.fl#operate
+                            button.white_btn.o-pay 修改信息
+                            button.white_btn.o-msg 删除信息
+
+
+        // footer
+        include ../../com/footer
+        include ../../com/panel
+        include ../../com/confirmcppanel
+
+
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/tenders/my-tenders-detail-bidcompany.js");
+        include ../../com/page-tmpl
+
+        script(type="text/html",id="order-detail-tmpl")
+            | <div class="product_info fl">
+            
+            | <div class="clearfix">
+            | <div class="c_282828">
+      
+            | <div class="fl">
+            | <p class="clearfix"><span><!--[=list.companyName]--></span></p>
+            | <p class="clearfix"><span><!--[=list.bidName]--> <!--[=list.bidPhone]--></span></p>
+
+
+            | <!--[for(var i=0;i<list.bidBasicList.length;i++){]-->
+            | <p class="clearfix"><span><!--[=list.bidBasicList[i].basicName]-->：<!--[=list.bidBasicList[i].name]--></span></p>
+            | <!--[}]-->
+
+            |<a href="<!--[=list.bidDoc]-->" target="_blank">下载竞标文件</a>
+            | &nbsp;&nbsp;&nbsp;&nbsp;<a href="<!--[=list.remitterBill]-->" target="_blank">下载汇款票据</a>
+
+            |<div class="tlist"><table id="tenderLine">
+            |<thead>
+            |        <tr>
+            |            <td>起运地</td>
+            |            <td>目的地</td>
+            |            <td>货物名称</td>
+            |            <td>现执行价(元/吨)</td>
+            |            <td>报价(元)</td>
+            |            <td>技术标得分</td>
+            |            <td>平均中标价得分/最低中标价得分</td>
+            |            <td>总分</td>
+            |            <td>竞标结果</td>
+            |       </tr></thead>
+            |    <tbody>
+
+            | <!--[for(var i=0;i<list.bidLineDetail.length;i++){]-->
+            |    <tr>
+            |            <td><!--[=list.bidLineDetail[i].fromAdd]--></td>
+            |            <td><!--[=list.bidLineDetail[i].toAdd]--></td>
+            |            <td><!--[=list.bidLineDetail[i].goodName]--></td>
+            |            <td><!--[=list.bidLineDetail[i].nowPrice]--></td>
+            |            <td><!--[=list.bidLineDetail[i].price]--></td>
+            |            <td><!--[=list.bidLineDetail[i].techScore]--></td>
+            |            <td><!--[=list.bidLineDetail[i].lineScore]--></td>
+            |            <td><!--[=list.bidLineDetail[i].totalScore]--></td>
+            |            <td><!--[=list.bidLineDetail[i].rankName]--></td>
+            |       </tr>
+            | <!--[}]-->
+
+            |</tbody></table></div>
+
+           
+            | </div>
+
+            | </div>
+            | </div>
+            | </div>

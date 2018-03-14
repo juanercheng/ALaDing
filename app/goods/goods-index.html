@@ -1,0 +1,64 @@
+<!DOCTYPE html><html><head><title>丁丁物流</title><mate charset="utf-8"></mate><mate came="description" content=""></mate><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><mate name="viewport" content="width=device-width, initial-scale=1"></mate><link type="text/css" rel="stylesheet" href="../assets/styles/order/index.min.css"></head><body><!-- header--><div class="header"><div class="clearfix"><a href="/index.html" class="logo"></a><ul class="nav clearfix"><li>首页</li><li>货源信息</li><li>车源信息</li><li>物流信息</li><li>人员招聘</li><li>招投标</li><li>二手车</li><li>订单中心</li><li>联系我们</li></ul><div class="header_right"><div class="search_form"><div id="search_type" class="type"><span data-type="good" class="active">货源</span><span data-type="car">车源</span><span data-type="express">物流</span></div><form id="search_all"><input type="text" name="key" placeholder="货源、车源、物流公司" maxlength="10"><input type="submit" value=""></form></div><ul class="btn_group clearfix"><li><a id="l_u">登录</a></li><li class="line"><a>|</a></li><li><a id="r_l">注册</a></li></ul></div></div></div><!--containner--><div class="container"><!--localtion--><p class="local_nav">当前位置：货源信息</p><!--c_center--><div class="clearfix c_center"><!--车源详情--><div class="article fl order_list"><div class="gray_box"><form id="list_search" action="post" class="c_282828"><p><label>起运地：<select name="provinceFrom" class="province"></select><select name="cityFrom" class="city"></select><select name="areaFrom" class="area"></select></label><label>目的地：<select name="provinceTo" class="province"></select><select name="cityTo" class="city"></select><select name="areaTo" class="area"></select></label></p><p><label>业务类型：<select id="businesstype" name="businessType"></select></label><label>货物性质：<select id="goodkind" name="goodKind"></select></label><label>备注：<input type="text" name="nodes" maxlength="10"></label></p><p class="t-c"><button class="pink_btn search_btn">搜索</button></p></form></div><div class="article_head"><div class="article_title clearfix"><!--span 最新货源信息--><span id="count" class="fl">共0条</span><div class="orderby c_282828"><a data-order="true" class="d_order">默认排序</a><a data-order="" class="o_order">好评率</a><a data-order="" class="t_order">成交次数</a></div></div><div class="article_line"><span></span></div></div><ul id="data-list" class="article_content"><!--for i in [1,2,3,4,5,6,7,8]--><!--    li--><!--        div.fz-16.c_282828.clearfix--><!--            a.fl 江苏省南京市白下区—>浙江省杭州市下城区--><!--            span.fr.fc_e67b09 已有24人报价--><!--        div--><!--            a 沪D96702、冷藏、高栏车、载重5吨、长x宽x高:3m x 4m x 5m沪D96702--><!--        div.c_282828--><!--            span 杜晗 &nbsp;--><!--            span 18066722251 &nbsp;--><!----><!--        div.c_282828--><!--            ul.rating-level--><!--                li--><!--                    a.one-star(href="#")--><!--                li--><!--                    a.two-stars(href="#")--><!--                li--><!--                    a.three-stars(href="#")--><!--                li--><!--                    a.four-stars(href="#")--><!--                li--><!--                    a.five-stars(href="#")--><!--            span 好评率：--><!--            span 87% &nbsp;&nbsp;--><!--            span 成交次数：--><!--            span 89--><!--        div.clearfix--><!--            span.fr 2015-12-12 12:00 发布--></ul><div class="t-c"><div class="pager"><div class="splite"></div><div id="page" class="page"></div></div></div></div><!--活动广告--><div class="article fr ad"><div class="article_head"><div class="article_title clearfix"><span class="fl">广告活动</span></div><div class="article_line"><span></span></div></div><!--Created by haner on 15/6/10.--><ul id="ads" class="article_content clearfix c_282828"></ul><script type="text/html" id="ads-tmpl"><!--[for(i=0;i<list.length;i++){]-->
+<li class="">
+<a href="<!--[=list[i].url]-->" target="_blank"> <img src="<!--[=list[i].adImg]-->" height="100px"/><p><!--[=list[i].title]--></p></a>
+</li>
+<!--[}]--></script></div></div></div><!-- footer--><div class="footer"><div class="footer_content clearfix"><a href="/index.html" class="logo"></a><div class="copyright"><div class="footer_nav"><a href="/index.html">网站首页</a><a href="/ours/company-info.html">公司简介</a><a href="/ours/contact.html">联系我们</a><a href="/ours/help.html">使用帮助</a></div><div class="footer_com_name">南通阿拉丁网络科技有限公司</div><div class="footer_copyright"><div>备案号：苏ICP备10027778号-1</div><div>版权所有 ©2010-2014 dingding56.com</div></div></div><a href="#" class="android_app"></a></div></div><!-- seajs--><script type="text/javascript" src="/assets/scripts/module/sea/sea.js"></script><script type="text/javascript" src="/assets/scripts/module/sea/sea-config.js"></script><script type="text/javascript">seajs.use("../assets/scripts/goods/goods-index.js");</script><!--    totalPage  //总页数--><!--    cpage     //当前页--><!--    pageStart //页码循环开始--><!--    pageEnd   //页码循环结束--><script type="text/html" id="page-tmpl"><form id="page-form" action="<!--[=action]-->">
+<input type="hidden" name="pageSize" value="<!--[=pageSize]-->"/>
+<input type="hidden" name="lastRecordId" value="<!--[=lastRecordId || '']-->"/>
+ <!--[if(totalPage!=0){]-->
+ <!--[if(cPage > 1){]-->
+ <a class="pre">上一页</a>
+ <!--[}else{]-->
+  <a class="disable">上一页</a>
+ <!--[}]-->
+ <div class="p_center">
+ <!--[if(pageStart != 1){]-->
+ <a data-page-num="<!--[=i]-->">1</a>
+ <!--[if(pageStart-1 != 1){]-->
+ <a>...</a>
+ <!--[}]-->
+ <!--[}]-->
+ <!--[for(i=pageStart;i<=pageEnd;i++){]-->
+ <!--[if(i==cPage){]-->
+ <span class="current"><!--[=i]--></span>
+ <!--[}else{]-->
+ <a data-page-num="<!--[=i]-->"><!--[=i]--></a>
+ <!--[}]-->
+ <!--[}]-->
+ <!--[if(pageEnd!=totalPage){]-->
+ <!--[if(totalPage-pageEnd != 1){]-->
+ <a>...</a>
+ <!--[}]-->
+ <a data-page-num="<!--[=totalPage]-->"><!--[=totalPage]--></a>
+ <!--[}]-->
+ </div>
+ <!--[if(cPage<totalPage){]-->
+ <a class="next">下一页</a>
+ <!--[}else{]-->
+  <a class="disable">下一页</a>
+  <!--[}]-->
+ <!--[}]-->
+</form></script><script type="text/html" id="data-list-tmpl"><!--[for(i=0;i<list.length;i++){]-->
+<li data-id="<!--[=list[i].goodId]-->" data-cb="<!--[=list[i].createBy || '']-->"> <div class="fz-16 c_282828 clearfix">
+<a class="fl" data-id="<!--[=list[i].goodId || '']-->" data-cb="<!--[=list[i].createBy || '']-->"><!--[=list[i].loadPlacePro || '']--><!--[=list[i].loadPlaceCity || '']--><!--[=list[i].loadPlaceArea || '']-->—&gt;<!--[=list[i].unloadPlacePro || '']--><!--[=list[i].unloadPlaceCity || '']--><!--[=list[i].unloadPlaceArea || '']--></a>
+</div>
+              <div><a data-id="<!--[=list[i].goodId || '']-->" data-cb="<!--[=list[i].createBy || '']-->"><!--[=list[i].goodName || '']-->、<!--[=list[i].goodKindName]-->、预估体积<!--[=list[i].cubage]-->m³、重量<!--[=list[i].weight]-->吨、保证金：<!--[=list[i].bondMoney||0]-->￥</a></div>
+              <div class="c_282828"><span><!--[=list[i].reallyName]--> &nbsp;</span><span><!--[=$isLogin(list[i].cellPhone)]--></span></div>
+              <div class="c_282828">
+                <ul class="rating-level" data-level="<!--[=$printStar(list[i].praiseRate)]-->">
+                  <li><a href="#" class="one-star"></a></li>
+                  <li><a href="#" class="two-stars"></a></li>
+                  <li><a href="#" class="three-stars"></a></li>
+                  <li><a href="#" class="four-stars"></a></li>
+                  <li><a href="#" class="five-stars"></a></li>
+                </ul><span>好评率：</span><span><!--[=list[i].praiseRate]-->% &nbsp;&nbsp;</span><span>成交次数：</span><span><!--[=list[i].doneNum]--></span>
+              </div>
+              <div class="clearfix"><span class="fr"><!--[=list[i].createTime]--> 发布</span></div>
+            </li>
+<!--[}]--></script><script type="text/html" id="businesstype-tmpl"><option value="">---请选择---</option>
+<!--[for(i=0;i<list.length;i++){]-->
+<option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+<!--[}]--></script><script type="text/html" id="goodkind-tmpl"><option value="">---请选择---</option>
+<!--[for(i=0;i<list.length;i++){]-->
+<option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+<!--[}]--></script></body></html>

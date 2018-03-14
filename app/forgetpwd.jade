@@ -1,0 +1,50 @@
+doctype html
+html
+
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="./assets/styles/forget.min.css")
+
+    body
+        // header
+        .header
+            .clearfix
+                a.logo
+                div.no_nav 找回密码
+
+        //containner
+        div.container.gray_box
+
+            //form
+            div.t-c
+                form.reg_form#reg_form(action="post")
+
+                    div.input
+                        label 手机号码&nbsp;*&nbsp;: &nbsp;
+                        input(type="text",data-rule="手机号: required;mobile;",placeholder="输入手机号",maxlength=11,name="cellPhone")
+
+                    .yzm.clearfix
+                        div.input.fl
+                            label 短信验证码&nbsp;*&nbsp;: &nbsp;
+                            input(type="text",name="yzm",data-rule="验证码: required;length[6]")
+                        button.fr#sendMsg 获取验证码
+
+                    div.input
+                        label 新密码&nbsp;*&nbsp;: &nbsp;
+                        input(type="password",placeholder="输入密码",data-rule="密码: required;password;",maxlength=20,name="spwd")
+
+                    div.input
+                        label 确认新密码&nbsp;*&nbsp;: &nbsp;
+                        input(type="password",placeholder="确认密码",maxlength=20,name="password",data-rule="确认密码: required;password;match(spwd)")
+
+                    .t-c
+                        input(type="submit",class="pink_btn save_btn",value="保存")
+        // footer
+        include com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/account/forget.js");
+

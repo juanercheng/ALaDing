@@ -1,0 +1,121 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/tenders/detail.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container
+
+            //localtion
+            p.local_nav 当前位置：
+                a(href="tenders-index.html") 招投标信息
+                span.splite >
+                span 招投标详情
+                
+            .content.gray_box
+                #data-detail
+
+
+                .t-c
+                    include ../com/page
+
+
+        // footer
+        include ../com/footer
+        include ../com/page-tmpl
+
+        form(target="blank",method="get",action="",id="openDownLoad")
+
+        |<div class="dialogbg"></div>
+        |<div class="dialog">
+        |     <h1>购买标书金额:<input type="text" readonly="readonly" class="money" maxlength="10" /></h1>
+        |     <div class="password">付款密码(同登录密码)：<br/>
+        |       <input type="password" /></div>
+        |   <input type="button" class="pink_btn gray_btn money_btn" value="确认" />
+        |   <input type="button" class="pink_btn gray_btn cannel" value="取消" />
+        |</div>
+
+        script(type="text/javascript") seajs.use("../assets/scripts/tenders/tenders-detail.js");
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <div class="clearfix top">
+            | <div class="user_img"><img src="<!--[=list[i].userPhotoImg]-->" width="100%" height="100%" class="fl">
+            | <div class="user-info">
+            | <div><!--[=list[i].memberTypeName]--></div>
+            | <div><!--[=$isNoName(list[i].isAnon,list[i].cellPhone)]--></div>
+            | </div>
+            | </div>
+            | <div class="tags fr c_282828">
+            | <!--[if(list[i].tagList || list[i].tagList.length){]-->
+            | <!--[for(j=0;j<list[i].tagList.length;j++){]-->
+            | <span><!--[=list[i].tagList[j].tagContent]--></span>
+            | <!--[}]-->
+            | <!--[}]-->
+            | </div>
+            | </div>
+            | <div class="text"><!--[=list[i].appraiseContent]--></div>
+            | <div class="clearfix"><span class="fr"><!--[=list[i].createTime]--></span></div>
+            | </li>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-detail-tmpl")
+            | <div class="product">
+            | <div class="product_info fl">
+
+            | <div class="product_modal">
+            | 【<!--[=tenderCompany]-->】<!--[=tenderTitle]-->
+            | </div>
+
+            | <div class="product_detail c_282828">
+
+            | <div>联系人：<!--[=tenderName]--> <!--[=$isLogin(tenderPhone)]--></div>
+
+            | <div>招标结束日期：<!--[=$DateFormat(endTime,'yyyy-MM-dd')]--> 
+            | <a href="#" id="downloadNotic" target="_blank">下载招标通知书</a>
+            | <a href="#" id="downloadDoc" target="_blank">下载招标文件</a>
+            | </div>
+
+            | <div>
+            | <!--[=isTechnical=='false'?"非技术标":"技术标"]-->
+            | <!--[if(isTechnical=="true"){]--> 【<!--[=techScore]-->分】 <!--[}]-->
+            | <!--[=wonBasic=='0'?"最低价中标":"平均价中标"]-->【<!--[=basicScore]-->分】
+            | 购买标书金额：<!--[=tenderAmount]-->元
+            | </div>
+
+            | <div>最低要求：<!--[=minRequire]--></div>
+            | <div>地址：<!--[=tenderADD]--></div>
+
+            |<div class="tlist">
+            |<table id="tenderLine">
+            |  <thead>
+            |    <tr>
+            |      <td>起运地</td>
+            |      <td>目的地</td>
+            |      <td>货物名称</td>
+            |      <td>现执行价(元/吨)</td>
+            |      <td>运量/单位</td>
+            |      <td>备注</td>
+            |    </tr>
+            |  </thead>
+            |  <tbody></tbody>
+            | </table>
+            |</div>
+
+            | <!--[if(tenderStatus=="beginbid"){]--> 
+            | <br/><button style="width: 80px;margin: 0 auto;" class="white_btn btn_Bid">我要竞标</button>
+            |<!--[}]-->
+            
+            | </div></div></div>
+
+

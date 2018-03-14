@@ -1,0 +1,50 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/goods/order-price.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container
+
+            //localtion
+            p.local_nav 当前位置：
+                a(href="/goods/goods-index.html") 货源信息
+                span.splite >
+                a(onclick="javascript:history.go(-1)") 货源详情
+                span.splite >
+                span 确认报价
+            .content.gray_box
+                form#form
+                    .input
+                        label 预计到达装货地时间：
+                        input(id="datepicker",readonly="true",name="loadTime",data-rule="required;")
+                    .input
+                        label 报价金额：
+                        input(data-rule="required;digits;length[1~9]",name="price")
+                    .input
+                        label(id="gt") ：
+                        input(data-rule="required;number2;length[1~10]",name="maxLoadOrCub")
+                    .input
+                        label 承运车辆：
+                        input(data-rule="required;length[1~200]",name="drvLicenseNo")
+                    .t-c
+                        input(type="submit",class="pink_btn login_btn",value="提交")
+
+        // footer
+        include ../com/footer
+        script(type="text/javascript",src="/assets/scripts/laydate/laydate.js")
+        script(type="text/javascript") seajs.use("../assets/scripts/goods/order-price.js");
+
+
+
+

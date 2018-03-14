@@ -1,0 +1,193 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/order-detail.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/common/panel.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/my-price.html") 我的报价
+                    span.splite >
+                    span 货源详情
+
+                .content
+                    .product#data-detail
+                        //img(width="284",height="284",src="http://www.w3school.com.cn/i/eg_tulip.jpg")
+                        //.product_info.fr
+                        //    .product_modal 货源编号：00000
+                        //    p.product_title 江苏省南京市白下区—>浙江省杭州市下城区
+                        //    .product_detail.c_282828
+                        //        div 蔬菜水果、保险品、重量2吨、体积20m³
+                        //        div 装货次数：2次        卸货次数：2次
+                        //        div 单件尺寸：长1.0m、高2.0m、宽3.0m
+                        //        div 货物数量：20件
+                        //        div 保证金：￥500
+                        //        div 付款方式：现付
+                        //        div 货源类型：普通
+                        //        div 备注：长期有效
+                        //        div 装货信息：
+                        //        div 2014年11月09日12点 上海市闸北区陆家嘴45号盛昌大厦
+                        //        div 卸货信息：
+                        //        div 2014年11月09日12点 湖北武汉市汉口区岳家嘴145号
+                    .clearfix
+                        //.operate.fr#operate
+                        //    button.white_btn.active.o-pay 付款
+                        //    button.white_btn.active.o-msg 消息
+                        //    button.white_btn.active.o-com 评价
+                        //    button.white_btn.active.o-back 悔单
+                        //    button.white_btn.active.o-express-p 承运人
+                        //    button.white_btn.active.o-express 物流追踪
+                        //    button.white_btn.active.o-confirm 确认到货
+
+                    section.c_282828
+                        .title
+                            span 评价信息
+                            ul.tab
+                                li.active(data-type="") 全部
+                                    span (0)
+                                li(data-type="good") 好评
+                                    span (0)
+                                li(data-type="bad") 差评
+                                    span (0)
+
+                        ul.list#data-list
+                            //-var n = 0
+                            //while n < 10
+                            //    li
+                            //        div.clearfix
+                            //            .fl.user_img_info
+                            //                img.user_img.fl(width="100%",height="100%",src="http://www.w3school.com.cn/i/eg_tulip.jpg")
+                            //                .o_phone
+                            //                    div 18066722251
+                            //                    div awdawdawdawdawdwadwa
+                            //
+                            //            .fr.c_282828
+                            //                .o_r_t.clearfix
+                            //                    ul.rating-level.fl
+                            //                        li
+                            //                            a.one-star(href="#")
+                            //                        li
+                            //                            a.two-stars.active(href="#")
+                            //                        li
+                            //                            a.three-stars(href="#")
+                            //                        li
+                            //                            a.four-stars(href="#")
+                            //                        li
+                            //                            a.five-stars(href="#")
+                            //
+                            //                    span 好评率：
+                            //                    span 87% &nbsp;&nbsp;
+                            //                    span 成交次数：
+                            //                    span=n++
+                            //
+                            //                .o_r_b.clearfix
+                            //
+                            //                    if n%2==0
+                            //                        button.orange_btn.fr.active 确认
+                            //                    else
+                            //                        button.orange_btn.fr 确认
+                            //
+                            //
+                            //        div.clearfix
+                            //            .fl 预计到时间：2015-12-12   保证金：20元
+                            //            .fr 2015-12-12 10:10
+                    .t-c
+                        include ../../com/page
+
+
+        // footer
+        include ../../com/footer
+
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/good-detail.js");
+        include ../../com/page-tmpl
+
+        //script(type="text/html",id="data-list-tmpl")
+        //    | <!--[for(i=0;i<list.length;i++){]-->
+        //    | <li>
+        //    | <div class="clearfix">
+        //    | <div class="fl user_img_info"><img width="100%" height="100%" src="<!--[=list[i].userPhotoImg|| '']-->" class="user_img fl">
+        //    | <div class="o_phone">
+        //    | <div><!--[=list[i].cellPhone]--></div>
+        //    | <div><!--[=list[i].reallyName]--></div>
+        //    | </div>
+        //    | </div>
+        //    | <div class="fr c_282828">
+        //    | <div class="o_r_t clearfix">
+        //    | <ul class="rating-level fl" data-level="<!--[=$printStar(list[i].praiseRate)]-->">
+        //    | <li><a href="#" class="one-star"></a></li>
+        //    | <li><a href="#" class="two-stars"></a></li>
+        //    | <li><a href="#" class="three-stars"></a></li>
+        //    | <li><a href="#" class="four-stars"></a></li>
+        //    | <li><a href="#" class="five-stars"></a></li>
+        //    | </ul><span>好评率：</span><span><!--[=list[i].praiseRate||0]-->% &nbsp;&nbsp;</span><span>成交次数：</span><span><!--[=list[i].dealNum]--></span>
+        //    | </div>
+        //    | </div>
+        //    | </div>
+        //    | <div class="clearfix">
+        //    | <div class="fl">预计到达时间：<!--[=list[i].loadTime]-->   报价金额：<!--[=list[i].price || '0']-->元</div>
+        //    | <div class="fr"><!--[=list[i].createTime]--></div>
+        //    | </div>
+        //    | </li>
+        //    | <!--[}]-->
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <div class="clearfix top">
+            | <div class="user_img"><img src="<!--[=list[i].userPhotoImg]-->" width="100%" height="100%" class="fl">
+            | <div class="user-info">
+            | <div><!--[=$isNoName(list[i].isAnon,list[i].cellPhone)]--></div>
+            | <div><!--[=list[i].memberTypeName]--></div>
+            | </div>
+            | </div>
+            | <div class="tags fr c_282828">
+            | <!--[if(list[i].tagList || list[i].tagList.length){]-->
+            | <!--[for(j=0;j<list[i].tagList.length;j++){]-->
+            | <span><!--[=list[i].tagList[j].tagContent]--></span>
+            | <!--[}]-->
+            | <!--[}]-->
+            | </div>
+            | </div>
+            | <div class="text"><!--[=list[i].appraiseContent]--></div>
+            | <div class="clearfix"><span class="fr"><!--[=list[i].createTime]--></span></div>
+            | </li>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-detail-tmpl")
+            | <img width="284" height="284" src="<!--[=$absImg(goodImg,'good')]-->">
+            | <div class="product_info fr">
+            | <div class="product_modal">货源编号：<!--[=goodNum||'']--></div>
+            | <p class="product_title"><!--[=loadPlacePro || '']--><!--[=loadPlaceCity || '']--><!--[=loadPlaceArea || '']-->—&gt;<!--[=unloadPlacePro || '']--><!--[=unloadPlaceCity || '']--><!--[=unloadPlaceArea || '']--></p>
+            | <div class="product_detail c_282828">
+            | <div><!--[=goodName]-->、<!--[=goodKindName||'']-->、<!--[=goodType]-->、重量<!--[=weight||'']-->吨、体积<!--[=cubage||'']-->m³</div>
+            | <div>装货次数：<!--[=loadCount || '--']-->次 &nbsp;&nbsp;&nbsp; 卸货次数：<!--[=unLoadCount||'']-->次</div>
+            | <div>单件尺寸：长<!--[=goodLong || '--']-->m、高<!--[=goodHigh || 0]-->m、宽<!--[=goodWidth|| 0]-->m</div>
+            | <div>货物数量：<!--[=goodCount || '--']-->件</div>
+            | <div>保证金：￥<!--[=bondMoney || '--']--></div>
+            | <div>付款方式：<!--[=payTypeName]--></div>
+            | <div>货源类型：<!--[=businessTypeName]--></div>
+            | <div>备注：<!--[=nodes || '']--></div>
+            | <div>装货信息：</div>
+            | <div><!--[=loadTime||'']-->&nbsp;<!--[=loadPlacePro||'']--><!--[=loadPlaceCity||'']--><!--[=loadPlaceArea||'']--><!--[=loadPlace||'']--></div>
+            | <div>卸货信息：</div>
+            | <div><!--[=unloadTime||'']-->&nbsp;<!--[=unloadPlacePro||'']--><!--[=unloadPlaceCity||'']--><!--[=unloadPlaceArea||'']--><!--[=unloadPlace||'']--></div>
+            | </div>
+            | </div>

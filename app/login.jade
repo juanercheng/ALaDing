@@ -1,0 +1,40 @@
+doctype html
+html
+
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="./assets/styles/login.min.css")
+
+    body
+        // header
+        include com/header
+
+        //containner
+        div.container.gray_box
+            div.login_form
+                form#login_form(action="post")
+                    input(name="deviceType",value="web",type="hidden")
+                    div.login_form_title 账号登录
+                    div.input_group
+                        span.username_icon.icon
+                        input(type="text",placeholder="手机号码",data-rule="手机号: required;mobile;",maxlength=11,name="cellPhone")
+                    div.input_group
+                        span.pwd_icon.icon
+                        input(type="password",placeholder="登录密码",data-rule="确认密码: required;password;",maxlength=16,name="password")
+                    div.rem_pwd
+                        label
+                            input(type="checkbox",name="rememberMe")
+                            | &nbsp;&nbsp;下次自动登录
+                        label.fr
+                            a(href="/forgetpwd.html") 忘记密码?
+                    input(type="submit",class="pink_btn login_btn",value="立即登录")
+                    button.gray_btn(onclick="location.href='/register-step1.html'") 注册
+
+
+        // footer
+        include com/footer
+        script(type="text/javascript") seajs.use("/assets/scripts/account/login.js");

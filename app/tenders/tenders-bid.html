@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head><title>丁丁物流</title><mate charset="utf-8"></mate><mate came="description" content=""></mate><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><mate name="viewport" content="width=device-width, initial-scale=1"></mate><link type="text/css" rel="stylesheet" href="../assets/styles/tenders/bid.min.css"></head><body><!-- header--><div class="header"><div class="clearfix"><a href="/index.html" class="logo"></a><ul class="nav clearfix"><li>首页</li><li>货源信息</li><li>车源信息</li><li>物流信息</li><li>人员招聘</li><li>招投标</li><li>二手车</li><li>订单中心</li><li>联系我们</li></ul><div class="header_right"><div class="search_form"><div id="search_type" class="type"><span data-type="good" class="active">货源</span><span data-type="car">车源</span><span data-type="express">物流</span></div><form id="search_all"><input type="text" name="key" placeholder="货源、车源、物流公司" maxlength="10"><input type="submit" value=""></form></div><ul class="btn_group clearfix"><li><a id="l_u">登录</a></li><li class="line"><a>|</a></li><li><a id="r_l">注册</a></li></ul></div></div></div><!--containner--><div class="container"><!--localtion--><p class="local_nav">当前位置：<a href="tenders-index.html">招投标信息</a><span class="splite">></span><a href="tenders-detail.html" id="a_detail">招投标详情</a><span class="splite">></span><span>我要竞标</span></p><div class="content gray_box"><div id="data-detail"></div><div class="t-c"><div class="pager"><div class="splite"></div><div id="page" class="page"></div></div></div></div></div><!-- footer--><div class="footer"><div class="footer_content clearfix"><a href="/index.html" class="logo"></a><div class="copyright"><div class="footer_nav"><a href="/index.html">网站首页</a><a href="/ours/company-info.html">公司简介</a><a href="/ours/contact.html">联系我们</a><a href="/ours/help.html">使用帮助</a></div><div class="footer_com_name">南通阿拉丁网络科技有限公司</div><div class="footer_copyright"><div>备案号：苏ICP备10027778号-1</div><div>版权所有 ©2010-2014 dingding56.com</div></div></div><a href="#" class="android_app"></a></div></div><!-- seajs--><script type="text/javascript" src="/assets/scripts/module/sea/sea.js"></script><script type="text/javascript" src="/assets/scripts/module/sea/sea-config.js"></script><!--    totalPage  //总页数--><!--    cpage     //当前页--><!--    pageStart //页码循环开始--><!--    pageEnd   //页码循环结束--><script type="text/html" id="page-tmpl"><form id="page-form" action="<!--[=action]-->">
+<input type="hidden" name="pageSize" value="<!--[=pageSize]-->"/>
+<input type="hidden" name="lastRecordId" value="<!--[=lastRecordId || '']-->"/>
+ <!--[if(totalPage!=0){]-->
+ <!--[if(cPage > 1){]-->
+ <a class="pre">上一页</a>
+ <!--[}else{]-->
+  <a class="disable">上一页</a>
+ <!--[}]-->
+ <div class="p_center">
+ <!--[if(pageStart != 1){]-->
+ <a data-page-num="<!--[=i]-->">1</a>
+ <!--[if(pageStart-1 != 1){]-->
+ <a>...</a>
+ <!--[}]-->
+ <!--[}]-->
+ <!--[for(i=pageStart;i<=pageEnd;i++){]-->
+ <!--[if(i==cPage){]-->
+ <span class="current"><!--[=i]--></span>
+ <!--[}else{]-->
+ <a data-page-num="<!--[=i]-->"><!--[=i]--></a>
+ <!--[}]-->
+ <!--[}]-->
+ <!--[if(pageEnd!=totalPage){]-->
+ <!--[if(totalPage-pageEnd != 1){]-->
+ <a>...</a>
+ <!--[}]-->
+ <a data-page-num="<!--[=totalPage]-->"><!--[=totalPage]--></a>
+ <!--[}]-->
+ </div>
+ <!--[if(cPage<totalPage){]-->
+ <a class="next">下一页</a>
+ <!--[}else{]-->
+  <a class="disable">下一页</a>
+  <!--[}]-->
+ <!--[}]-->
+</form></script><script type="text/javascript">seajs.use("../assets/scripts/tenders/tenders-bid.js");</script><script type="text/html" id="list-tmpl"><!--[for(i=0;i<list.length;i++){]-->
+<div class="input">
+   <label><!--[=list[i].basicName]-->&nbsp;*&nbsp;: &nbsp;</label>
+   <select class="select">
+       <!--[for(j=0;j<list[i].basicinfo.length;j++){]-->
+           <option value="<!--[=list[i].basicinfo[j].basicId]-->"><!--[=list[i].basicinfo[j].name]--></option>
+       <!--[}]-->
+   </select>
+</div>
+<!--[}]--></script><script type="text/html" id="data-detail-tmpl"><div class="product">
+<div class="product_info fl">
+<div class="product_modal">
+【<!--[=tenderCompany]-->】<!--[=tenderTitle]-->
+</div>
+<div class="product_detail c_282828">
+<div>联系人：<!--[=tenderName]--> <!--[=tenderPhone]--></div>
+<div>招标结束日期：<!--[=$DateFormat(endTime,'yyyy-MM-dd')]--> 
+</div>
+<div>
+<!--[=isTechnical=='false'?"非技术标":"技术标"]-->
+<!--[if(isTechnical=="true"){]--> 【<!--[=techScore]-->分】 <!--[}]-->
+<!--[=wonBasic=='0'?"最低价中标":"平均价中标"]-->【<!--[=basicScore]-->分】
+购买标书金额：<!--[=tenderAmount]-->元
+</div>
+<div>最低要求：<!--[=minRequire]--></div>
+<div>地址：<!--[=tenderADD]--></div><div class="hr"></div><div id="tc" class="t-c"><form id="publish-order" class="reg_form"><div class="input"><label>公司名称&nbsp;*&nbsp;: &nbsp;</label><input maxlength="50" type="text" name="companyName" data-rule="required;length[1~50]"></div><div class="input"><label>招标联系人姓名&nbsp;*&nbsp;: &nbsp;</label><input maxlength="20" type="text" name="bidName" data-rule="required;length[1~20]"></div><div class="input"><label>招标联系人手机&nbsp;*&nbsp;: &nbsp;</label><input maxlength="11" id="bidPhone" type="text" name="bidPhone" data-rule="required;mobile;length[1~11]"></div><div class="input file"><label>上传竞标文件&nbsp;*&nbsp;: &nbsp;</label><div class="file_upload"><img><input type="file" class="bidDoc"><input type="hidden" name="bidDoc" value="" data-rule="required"></div></div><div class="input file"><label>上传汇款票据&nbsp;*&nbsp;: &nbsp;</label><div class="file_upload"><img><input type="file" class="remitterBill"><input type="hidden" name="remitterBill" value="" data-rule="required"></div></div><div class="tlist"><table id="tenderLine"><thead><tr><td>起运地</td><td>目的地</td><td>货物名称</td><td>现执行价(元/吨)</td><td>运量/单位</td><td>备注</td><td>报价(元)</td></tr></thead><tbody></tbody></table></div><div class="t-c"><input type="submit" value="保存" class="pink_btn save_btn"></div></form></div></div></div></div></script></body></html>

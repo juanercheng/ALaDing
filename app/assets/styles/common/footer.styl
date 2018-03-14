@@ -1,0 +1,49 @@
+@import './val'
+@import '../utils/fun'
+
+//底部样式
+$v_FooterWidth = 635px
+
+.footer .footer_content
+  width $v_FooterWidth
+  margin auto
+  color $tc_footer
+  font-size $fz_footer
+  position relative
+  padding 70px 0
+
+.footer_content .logo
+  F_center_v(67px)
+
+.footer_content .android_app
+  F_center_v(80px)
+  right 30px
+  &:after
+    width: 80px;
+    height: 80px;
+    background:url("/assets/image/android.png") center no-repeat;
+    background-size:100% 100%;
+    content:'';
+    display: table-cell;
+    vertical-align: middle;
+
+.footer_content .copyright
+  margin-left 100px
+
+.copyright .footer_nav a
+  display inline-block
+  border-left 1px solid $tc_footer
+  padding 0 15px
+  color #5f5f5f
+  &:visited,&:active
+    color #5f5f5f
+
+
+.copyright .footer_nav a:first-child
+  border-left none
+  padding-left 0
+
+.copyright .footer_nav a:hover
+  text-decoration underline
+.copyright .footer_com_name
+  margin 10px 0

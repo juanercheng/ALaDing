@@ -1,0 +1,42 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/ours/ours-notice.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+
+            .my_nav.fl
+                include ../com/ours-nav
+
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    span 公告
+
+                .content
+                    .notic-list
+                        ul#data-list
+                        include ../com/page
+
+
+        // footer
+        include ../com/footer
+
+        script(type="text/javascript") seajs.use("../assets/scripts/ours/notice-list.js");
+        include ../com/page-tmpl
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li class="clearfix"><a class="fl" data-id="<!--[=list[i].id]-->"><!--[=list[i].title]--></a><span class="fr"><!--[=$replaceStr(list[i].modifyDate,'T',' ')]--></span></li>
+            | <!--[}]-->

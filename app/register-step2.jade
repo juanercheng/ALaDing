@@ -1,0 +1,127 @@
+doctype html
+html
+
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="./assets/styles/reg-step2.min.css")
+
+    body
+        // header
+        include com/no-nav-header
+
+        //containner
+        div.container.gray_box
+
+            //process
+            .t-c
+                .progress
+                    .p_line
+                        div
+                        //div.active
+                    .p_text
+                        div
+                            div.circle.active 1
+                            div.c_282828 注册
+                            //div.ok
+                        div
+                            div.circle.active 2
+                            div.c_282828 完善资料
+                            //div.ok
+                        div
+                            div.circle 3
+                            div.c_282828 完成
+                            //div.ok
+
+            //form
+            div.t-c
+                form.reg_form
+
+                    .input
+                        label 真实姓名&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input.t-l
+                        label 起运地&nbsp;*&nbsp;: &nbsp;
+                        select.select#province
+                        select.select#city
+                        select.select#area
+
+                    .input.t-l
+                        label 车辆性质&nbsp;*&nbsp;: &nbsp;
+                        select.select
+
+                    .input
+                        label 车牌号&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input
+                        label 车型&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input
+                        label 载重&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input
+                        label 车长(米)&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input
+                        label 车宽(米)&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input
+                        label 车高(米)&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input
+                        label 车辆业务&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input
+                        label 停放地址&nbsp;*&nbsp;: &nbsp;
+                        input(type="text")
+
+                    .input.file
+                        label 身份证号&nbsp;*&nbsp;: &nbsp;
+                        .file_upload
+                            img
+                            input(type="file")
+                            input(type="hidden",name="" value="/a.jpg")
+
+                    .input.file
+                        label 驾驶证号&nbsp;*&nbsp;: &nbsp;
+                        .file_upload
+                            input(type="file")
+                            input(type="hidden",name="" value="/a.jpg")
+
+                    .input.file
+                        label 行驶证号&nbsp;*&nbsp;: &nbsp;
+                        .file_upload
+                            input(type="file")
+                            input(type="hidden",name="" value="/a.jpg")
+
+                    .input.file
+                        label 运&nbsp;&nbsp;营&nbsp;&nbsp;证&nbsp;*&nbsp;: &nbsp;
+                        .file_upload
+                            input(type="file")
+                            input(type="hidden",name="" value="/a.jpg")
+
+                    .input.file
+                        label 车辆照片&nbsp;*&nbsp;: &nbsp;
+                        .file_upload
+                            input(type="file")
+                            input(type="hidden",name="" value="/a.jpg")
+
+                    .t-c
+                        input(type="submit",class="pink_btn save_btn",value="保存")
+
+        // footer
+        include com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/account/perfect-info.js");
+

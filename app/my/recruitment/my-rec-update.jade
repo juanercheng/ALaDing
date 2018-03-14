@@ -1,0 +1,107 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/rec-publish.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/recruitment/my-rec.html") 招聘信息
+                    span.splite >
+                    a(href="",class="detail") 招聘详情
+                    span.splite >
+                    span 修改招聘信息
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            .input
+                                label 标题&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="recruitTitle",data-rule="required;length[1~50]")
+
+                            .input
+                                label 职位&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="recruitPosition",data-rule="required;length[1~20]")
+
+                            .input.t-l
+                                label 职位分类&nbsp;*&nbsp;: &nbsp;
+                                select#positionType(name="positionType",data-rule="required;")
+
+                            .input.t-l
+                                label 工资&nbsp;*&nbsp;: &nbsp;
+                                select#price(name="price",data-rule="required;")
+                                
+                            .input.t-l
+                                label 性别&nbsp;*&nbsp;: &nbsp;
+                                select#sex(name="sex",data-rule="required;")
+
+                            .input.t-l
+                                label 工作地点&nbsp;*&nbsp;: &nbsp;
+                                select.select.province(name="workProvince")
+                                select.select.city(name="workCity")
+                                select.select.area(name="workArea",data-rule="required;")
+
+                            .input
+                                label(style="visibility:hidden")  详细工作地点&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="workPlace",data-rule="required;length[1~100]")
+
+                            .input
+                                label 工作要求&nbsp;*&nbsp;: &nbsp;
+                                textarea(class="textarea",name="workRequire",data-rule="required;length[1~1000]")
+
+                            .t-c
+                                input(id="save_btn",type="submit",class="pink_btn save_btn gray_btn",value="保存")
+                                input(id="btn-back",type="button",class="pink_btn save_btn",value="返回")
+                                
+                            .t-c.readWarning
+                                br
+                                label *请注意填写招聘信息，以免发生纠纷
+
+
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/my-rec-update.js");
+        script(type="text/javascript",src="/assets/scripts/laydate/laydate.js")
+
+        script(type="text/html",id="price-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="positionType-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="sex-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="drvLincese-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->

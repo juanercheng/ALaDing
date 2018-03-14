@@ -1,0 +1,164 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+@import '../reg-step2'
+
+.content
+  position relative
+  padding-bottom 30px
+
+
+.product
+  color #333333
+  min-height 284px
+  overflow hidden
+  padding 20px 0
+  padding-left 15px
+  & .product_info
+    width 960px
+    & .product_modal
+      padding 10px
+      color $GlobalBg
+      background #b7b7b7
+    & .product_title
+      font-size 16px
+      margin 10px 0
+    & .product_detail
+      line-height 16px
+      padding 15px
+      & >div
+        F_ellipsis(100%)
+      & .go-price
+        width 100px
+        height 35px
+        margin-right 100px
+
+
+.content .pager .splite
+  border-bottom none
+  margin 0
+
+section
+  & .title
+    padding 10px
+    position relative
+    background #E7E7E7
+    & .tab
+      position absolute
+      top 0
+      left 100px
+      & li
+        float: left
+        border: 1px solid#d3d3d3
+        padding: 9px 15px
+        background #ffffff
+        cursor pointer
+        &.active
+          color $LogoBg
+        &:first-child
+          border-right none
+        &:last-child
+          border-left none
+  & .info
+    padding 20px 25px
+    line-height 18px
+  & .list
+    padding 10px
+    & li
+      padding 10px
+      border-bottom 1px solid #D4D2D3
+      & .top
+        position relative
+        min-height 50px
+      & .user_img
+        display inline-block
+        F_center_v(50px)
+        & img
+          width: 48px;
+          height: 48px;
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%;
+          border-radius: 100%;
+          border: 1px solid #d3d3d3;
+          overflow: hidden
+          display inline-block
+        & .user-info
+          padding-left 60px
+          line-height 25px
+      & .tags
+        max-width 60%
+        & span
+          display inline-block
+          background #E7E7E7
+          border 1px solid #D8D6D7
+          padding 5px
+          margin 5px
+      & .text
+        margin: 20px 0
+        text-indent: 25px
+
+.product .product_info .product_detail>div{
+  margin-bottom: 10px;
+}
+.product_detail a{
+  color:#000;
+}
+
+#publish-order{
+  margin-top: 30px;
+  display:block;
+}
+form .input>input{
+  padding:5px;
+}
+form .input>label {
+  width: 120px;
+}
+form .input select{
+  width: 351px;
+  padding: 5px;
+}
+
+div.hr{
+  height:1px;
+  border-bottom:1px solid #A9A4A4;
+}
+
+.tlist{
+  width:100%;
+  color:#333;
+}
+
+.tlist>table{
+  width: 100%;
+  border:solid #ccc; 
+  border-width:1px 0px 0px 1px;
+}
+
+.tlist td{
+  width: 79px;
+  border:solid #ccc; 
+  border-width:0px 1px 1px 0px;
+  padding: 8px;
+  white-space:normal;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.reg_form .save_btn{
+  margin-top: 20px;
+}
+#tenderLine td input{  
+  width: 80px;
+}
+form .input.file label{
+  float: none;
+}
+form .file .file_upload{
+  position: static;
+}
+.file_upload .n-right{
+  margin-top: 57px;
+  margin-left: 10px;
+  left: 461px;
+  position: absolute;
+}

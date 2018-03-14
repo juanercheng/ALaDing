@@ -1,0 +1,139 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-msg.min.css")
+    body
+        // header
+        include ../../com/header
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        a(href="/my/order/my-order.html") 我的订单
+                        span.splite >
+                        span 订单消息
+                .content.c_282828
+                    .product#data-detail
+                        //.info.clearfix
+                        //    .product_img.fl
+                        //        img(src="http://frozenui.github.io/static/ui.png",width="100%",height="100%")
+                        //    p.fz-16 南京江苏。。。。
+                        //        span.fr.c_ea7914 已提交
+                        //    p.c_6c6c6c 蔬菜水果
+                        //    p 装货时间：2015-12-12
+                        //    ul.rating-level
+                        //        li
+                        //            a.one-star(href="#")
+                        //        li
+                        //            a.two-stars.active(href="#")
+                        //        li
+                        //            a.three-stars(href="#")
+                        //        li
+                        //            a.four-stars(href="#")
+                        //        li
+                        //            a.five-stars(href="#")
+                        //    span &nbsp;&nbsp;&nbsp;
+                        //    span 好评率：85%
+                        //    span &nbsp;&nbsp;&nbsp;
+                        //    span 成交次数：85%
+                        //
+                        //.clearfix
+                        //    .fr.c_6c6c6c 2015-12-12 10:11
+
+                    .pay
+                        form#msg-form
+                            textarea(placeholder="请输入内容",name="messageContent")
+                            .file
+                                //.img-item
+                                //    img(src="http://frozenui.github.io/static/ui.png")
+                                //.img-item
+                                //    img(src="http://frozenui.github.io/static/ui.png")
+                                //.img-item
+                                //    img(src="http://frozenui.github.io/static/ui.png")
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="messageImg1" value="")
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="messageImg2" value="")
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="messageImg3" value="")
+                            .t-r
+                                input(type="submit",class="pink_btn login_btn",value="提交")
+
+
+                    .msg-list
+                        .title 消息列表
+                        ul.list#data-list
+                            //for i in [1,1,1,1,1,1,1,1]
+                            //    li
+                            //        .user_img_info
+                            //            img.fl(src="http://frozenui.github.io/static/ui.png")
+                            //            span 1807667**112
+                            //            span 司机
+                            //        p.c_6c6c6c 已联系货架
+                            //
+                            //        .upload-imgs.clearfix
+                            //            ul.imgs.clearfix
+                            //                for i in [1,1,1,1,1,1,1,1]
+                            //                    li
+                            //                        a(data-preview="true",href="http://100xue.com/image/advertisement/f33de1ff-0e1e-4d32-a444-a2cc54c14f3a.jpg",target="_blank")
+                            //                            img(src="http://100xue.com/image/advertisement/f33de1ff-0e1e-4d32-a444-a2cc54c14f3a.jpg")
+                            //
+                            //            span.fr.c_6c6c6c 2015-12-12 10:00
+
+                    .t-c
+                        include  ../../com/page
+
+        // footer
+        include ../../com/footer
+        include  ../../com/page-tmpl
+        script(type="text/javascript") seajs.use("/assets/scripts/my/order-msg.js");
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <div class="user_img_info"><img src="<!--[=$absImg(list[i].userPhotoImg,'user')]-->" class="fl"><span><!--[=list[i].cellPhone]--></span><span><!--[=list[i].memberType]--></span></div>
+            | <p class="c_6c6c6c"><!--[=list[i].messageContent]--></p>
+            | <div class="upload-imgs clearfix">
+            | <ul class="imgs clearfix">
+            | <!--[if(list[i].messageImg1){]--><li><a data-preview="true" href="#"><img src="<!--[=$absImg(list[i].messageImg1,'')]-->"></a></li><!--[}]-->
+            | <!--[if(list[i].messageImg2){]--><li><a data-preview="true" href="#"><img src="<!--[=$absImg(list[i].messageImg2,'')]-->"></a></li><!--[}]-->
+            | <!--[if(list[i].messageImg3){]--><li><a data-preview="true" href="#"><img src="<!--[=$absImg(list[i].messageImg3,'')]-->"></a></li><!--[}]-->
+            | </ul><span class="fr c_6c6c6c"><!--[=list[i].createDate]--></span>
+            | </div>
+            | </li>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-detail-tmpl")
+            | <div class="info clearfix">
+            | <div class="product_img fl"><img src="<!--[=$absImg(goodImg,'good')]-->" width="100%" height="100%"></div>
+            | <p class="fz-16"><!--[=loadPlacePro || '']--><!--[=loadPlaceCity || '']--><!--[=loadPlaceArea || '']-->—&gt;<!--[=unloadPlacePro || '']--><!--[=unloadPlaceCity || '']--><!--[=unloadPlaceArea || '']--><span class="fr c_ea7914"></span></p>
+            | <p class="c_6c6c6c"><!--[=goodName || '']-->、<!--[=goodKindName]-->、预估体积<!--[=cubage]-->m³、重量<!--[=weight]-->吨</p>
+            | <p>装货时间：<!--[=loadTime || '']--></p>
+            | <ul class="rating-level" data-level="<!--[=$printStar(praiseRate)]-->">
+            | <li><a href="#" class="one-star"></a></li>
+            | <li><a href="#" class="two-stars"></a></li>
+            | <li><a href="#" class="three-stars"></a></li>
+            | <li><a href="#" class="four-stars"></a></li>
+            | <li><a href="#" class="five-stars"></a></li>
+            | </ul><span>&nbsp;&nbsp;&nbsp;</span><span>好评率：<!--[=praiseRate || 0]-->%</span><span>&nbsp;&nbsp;&nbsp;</span><span>成交次数：<!--[=doneNum || 0]--></span>
+            | </div>
+            | <div class="clearfix">
+            | <div class="fr c_6c6c6c"><!--[=createTime || '']--></div>
+            | </div>
+

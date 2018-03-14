@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-carrier.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/order/my-order.html") 我的订单
+                    span.splite >
+                    span 到货图片
+
+                .content
+                    .carrier
+                        form#carrier_form
+                            div.input.file
+                                label 到货照片*：
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="drvLoadImg",data-rule="required;",value="")
+                                span(class="msg-box",for="drvLoadImg")
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/order-carrier2.js");
+

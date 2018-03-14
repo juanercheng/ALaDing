@@ -1,0 +1,99 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-car-detail.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/common/panel.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/oldcar/my-car.html") 卖车信息
+                    span.splite >
+                    span 车辆详情
+
+                .content
+                    .product#order-detail
+                        //img(width="284",height="284",src="http://www.w3school.com.cn/i/eg_tulip.jpg")
+                        //.product_info.fr
+                        //    .product_modal 货源编号：00000
+                        //    p.product_title 江苏省南京市白下区—>浙江省杭州市下城区
+                        //    .product_detail.c_282828
+                        //        div 蔬菜水果、保险品、重量2吨、体积20m³
+                        //        div 装货次数：2次        卸货次数：2次
+                        //        div 单件尺寸：长1.0m、高2.0m、宽3.0m
+                        //        div 货物数量：20件
+                        //        div 保证金：￥500
+                        //        div 付款方式：现付
+                        //        div 货源类型：普通
+                        //        div 备注：长期有效
+                        //        div 装货信息：
+                        //        div 2014年11月09日12点 上海市闸北区陆家嘴45号盛昌大厦
+                        //        div 卸货信息：
+                        //        div 2014年11月09日12点 湖北武汉市汉口区岳家嘴145号
+                    div
+                        .operate.fl#operate
+                            button.white_btn.o-pay 修改信息
+                            button.white_btn.o-msg 删除信息
+
+
+        // footer
+        include ../../com/footer
+        include ../../com/panel
+        include ../../com/confirmcppanel
+
+
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/oldcar/my-car-detail.js");
+        include ../../com/page-tmpl
+
+        script(type="text/html",id="order-detail-tmpl")
+            | 
+            | <div class="product_info fl">
+            
+            | <div class="clearfix">
+            | <div class="c_282828">
+            | <div class="fl">
+            | <p><img class="carImg" alt="车辆照片" src="<!--[=list.carImg || '']-->" /></p>
+            | <!--[if(list.drvLicenseImg){]-->
+            | <p><img class="carImg" alt="行驶证照片" src="<!--[=list.drvLicenseImg || '']-->" /></p>
+            | <!--[}]-->
+            | </div>
+            | <div class="fl">
+            | <p class="clearfix"><span class="fl">审核状态：<!--[=list.oldcarStatusName]--></span></p>
+            | <p class="clearfix"><span class="fl">审核原因：<!--[=list.reason]--></span></p>
+
+            | <p class="clearfix"><span class="fl">标题：<!--[=list.oldcarTitle || '']--></span></p>
+
+            | <p class="clearfix"><span class="fl">品牌：<!--[=list.carBrand || '']--></span></p>
+            | <p class="clearfix" ><span class="fl">马力(匹)<!--[=list.displacement || '']--></span></p>
+            | <p class="clearfix">预估卖价(元) ：<!--[=list.price||'']--></p>
+            | <p class="clearfix">购车时间：<!--[=list.buyTime||'']--></p>
+            | <p class="clearfix">行驶里程(km)：<!--[=list.travelMileage||'']--></p>
+           
+            | <p>看车地点：<!--[=list.provinceName || '']-->  <!--[=list.cityName||'']-->   <!--[=list.areaName||'']-->  <br/> <label style="visibility:hidden;">看车地点：</label> <!--[=list.lookPlace || '']--> </p>
+           
+            | <p>配置亮点：<!--[=list.configuration || '']--></p>
+            | <p>备注：<!--[=list.remark || '']--></p>
+
+            | <p>联系人姓名：<!--[=list.reallyName || '']-->、  联系人电话：<!--[=list.cellPhone || '']--></p></div>
+           
+            | </div>
+
+            | </div>
+            | </div>

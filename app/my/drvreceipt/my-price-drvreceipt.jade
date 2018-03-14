@@ -1,0 +1,72 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-price-drvreceipt.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/my-price.html") 我的报价
+                    span.splite >
+                    span 回单回寄
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            .input
+                                label 回寄信息&nbsp;&nbsp;: &nbsp;
+                                input(type="text",style="visibility:hidden")
+
+                            .input
+                                label 物流公司&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="receiptCmp",data-rule="required;length[1~50]")
+
+                            .input
+                                label 物流单号&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="receiptCmpNum",data-rule="required;length[1~20]")
+
+                            .input
+                                label 回单单号&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="receiptNum",data-rule="required;length[1~50]")
+
+                            .input.file
+                                label 物流单照片&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="receiptCmpImg",value="")
+
+                            .input.file
+                                label 回单照片&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="receiptImg",value="")
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/drvreceipt/my-price-drvreceipt.js");
+        script(type="text/javascript",src="/assets/scripts/laydate/laydate.js")

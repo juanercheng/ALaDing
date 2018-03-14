@@ -1,0 +1,98 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/usedcar/index.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container
+
+            //localtion
+            p.local_nav 当前位置：二手车
+
+            //c_center
+            div.clearfix.c_center
+
+                //车源详情
+                .article.fl.order_list
+                    .gray_box
+                        form.c_282828#list_search
+                            p
+                                label 品牌：
+                                    input(type="text",name="carBrand",maxlength="50")
+                                label 价格(万)：
+                                    input(type="text",name="priceSmall",maxlength="10")
+                                label 至
+                                    input(type="text",name="priceBig",maxlength="10")
+                            p
+                                label 看车地区：
+                                    select.province(name="province")
+                                    select.city(name="city")
+                                    select.area(name="area")
+                            p.t-c
+                                button(class="pink_btn search_btn") 搜索
+
+                    .article_head
+                        .article_title.clearfix
+                            span.fl#count 共0条
+                            .orderby.c_282828
+                                //a.d_order(data-order="true") 默认排序
+                                //a.o_order(data-order="") 好评率
+                                //a.t_order(data-order="") 成交次数
+                        .article_line
+                            span
+                    ul.article_content#data-list
+
+                    .t-c
+                        include ../com/page
+
+                  //活动广告
+                .article.fr.ad
+                    .article_head
+                        .article_title.clearfix
+                            span.fl 广告活动
+                        .article_line
+                            span
+
+                    include ../com/ad-tmpl
+
+        // footer
+        include ../com/footer
+
+        script(type="text/javascript") seajs.use("../assets/scripts/usedcar/usedcar-index.js");
+
+        include ../com/page-tmpl
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li data-id="<!--[=list[i].oldcarId]-->"> 
+            | <div class="fl fl_img"><img src="<!--[=list[i].carImg]-->" /></div>
+            | <div class="fl fl_info">
+            | <div class="fz-16 c_282828 clearfix">
+            | <a class="fl">
+            |   【<!--[=list[i].carBrand]-->】 <!--[=list[i].oldcarTitle]-->
+            | </a>
+            | </div>
+
+            | <div class="fz-16 c_282828 clearfix">
+            | <a class="fl">
+            |   预计卖价：<!--[=list[i].price]-->元
+            | </a>
+            | </div>
+
+            | <div class="fz-16 c_282828 clearfix">
+            | <a class="fl">
+            |   看车地点：<!--[=list[i].provinceName]--><!--[=list[i].cityName]--><!--[=list[i].areaName]-->
+            | </a>
+            | </div>
+
+            | </li>
+            | <!--[}]-->

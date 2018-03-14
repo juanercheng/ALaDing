@@ -1,0 +1,52 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/payTest.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        a(href="/my/training/training.html")
+                            span 培训
+                        span.splite >
+                            span 付款
+
+                .content
+                    div
+                        form.payTestBox
+                            h2 待付款:
+                                span.money 30.60
+                                span 元
+                            div.payWay
+                                h2 支付方式：余额支付
+                                div.payList
+                                   div.balance
+                                   div.inputMsg 您的账户余额不足，请先充值！
+                            div.btnBox
+                                button.pink_btn.btn 确认支付
+                                button.orange_btn.btn 去充值
+
+
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/training/payTest.js");
+
+
+
+

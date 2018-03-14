@@ -1,0 +1,84 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/information.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/layui/css/layui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        span 认证信息
+
+                .content
+                    div.t-c
+                        form
+                            div#infoList
+                        div.noData 暂无认证信息！
+                    .t-c
+                        include ../../com/page
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/information/information.js");
+
+        include ../../com/page-tmpl
+
+        script(type="text/html", id="seqrch-tmpl")
+            | <table class="layui-table infoTable01">
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <tr style="border-top:3px solid #ddd">
+            | <td>认证时间</td>
+            | <td class="Authstartdate"> </td>
+            | <td>认证平台</td>
+            | <td><!--[=list[i].PlatformName]--></td>
+            | </tr>
+            | <tr>
+            | <td>认证角色</td>
+            | <td><!--[=list[i].AuthType]--></td>
+            | <td>认证周期</td>
+            | <td><!--[=list[i].Day]--></td>
+            | </tr>
+            | <tr>
+            | <td>认证编号</td>
+            | <td><!--[=list[i].Id]--></td>
+            | <td>姓名</td>
+            | <td><!--[=list[i].ReallyName]--></td>
+            | </tr>
+            | <tr>
+            | <td>手机号</td>
+            | <td><!--[=list[i].CellPhone]--></td>
+            | <td >货物名称</td>
+            | <td ><!--[=list[i].ProductName]--></td>
+            | </tr>
+            | <tr>
+            | <td >剩余天数</td>
+            | <td colspan="3" style="text-align:left;padding-left:12%;"><!--[=list[i].Timeleft]--></td>
+            | </tr>
+            | <tr>
+            | <td>签字</td>
+            | <td colspan="3" class="tdImg"><img src="<!--[=list[i].HandHeldIdCardImg]-->"></td>
+            | </tr>
+            | <tr>
+            | <td >手持照片</td>
+            | <td colspan="3" class="tdImg"><img src="<!--[=list[i].SignatureImg]-->"></td>
+            | </tr>
+            | <!--[}]-->
+            |</table>
+
+

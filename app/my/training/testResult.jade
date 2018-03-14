@@ -1,0 +1,69 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/testResults.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        a(href="/my/training/training.html")
+                            span 培训
+                        span.splite >
+                            span 考试结果
+
+                .content
+                    div
+                        form
+                            div.success
+                                div.resultBox
+                                    img.resultImg(src='/assets/image/success.png')
+                                div.result
+                                    p
+                                    h2 请您上传照片、签字照片完成认证
+                            div.failed
+                                div.resultBox
+                                    img.resultImg(src='/assets/image/fail.png')
+                                div.result
+                                    p
+                                    h2 请您上传照片、签字照片完成认证
+                            .input.file.driver.handIDImg
+                                label 手持身份证照片：&nbsp;&nbsp;  &nbsp;
+                                .file_upload
+                                    img(src='')
+                                    input(type="file" id="handIDImg")
+                                    input(type="hidden", name="handIDImg",value="")
+                            .input.file.driver.singeImg
+                                label 签字照片：&nbsp;&nbsp;  &nbsp;
+                                .file_upload
+                                    img(src='')
+                                    input(type="file" id="singeImg")
+                                    input(type="hidden", name="singeImg", value="")
+                            div.btnBox
+                                //button.btn.gray_btn 清除签名
+                                button.orange_btn.btn(type="submit") 确认提交
+
+
+        include ../../com/footer
+
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/training/testResult.js");
+
+
+
+

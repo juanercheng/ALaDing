@@ -1,0 +1,188 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+
+.content
+  position relative
+  padding-bottom 30px
+
+
+.product
+  color #333333
+  min-height 284px
+  overflow hidden
+  padding 20px 0
+  padding-left 15px
+  & .product_info
+    width 960px
+    & .product_modal
+      padding 10px
+      color $GlobalBg
+      background #b7b7b7
+    & .product_title
+      font-size 16px
+      margin 10px 0
+    & .product_detail
+      line-height 16px
+      padding 15px
+      & >div
+        F_ellipsis(100%)
+      & .go-price
+        width 100px
+        height 35px
+        margin-right 100px
+
+
+.content .pager .splite
+  border-bottom none
+  margin 0
+
+section
+  & .title
+    padding 10px
+    position relative
+    background #E7E7E7
+    & .tab
+      position absolute
+      top 0
+      left 100px
+      & li
+        float: left
+        border: 1px solid#d3d3d3
+        padding: 9px 15px
+        background #ffffff
+        cursor pointer
+        &.active
+          color $LogoBg
+        &:first-child
+          border-right none
+        &:last-child
+          border-left none
+  & .info
+    padding 20px 25px
+    line-height 18px
+  & .list
+    padding 10px
+    & li
+      padding 10px
+      border-bottom 1px solid #D4D2D3
+      & .top
+        position relative
+        min-height 50px
+      & .user_img
+        display inline-block
+        F_center_v(50px)
+        & img
+          width: 48px;
+          height: 48px;
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%;
+          border-radius: 100%;
+          border: 1px solid #d3d3d3;
+          overflow: hidden
+          display inline-block
+        & .user-info
+          padding-left 60px
+          line-height 25px
+      & .tags
+        max-width 60%
+        & span
+          display inline-block
+          background #E7E7E7
+          border 1px solid #D8D6D7
+          padding 5px
+          margin 5px
+      & .text
+        margin: 20px 0
+        text-indent: 25px
+
+.product .product_info .product_detail>div{
+  margin-bottom: 10px;
+}
+.product_detail a{
+  color:#000;
+}
+
+
+.dialog{
+  position: fixed;
+  width: 300px;
+  height:250px;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  margin-left: -150px;
+  margin-top: -125px;
+  z-index: 9999;
+  border: 1px solid #ccc;
+  color:#333;
+  display:none;
+}
+.dialog h1{
+  border-bottom: 1px solid #ccc;
+  padding-left: 30px;
+  font-size: 18px;
+}
+.dialog textarea{
+  width: 90%;
+  height: 150px;
+  margin-left: 5%;
+}
+.dialog .pink_btn{
+  width: 100px;
+  display: inline-block;
+  margin-left: 30px;
+}
+.dialogbg{
+  display:none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9998;
+  background-color: black;
+  top: 0;
+  left: 0;
+  opacity: 0.7;
+}
+.dialog .money{
+  border: none;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  width: 109px;
+  padding: 10px 5px;
+}
+.dialog .password{
+  padding-left: 30px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  
+}
+.dialog .password input{
+  margin-top: 16px;
+  padding: 10px 5px;
+}
+
+.tlist {
+    width: 100%;
+    color: #333
+}
+
+.tlist>table {
+    width: 100%;
+    border: solid #ccc;
+    border-width: 1px 0 0 1px
+}
+
+.tlist td {
+    width: 79px;
+    border: solid #ccc;
+    border-width: 0 1px 1px 0;
+    padding: 3px;
+    word-break: break-all;
+    word-wrap: break-word;
+    text-align: center
+}
+
+.tlist tr {
+    border-bottom: 1px solid #ccc
+}

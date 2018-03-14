@@ -1,0 +1,98 @@
+@import './common/normalize'
+@import './common/common'
+@import './common/header'
+@import './common/footer'
+@import './common/reg-common'
+@import './utils/fun'
+
+.reg_form .save_btn
+  width 115px
+  display inline-block
+
+.reg_form
+  width auto
+  margin 30px 0
+  display none
+
+form .input
+  margin 20px 0
+
+form .input > input
+  @extends .gray_box
+  background $GlobalBg
+  padding 10px
+  color #000000
+  width 340px
+
+form .file
+  position relative
+  height 100px
+  & span.msg-box
+    right -10px
+    top -10px
+
+form .file input[type="file"]
+  opacity 0
+  /* IE 8 */
+  -ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=100)')
+  /* IE 5-7 */
+  filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=100)')
+  /* Netscape */
+  -moz-opacity: 0
+  /* Safari 1.x */
+  -khtml-opacity: 0
+  /* Good browsers */
+  font-size 100px
+  z-index 99
+  position absolute
+  left 0
+  cursor pointer
+
+form .file .file_upload
+  border-radius 10px
+  position absolute
+  width 360px
+  height 100px
+  display inline-block
+  top: 0
+  left: 105px
+  overflow: hidden
+  background gainsboro
+  &:hover
+    background #babdb6
+  & >img
+    height 100%
+
+form .input.file label
+  float left
+
+form .input >label
+  width 100px
+  text-align right
+  color #000000
+  display inline-block
+
+.select
+  display inline-block
+
+.form .input.t-l
+  text-align left
+
+.select input
+  padding: 10px
+  width: 84px
+  color #000000
+  border 1px solid #e3e3e3
+
+.select:nth-child(3)
+  margin: 0 18px
+
+.select .option
+  top 35px
+  left 0
+  width 98%
+  text-align center
+  font-size 14px
+
+.select .icon_select
+  top 15px

@@ -1,0 +1,31 @@
+.header
+    .clearfix
+        a.logo(href="/index.html")
+        mixin f_nav(name)
+            li #{name}
+        ul.nav.clearfix
+            +f_nav("首页")
+            +f_nav("货源信息")
+            +f_nav("车源信息")
+            +f_nav("物流信息")
+            +f_nav("人员招聘")
+            +f_nav("招投标")
+            +f_nav("二手车")
+            +f_nav("订单中心")
+            +f_nav("联系我们")
+        .header_right
+            div.search_form
+                .type#search_type
+                    span.active(data-type="good") 货源
+                    span(data-type="car") 车源
+                    span(data-type="express") 物流
+                form#search_all
+                    input(type="text",name="key",placeholder="货源、车源、物流公司",maxlength="10")
+                    input(type="submit",value="")
+            ul.btn_group.clearfix
+                li
+                    a#l_u 登录
+                li.line
+                    a |
+                li
+                    a#r_l 注册

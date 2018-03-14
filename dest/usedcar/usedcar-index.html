@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>丁丁物流</title>
+    <mate charset="utf-8"></mate>
+    <mate came="description" content=""></mate>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <mate name="viewport" content="width=device-width, initial-scale=1"></mate>
+    <link type="text/css" rel="stylesheet" href="../assets/styles/usedcar/index.min.css">
+  </head>
+  <body>
+    <!-- header-->
+    <div class="header">
+      <div class="clearfix"><a href="/index.html" class="logo"></a>
+        <ul class="nav clearfix">
+                  <li>首页</li>
+                  <li>货源信息</li>
+                  <li>车源信息</li>
+                  <li>物流信息</li>
+                  <li>人员招聘</li>
+                  <li>招投标</li>
+                  <li>二手车</li>
+                  <li>订单中心</li>
+                  <li>联系我们</li>
+        </ul>
+        <div class="header_right">
+          <div class="search_form">
+            <div id="search_type" class="type"><span data-type="good" class="active">货源</span><span data-type="car">车源</span><span data-type="express">物流</span></div>
+            <form id="search_all">
+              <input type="text" name="key" placeholder="货源、车源、物流公司" maxlength="10">
+              <input type="submit" value="">
+            </form>
+          </div>
+          <ul class="btn_group clearfix">
+            <li><a id="l_u">登录</a></li>
+            <li class="line"><a>|</a></li>
+            <li><a id="r_l">注册</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--containner-->
+    <div class="container">
+      <!--localtion-->
+      <p class="local_nav">当前位置：二手车</p>
+      <!--c_center-->
+      <div class="clearfix c_center">
+        <!--车源详情-->
+        <div class="article fl order_list">
+          <div class="gray_box">
+            <form id="list_search" class="c_282828">
+              <p>
+                <label>品牌：
+                  <input type="text" name="carBrand" maxlength="50">
+                </label>
+                <label>价格(万)：
+                  <input type="text" name="priceSmall" maxlength="10">
+                </label>
+                <label>至
+                  <input type="text" name="priceBig" maxlength="10">
+                </label>
+              </p>
+              <p>
+                <label>看车地区：
+                  <select name="province" class="province"></select>
+                  <select name="city" class="city"></select>
+                  <select name="area" class="area"></select>
+                </label>
+              </p>
+              <p class="t-c">
+                <button class="pink_btn search_btn">搜索</button>
+              </p>
+            </form>
+          </div>
+          <div class="article_head">
+            <div class="article_title clearfix"><span id="count" class="fl">共0条</span>
+              <div class="orderby c_282828">
+                <!--a.d_order(data-order="true") 默认排序-->
+                <!--a.o_order(data-order="") 好评率-->
+                <!--a.t_order(data-order="") 成交次数-->
+              </div>
+            </div>
+            <div class="article_line"><span></span></div>
+          </div>
+          <ul id="data-list" class="article_content"></ul>
+          <div class="t-c">
+            <div class="pager">
+              <div class="splite"></div>
+              <div id="page" class="page"></div>
+            </div>
+          </div>
+        </div>
+        <!--活动广告-->
+        <div class="article fr ad">
+          <div class="article_head">
+            <div class="article_title clearfix"><span class="fl">广告活动</span></div>
+            <div class="article_line"><span></span></div>
+          </div>
+          <!--Created by haner on 15/6/10.
+          -->
+          <ul id="ads" class="article_content clearfix c_282828"></ul>
+          <script type="text/html" id="ads-tmpl">
+            <!--[for(i=0;i<list.length;i++){]-->
+            <li class="">
+            <a href="<!--[=list[i].url]-->" target="_blank"> <img src="<!--[=list[i].adImg]-->" height="100px"/><p><!--[=list[i].title]--></p></a>
+            </li>
+            <!--[}]-->
+          </script>
+        </div>
+      </div>
+    </div>
+    <!-- footer-->
+    <div class="footer">
+      <div class="footer_content clearfix"><a href="/index.html" class="logo"></a>
+        <div class="copyright">
+          <div class="footer_nav"><a href="/index.html">网站首页</a><a href="/ours/company-info.html">公司简介</a><a href="/ours/contact.html">联系我们</a><a href="/ours/help.html">使用帮助</a></div>
+          <div class="footer_com_name">南通阿拉丁网络科技有限公司</div>
+          <div class="footer_copyright">
+            <div>备案号：苏ICP备10027778号-1</div>
+            <div>版权所有 ©2010-2014 dingding56.com</div>
+          </div>
+        </div><a href="#" class="android_app"></a>
+      </div>
+    </div>
+    <!-- seajs-->
+    <script type="text/javascript" src="/assets/scripts/module/sea/sea.js"></script>
+    <script type="text/javascript" src="/assets/scripts/module/sea/sea-config.js"></script>
+    <script type="text/javascript">seajs.use("../assets/scripts/usedcar/usedcar-index.js");</script>
+    <!--    totalPage  //总页数-->
+    <!--    cpage     //当前页-->
+    <!--    pageStart //页码循环开始-->
+    <!--    pageEnd   //页码循环结束-->
+    <script type="text/html" id="page-tmpl">
+      <form id="page-form" action="<!--[=action]-->">
+      <input type="hidden" name="pageSize" value="<!--[=pageSize]-->"/>
+      <input type="hidden" name="lastRecordId" value="<!--[=lastRecordId || '']-->"/>
+       <!--[if(totalPage!=0){]-->
+       <!--[if(cPage > 1){]-->
+       <a class="pre">上一页</a>
+       <!--[}else{]-->
+        <a class="disable">上一页</a>
+       <!--[}]-->
+       <div class="p_center">
+       <!--[if(pageStart != 1){]-->
+       <a data-page-num="<!--[=i]-->">1</a>
+       <!--[if(pageStart-1 != 1){]-->
+       <a>...</a>
+       <!--[}]-->
+       <!--[}]-->
+       <!--[for(i=pageStart;i<=pageEnd;i++){]-->
+       <!--[if(i==cPage){]-->
+       <span class="current"><!--[=i]--></span>
+       <!--[}else{]-->
+       <a data-page-num="<!--[=i]-->"><!--[=i]--></a>
+       <!--[}]-->
+       <!--[}]-->
+       <!--[if(pageEnd!=totalPage){]-->
+       <!--[if(totalPage-pageEnd != 1){]-->
+       <a>...</a>
+       <!--[}]-->
+       <a data-page-num="<!--[=totalPage]-->"><!--[=totalPage]--></a>
+       <!--[}]-->
+       </div>
+       <!--[if(cPage<totalPage){]-->
+       <a class="next">下一页</a>
+       <!--[}else{]-->
+        <a class="disable">下一页</a>
+        <!--[}]-->
+       <!--[}]-->
+      </form>
+    </script>
+    <script type="text/html" id="data-list-tmpl">
+      <!--[for(i=0;i<list.length;i++){]-->
+      <li data-id="<!--[=list[i].oldcarId]-->"> 
+      <div class="fl fl_img"><img src="<!--[=list[i].carImg]-->" /></div>
+      <div class="fl fl_info">
+      <div class="fz-16 c_282828 clearfix">
+      <a class="fl">
+        【<!--[=list[i].carBrand]-->】 <!--[=list[i].oldcarTitle]-->
+      </a>
+      </div>
+      <div class="fz-16 c_282828 clearfix">
+      <a class="fl">
+        预计卖价：<!--[=list[i].price]-->元
+      </a>
+      </div>
+      <div class="fz-16 c_282828 clearfix">
+      <a class="fl">
+        看车地点：<!--[=list[i].provinceName]--><!--[=list[i].cityName]--><!--[=list[i].areaName]-->
+      </a>
+      </div>
+      </li>
+      <!--[}]-->
+    </script>
+  </body>
+</html>

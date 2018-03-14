@@ -1,0 +1,148 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/loan-publish.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 申请贷款
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            .input
+                                label 车牌号&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="licenceNo",data-rule="required;length[1~10]")
+
+                            .input
+                                label 车辆所有人&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="company",data-rule="required;length[1~20]")
+
+                            .input
+                                label 行驶证&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="drvTLicenseNo",data-rule="required;length[1~20]")
+
+                            .input
+                                label 驾驶证&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="drvLicenseNum",data-rule="required;length[1~20]")
+
+                            .input
+                                label 姓名&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="loanName",data-rule="required;length[1~10]")
+
+                            .input
+                                label 身份证号&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="loanIDNum",data-rule="required;ID_card;")
+
+                            .input
+                                label 产权证号&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="certificNum",data-rule="required;length[1~50]")
+
+                            .input.tal
+                                label 贷款金额&nbsp;*&nbsp;: &nbsp;
+                                select.select(id="loanMoney",name="loanMoney")
+
+                            .input.file
+                                label 身份证&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="iDImg",value="",data-rule="required")
+                                
+                            .input.file
+                                label 行驶证&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="drvTLicenseNoImg",value="",data-rule="required")
+                                
+                            .input.file
+                                label 驾驶证&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="drvLicenseNumImg",value="",data-rule="required")
+                                
+                            .input.file
+                                label 车辆照片&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="carImg",value="",data-rule="required")
+                                
+                            .input.file
+                                label 产权证&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="certificNumImg",value="",data-rule="required")
+                                
+                            .input.file
+                                label 车辆强制保险单&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="compulsoryInsuranceImg",value="",data-rule="required")
+                                
+                            .input.file
+                                label 商业保险单&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="businessInsuranceImg",value="",data-rule="required")
+                                
+                            .input.file
+                                label 上传授权书&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="authorizationImg",value="",data-rule="required")
+
+                            .input(style="margin-top: 40px;")
+                                a(href="http://www.dingding56.com/download/shouquanshumoban.doc",target="_blank",id="downloadTemplate")
+                                    span 下载授权书模版
+
+                            .input
+                                label 贷款协议&nbsp;&nbsp;: &nbsp;
+                                <textarea id="userprotocol" style="height:100px;width:380px;color:black;" readonly="readonly">如需更详细内容，请咨询客服，电话：400668-7227</textarea>
+                                br
+                                input.radio(type="checkbox",name="",checked="checked",value="")
+                                span 同意贷款协议
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+                            .t-c.readWarning
+                                br
+                                label *请注意填写正确信息，以免发生纠纷
+
+
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/loan/loan-publish.js");
+        script(type="text/javascript",src="/assets/scripts/laydate/laydate.js")
+
+        script(type="text/html",id="loanmoneyenum-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->

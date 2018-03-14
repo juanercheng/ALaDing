@@ -1,0 +1,142 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-price-confirminvoice.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/my-price.html") 我的报价
+                    span.splite >
+                    span 确认发票
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            input(type="hidden",name="goodId" value="")
+                            input(type="hidden",name="invoiceId" value="")
+
+                            .input
+                                label 承运方信息&nbsp;&nbsp;: &nbsp;
+                                input(readonly="readonly",type="text",style="visibility: hidden;")
+
+                            .input
+                                label 公司名称&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="drvCompany")
+
+                            .input
+                                label 公司税号&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="drvTaxNum")
+
+                            .input
+                                label 开户行&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="drvBank")
+
+                            .input
+                                label 银行账号&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="drvBankNum")
+
+                            .input
+                                label 公司地址&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="drvAdd")
+
+                            .input
+                                label 公司电话&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="drvCellPhone")
+
+
+                            .input
+                                label 受票方信息&nbsp;&nbsp;: &nbsp;
+                                input(readonly="readonly",type="text",style="visibility: hidden;")
+
+                            .input
+                                label 公司名称&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="goodCompany")
+
+                            .input
+                                label 公司税号&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="goodTaxNum")
+
+                            .input
+                                label 开户行&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="goodBank")
+
+                            .input
+                                label 银行账号&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="goodBankNum")
+
+                            .input
+                                label 公司地址&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="goodAdd")
+
+                            .input
+                                label 公司电话&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="goodCellPhone")
+                                
+
+                            .input
+                                label 发票明细信息&nbsp;&nbsp;: &nbsp;
+                                input(readonly="readonly",type="text",style="visibility: hidden;")
+
+                            .input
+                                label 货物或应税劳务名称&nbsp;&nbsp;: &nbsp;
+                                input(readonly="readonly",type="text",name="invoiceName")
+
+                            .input
+                                label 规格型号&nbsp;&nbsp;: &nbsp;
+                                input(readonly="readonly",type="text",name="specificationType")
+
+                            .input
+                                label 单位&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="unit")
+
+                            .input
+                                label 数量&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="quantity")
+
+                            .input
+                                label 单价(元)&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="unitPrice")
+
+                            .input
+                                label 总价(元)&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="money")
+
+                            .input
+                                label 税额(元)&nbsp;&nbsp;*: &nbsp;
+                                input(readonly="readonly",type="text",name="tax")
+
+                            .t-c
+                                input(type="button",class="pink_btn save_btn",value="确认")
+                                input(type="button",class="pink_btn fail_btn",value="拒绝")
+
+
+        // footer
+        include ../../com/footer
+        |<div class="dialogbg"></div>
+        |<div class="dialog">
+        |     <h1>拒绝:</h1>
+        |     <textarea id="remark"></textarea>
+        |   <input type="button" class="pink_btn gray_btn dfail_btn" value="拒绝" />
+        |   <input type="button" class="pink_btn gray_btn cannel" value="取消" />
+        |</div>
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/confirminvoice/my-price-confirminvoice.js");

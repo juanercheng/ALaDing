@@ -1,0 +1,133 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-tenders-detail.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/common/panel.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="my-tenders.html") 我的招标
+                    span.splite >
+                    span 我的招标详情
+
+                .content
+                    .product#order-detail
+                        //img(width="284",height="284",src="http://www.w3school.com.cn/i/eg_tulip.jpg")
+                        //.product_info.fr
+                        //    .product_modal 货源编号：00000
+                        //    p.product_title 江苏省南京市白下区—>浙江省杭州市下城区
+                        //    .product_detail.c_282828
+                        //        div 蔬菜水果、保险品、重量2吨、体积20m³
+                        //        div 装货次数：2次        卸货次数：2次
+                        //        div 单件尺寸：长1.0m、高2.0m、宽3.0m
+                        //        div 货物数量：20件
+                        //        div 保证金：￥500
+                        //        div 付款方式：现付
+                        //        div 货源类型：普通
+                        //        div 备注：长期有效
+                        //        div 装货信息：
+                        //        div 2014年11月09日12点 上海市闸北区陆家嘴45号盛昌大厦
+                        //        div 卸货信息：
+                        //        div 2014年11月09日12点 湖北武汉市汉口区岳家嘴145号
+                    
+                    .operate#operate
+                        button.pink_btn.o-pay 确认线路中标人
+                        button.gray_btn.o-msg 线路流标
+
+
+        // footer
+        include ../../com/footer
+        include ../../com/panel
+        include ../../com/confirmcppanel
+
+
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/tenders/my-tenders-detail.js");
+        include ../../com/page-tmpl
+
+        script(type="text/html",id="order-detail-tmpl")
+            | <div class="product_info fl">
+            
+            | <div class="clearfix">
+            | <div class="c_282828">
+      
+            | <div class="fl">
+            | <p class="clearfix"><span>【<!--[=list.tenderCompany]-->】【<!--[=list.isOpen=='true'?'公开招标':'邀请招标']-->】 <!--[=list.tenderTitle]--></span><span class="tenderName"><!--[=list.tenderName]--><!--[=list.tenderPhone]--></span></p>
+
+            | <p class="clearfix"><span>结束招标日期：<!--[=list.endTime]--></span>
+            | <a href="<!--[=list.bidDoc]-->" target="_blank">下载招标通知书</a>
+            | <a href="<!--[=list.notice]-->" target="_blank">下载招标文件</a>
+            | </p>
+
+            | <p class="clearfix">
+            | <!--[=list.isTechnical=='false'?"非技术标":"技术标"]-->
+            | <!--[if(list.isTechnical=="true"){]--> 【<!--[=list.techScore]-->分】 <!--[}]-->
+            | <!--[=list.wonBasic=='0'?"最低价中标":"平均价中标"]-->【<!--[=list.basicScore]-->分】
+            | 购买标书金额：<!--[=list.tenderAmount]-->元
+            | </p>
+
+            | <p class="clearfix">
+            | <!--[if(list.deviation!="1"){]--> 偏离度 <!--[=list.deviation]-->% <!--[}]-->
+            | 商务系数 <!--[=list.bussinessCoefficient]-->
+            | </p>
+
+            | <p class="clearfix">
+            | 最低要求：<!--[=list.minRequire]-->
+            | </p>
+
+            | <p class="clearfix">
+            | 地址：<!--[=list.tenderADD]-->
+            | </p>
+
+            |<!--[if(list.isOpen=="false"){]--> 
+            | <p class="clearfix">
+            | 邀标公司：<!--[=list.invitation]-->
+            | </p>
+            |<!--[}]-->
+            
+            |<div class="hr"></div>
+
+            button.pink_btn#o-auto-calc 自动计算得分
+
+            | <p class="clearfix">
+            | <select id="lineInfoList">
+            | <!--[for(var i=0;i<list.lineInfoList.length;i++){]-->
+            |   <option value="<!--[=list.lineInfoList[i].tenLineId]-->"><!--[=list.lineInfoList[i].tenderLineName]--></option>
+            | <!--[}]-->
+            | </select>
+            | </p>
+            
+            |<div class="tlist"><table id="tenderLine">
+            |<thead>
+            |        <tr>
+            |            <td>公司</td>
+            |            <td>报价</td>
+            |            <td>技术标得分</td>
+            |            <td><!--[=list.wonBasic=='0'?"最低价中标":"平均价中标"]--></td>
+            |            <td>总分</td>
+            |            <td>名次</td><td>废标</td></tr></thead>
+            |    <tbody></tbody></table></div>
+
+           
+            | </div>
+
+            | </div>
+            | </div>
+            | </div>

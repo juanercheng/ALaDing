@@ -1,0 +1,90 @@
+@import './common/normalize'
+@import './common/common'
+@import './common/header'
+@import './common/footer'
+@import './utils/fun'
+
+.container
+  min-height 500px
+
+.reg_form .save_btn
+  width 115px
+  display inline-block
+
+.reg_form
+  width auto
+  display inline-block
+  margin 60px 0
+
+form .input
+  margin 20px 0
+
+form .input > input
+  @extends .gray_box
+  background $GlobalBg
+  padding 10px
+  color #000000
+  width 340px
+
+form .file
+  position relative
+  height 100px
+
+form .file input[type="file"]
+  opacity 0
+  /* IE 8 */
+  -ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=100)')
+  /* IE 5-7 */
+  filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=100)')
+  /* Netscape */
+  -moz-opacity: 0
+  /* Safari 1.x */
+  -khtml-opacity: 0
+  /* Good browsers */
+  font-size 100px
+  z-index 2
+  position absolute
+  left 0
+  cursor pointer
+
+form .file .file_upload
+  border-radius 10px
+  position absolute
+  width 360px
+  height 100px
+  display inline-block
+  top: 0
+  left: 105px
+  overflow: hidden
+  background gainsboro
+  &:hover
+    background #babdb6
+
+form .input.file label
+  float left
+
+form .input label
+  width 100px
+  text-align right
+  color #000000
+  display inline-block
+
+.yzm .input
+  display inline-block
+  margin 0
+  & input
+    width 170px
+
+.yzm .msg-box
+  margin-left 180px
+
+.yzm button
+  width: 125px
+  height: 35px
+  background: #949393
+  border: 1px solid #bab9b9
+  color: #282828
+  outline none
+  F_borderRadius(5px)
+  &.disable
+    cursor not-allowed

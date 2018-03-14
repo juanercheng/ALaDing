@@ -1,0 +1,305 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/tenders-publish.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+        <link charset="utf-8" rel="stylesheet" href="/assets/scripts/module/star/star.css">
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 发布标书
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            .input
+                                label 标题&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="tenderTitle",data-rule="required;length[1~50]")
+
+                            .input
+                                label 结束时间&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",id="end",class="datepicker",name="endTime",readonly="readonly",data-rule="required;")
+
+                            .input
+                                label 招标公司&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="tenderCompany",data-rule="required;length[1~50]")
+
+                            .input
+                                label 地址&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="tenderADD",data-rule="required;length[1~100]")
+
+                            .input
+                                label 联系人&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="tenderName",data-rule="required;length[1~20]")
+
+                            .input
+                                label 联系方式&nbsp;*&nbsp;: &nbsp;
+                                input(maxlength="11",type="text",name="tenderPhone",data-rule="required;mobile")
+
+                            .input
+                                label 招标最低要求&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="minRequire",data-rule="required;length[1~200]")
+
+                            .input.tal
+                                label 商务标控制系数&nbsp;&nbsp;: &nbsp;
+                                select.select.scale(name="bussinessCoefficient")
+                                    option(value="0") 0
+                                    option(value="10") 10
+                                    option(value="20") 20
+                                    option(value="30") 30
+                                    option(value="40") 40
+                                    option(value="50") 50
+                                    option(value="60") 60
+                                    option(value="70") 70
+                                    option(value="80") 80
+                                    option(value="90") 90
+                                    option(value="100") 100
+
+                            .input.tal(id="deviation")
+                                label 设置偏离度&nbsp;&nbsp;: &nbsp;
+                                input.radio(type="radio",name="deviation",value="0",checked="checked")
+                                span 是
+                                input.radio(type="radio",name="deviation",value="1")
+                                span 否
+                                select.select.scale
+                                    option(value="0") 0
+                                    option(value="10") 10
+                                    option(value="20") 20
+                                    option(value="30") 30
+                                    option(value="40") 40
+                                    option(value="50") 50
+                                    option(value="60") 60
+                                    option(value="70") 70
+                                    option(value="80") 80
+                                    option(value="90") 90
+                                    option(value="100") 100
+                                span.tip
+                                    |偏离度是指投标价格与平均价格或最低价格的偏离比例，超过偏离度的价格将显示为红色。
+
+                            .input.tal
+                                label 是否技术标&nbsp;&nbsp;: &nbsp;
+                                input.checkbox(type="checkbox",name="isTechnical",value="true")
+                                span 是
+                                select.select.scale(name="techScore")
+                                    option(value="0") 0
+                                    option(value="10") 10
+                                    option(value="20") 20
+                                    option(value="30") 30
+                                    option(value="40") 40
+                                    option(value="50") 50
+                                    option(value="60") 60
+                                    option(value="70") 70
+                                    option(value="80") 80
+                                    option(value="90") 90
+                                    option(value="100") 100
+                                span (所占分值)
+
+                            .input.tal
+                                label 中标依据&nbsp;&nbsp;: &nbsp;
+                                input.radio(type="radio",name="wonBasic",value="0",checked="checked")
+                                span 最低价中标
+                                input.radio(type="radio",name="wonBasic",value="1")
+                                span 平均价中标
+                                select.select.scale(name="basicScore")
+                                    option(value="0") 0
+                                    option(value="10") 10
+                                    option(value="20") 20
+                                    option(value="30") 30
+                                    option(value="40") 40
+                                    option(value="50") 50
+                                    option(value="60") 60
+                                    option(value="70") 70
+                                    option(value="80") 80
+                                    option(value="90") 90
+                                    option(value="100") 100
+                                span (所占分值)
+
+                            .input
+                                label 购买标书金额&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="tenderAmount",data-rule="required;number4;length[1~10]")
+
+                            .input.tal
+                                label 招标方式&nbsp;&nbsp;: &nbsp;
+                                input.radio(type="radio",name="isOpen",value="true",checked="checked")
+                                span 公开招标
+                                input.radio(type="radio",name="isOpen",value="false")
+                                span 邀请招标
+
+                            .input(id="invitaBid")
+                                label 邀标公司名称&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="invitaBid",data-rule="length[1~200]")
+                                br 
+                                label.readWarning *如多家则用逗号,分割
+
+                            button.white_btn(id="add_invitations") 添加邀标公司
+                            .tlist#add_invitations_tlist
+                                input(type="hidden",name="invitations")
+                                table#invitations
+                                    thead
+                                        tr
+                                            td 邀标公司名称
+                                    tbody
+
+                            button.white_btn(id="add_tenderbasic",style="display:none;") 新增技术标依据
+                            .tlist(style="display:none;")
+                                table#tenderbasic
+                                    thead
+                                        tr
+                                            td 技术标依据
+                                            td 评分依据A
+                                            td 评分依据B
+                                            td 评分依据C
+                                            td 评分依据D
+                                    tbody
+                                
+                            .input.file
+                                label 上传招标通知书&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input.notice(type="file")
+                                    input(type="hidden",name="notice",value="",data-rule="required")
+                                
+                            .input.file
+                                label 招标格式文件&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input.bidDoc(type="file")
+                                    input(type="hidden",name="bidDoc",value="",data-rule="required")
+
+                            button.white_btn(id="add_tenderLine") 新增线路
+                            .tlist
+                                table#tenderLine
+                                    thead
+                                        tr
+                                            td 起运地
+                                            td 目的地
+                                            td 货物名称
+                                            td 现执行价（元/吨）
+                                            td 运量/单位
+                                            td 备注
+                                    tbody
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+
+        // footer
+        include ../../com/footer
+
+        |<div class="dialogbg" id="invitations_dialogbg"></div>
+        |<div class="dialog" id="invitations_dialog">
+        |<div class="article fl order_list">
+        |          <div class="gray_box">
+        |            <form id="list_search" class="c_282828">
+        |              <p>
+        |                <label>起运地：
+        |                  <select name="provinceFrom" class="province"></select>
+        |                  <select name="cityFrom" class="city"></select>
+        |                  <select name="areaFrom" class="area"></select>
+        |                </label>
+        |                <label>目的地：
+        |                  <select name="provinceTo" class="province"><option value=""></select>
+        |                  <select name="cityTo" class="city"></select>
+        |                  <select name="areaTo" class="area"></select>
+        |                </label>
+        |              </p>
+        |              <p>
+        |                <label>公司名称：
+        |                  <input type="text" name="nodes" maxlength="10">
+        |                </label>
+        |              </p>
+        |              <p class="t-c">
+        |                <button class="pink_btn search_btn">搜索</button>
+        |              </p>
+        |            </form>
+        |          </div>
+        |          <div class="article_head">
+        |            <div class="article_title clearfix"><span id="count" class="fl">共0条</span><div class="orderby c_282828"><button class="pink_btn invitations_btn">确认</button></div>
+        |            </div>
+        |            <div class="article_line"><span></span></div>
+        |          </div>
+        |          <ul id="data-list" class="article_content">
+        |      </ul>
+        |        </div>
+        |</div>
+
+        |<div class="dialogbg" id="tenderbasic_dialogbg"></div>
+        |<div class="dialog" id="tenderbasic_dialog">
+        |   <label>技术标依据：</label><input type="text" maxlength="50" class="text" name="basicName" /><input class="text scale" type="text" name="basicScore" maxlength="3"/>(所占分值)<br/>
+        |   &nbsp;&nbsp;&nbsp;&nbsp;<label>评分依据：</label><br/>
+
+        |   <label class="ml">A：</label><input name="name1" maxlength="50" type="text" class="text mlt" /><input class="text scale" type="text" name="score1" maxlength="3"/>(所占分值)<br/>
+        
+        |   <label class="ml">B：</label><input name="name2" maxlength="50" type="text" class="text mlt" /><input class="text scale" type="text" name="score2" maxlength="3"/>(所占分值)<br/>
+        
+        |   <label class="ml">C：</label><input name="name3" maxlength="50" type="text" class="text mlt" /><input class="text scale" type="text" name="score3" maxlength="3"/>(所占分值)<br/>
+        
+        |   <label class="ml">D：</label><input name="name4" maxlength="50" type="text" class="text mlt" /><input class="text scale" type="text" name="score4" maxlength="3"/>(所占分值)<br/>
+
+        |   <input type="button" class="pink_btn gray_btn save_btn" value="保存" />
+        |   <input type="button" class="pink_btn gray_btn cannel" value="取消" />
+        |</div>
+
+
+
+
+        |<div class="dialogbg" id="tenderLine_dialogbg"></div>
+        |<div class="dialog" id="tenderLine_dialog">
+        |   <label>起运地&nbsp;&nbsp;*：</label><input type="text" maxlength="100" class="text" name="fromAdd" /><br/>
+
+        |   <label>目的地&nbsp;&nbsp;*：</label><input type="text" maxlength="100" class="text" name="toAdd" /><br/>
+
+        |   <label>货物名称&nbsp;&nbsp;*：</label><input type="text" maxlength="50" class="text" name="goodName" /><br/>
+
+        |   <label>现执行价(元/吨)&nbsp;&nbsp;：</label><input type="text" maxlength="7" class="text" name="nowPrice" /><br/>
+
+        |   <label>运量(吨)&nbsp;&nbsp;：</label><input type="text" maxlength="10" class="text" name="load" /><br/>
+
+        |   <label>单位&nbsp;&nbsp;：</label><select name="unit"><option value="月">月</option><option value="年">年</option></select><br/>
+
+        |   <label>备注&nbsp;&nbsp;：</label><input type="text" maxlength="500" class="text" name="remark" /><br/>
+
+        |   <input type="button" class="pink_btn gray_btn save_btn" value="保存" />
+        |   <input type="button" class="pink_btn gray_btn cannel" value="取消" />
+        |</div>
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li data-id="<!--[=list[i].cmpMemberId]-->"> <div class="fz-16 c_282828 clearfix">
+            | <!--[=list[i].fromProvince || '']--><!--[=list[i].fromCity || '']--><!--[=list[i].fromArea || '']-->—&gt;<!--[=list[i].toProvince || '']--><!--[=list[i].toCity || '']--><!--[=list[i].toArea || '']-->
+            | </div>
+            |               <div><!--[=list[i].cmpName]--></div>
+            |               <div class="c_282828"><span><!--[=list[i].reallyName]--> &nbsp;</span><span><!--[=$isLogin(list[i].cellPhone)]--> &nbsp;</span></div>
+            |               <div class="c_282828">
+            |                 <ul class="rating-level" data-level="<!--[=$printStar(list[i].praiseRate)]-->">
+            |                   <li><a href="#" class="one-star"></a></li>
+            |                   <li><a href="#" class="two-stars"></a></li>
+            |                   <li><a href="#" class="three-stars"></a></li>
+            |                   <li><a href="#" class="four-stars"></a></li>
+            |                   <li><a href="#" class="five-stars"></a></li>
+            |                 </ul><span>好评率：</span><span><!--[=list[i].praiseRate]-->% &nbsp;&nbsp;</span><span>成交次数：</span><span><!--[=list[i].doneNum]--></span>
+            |               </div>
+            |<input type="checkbox" vt="<!--[=list[i].cmpName]-->" value="<!--[=list[i].cmpMemberId]-->" class="chbox_invitations" />
+            |             </li>
+            | <!--[}]-->
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/tenders/tenders-publish.js");
+        script(type="text/javascript",src="/assets/scripts/laydate/laydate.js")

@@ -1,0 +1,46 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/mytools.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 我的工具
+
+                .content
+                    form(target="blank",method="get",action="",id="openTools")
+                    .tools-list
+                        ul
+                            li.daijia 找代驾
+                            li.cheliangweizhang 车辆违章查询
+                            li.wuliukuaidi 物流快递查询
+                            li.chuanxun 船讯
+                            li.qiyexinyong 企业信息查询
+                    .t-c
+                        include ../../com/page
+
+
+        // footer
+        include ../../com/footer
+        include ../../com/page-tmpl
+        script(type="text/javascript") seajs.use("/assets/scripts/my/mytools/mytools.js");
+
+
+

@@ -1,0 +1,127 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/my/my-price.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 我的报价
+
+                .content
+                    .order_list
+                        form
+                            .o_header
+                                span#count 共0条
+                                .select.fr
+                                    select(id="state")
+                        ul.o_data#data-list
+                            //-var n = 0
+                            //while n < 10
+                            //    li
+                            //        div.clearfix
+                            //            .c_282828
+                            //                p.clearfix
+                            //                    a=n++
+                            //                        span.fl 江苏省南京市白下区—>浙江省杭州市下城区
+                            //                    span.fr.c_ea7914 正在报价
+                            //
+                            //                .clearfix
+                            //                    a
+                            //                        p.c_6c6c6c 蔬菜水果、普通货物、普通业务、预估体积21m³、重量3吨、保证金：¥500、现付…
+                            //                    p 崔休民  18701735673
+                            //                    p.operate
+                            //                        button.white_btn 评价
+                            //                        button.white_btn 消息
+                            //                        button.white_btn 取消报价
+                            //
+                            //        div.clearfix
+                            //            .fr 2015-12-12 10:10
+
+                    .t-c
+                        include ../com/page
+
+
+        // footer
+        include ../com/footer
+        include ../com/page-tmpl
+
+        |<div class="dialogbg"></div>
+        |<div class="dialog">
+        |     <h1>付款金额:<input type="text" class="money" maxlength="10" /></h1>
+        |     <div class="password">付款密码(同登录密码)：<br/>
+        |       <input type="password" /></div>
+        |   <input type="button" class="pink_btn gray_btn money_btn" value="确认" />
+        |   <input type="button" class="pink_btn gray_btn cannel" value="取消" />
+        |</div>
+        script(type="text/javascript") seajs.use("../assets/scripts/my/my-price.js");
+
+        script(type="text/html",id="state-tmpl")
+            | <option value="">全部</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <div class="clearfix">
+            | <div class="c_282828">
+            | <p class="clearfix" data-id="<!--[=list[i].goodId || '']-->" data-cb="<!--[=list[i].sendBy]-->"><a><span class="fl"><!--[=list[i].loadPlacePro || '']--><!--[=list[i].loadPlaceCity || '']--><!--[=list[i].loadPlaceArea || '']-->—&gt;<!--[=list[i].unloadPlacePro || '']--><!--[=list[i].unloadPlaceCity || '']--><!--[=list[i].unloadPlaceArea || '']--></span></a><span class="fr c_ea7914"><!--[=list[i].orderStateName || '']--></span></p>
+            | <div class="clearfix"><a>
+            | <p class="c_6c6c6c" data-id="<!--[=list[i].goodId || '']-->" data-cb="<!--[=list[i].sendBy]-->"><!--[=list[i].goodName || '']-->、<!--[=list[i].goodKindName]-->、预估体积<!--[=list[i].cubage]-->m³、重量<!--[=list[i].weight]-->吨</p></a>
+            | <p><!--[=list[i].reallyName]--> &nbsp;<!--[=list[i].cellPhone]--> </p>
+            | <p class="operate">
+            | <!--[if(list[i].orderState!=='beginquoted' && list[i].orderState!=='issure'&& list[i].orderState!=='sendcancel'&& list[i].orderState!=='drvcancel'){]-->
+            | <button class="white_btn comment" data-id="<!--[=list[i].goodId || '']-->" data-cb="<!--[=list[i].sendBy]-->" >评价</button>
+            | <!--[}]-->
+            | <!--[if(list[i].orderState!=='beginquoted'&& list[i].orderState!=='sendcancel'&& list[i].orderState!=='drvcancel'){]-->
+            | <button class="white_btn msg" data-id="<!--[=list[i].goodId || '']-->" >消息</button>
+            | <!--[}]-->
+            | <!--[if(list[i].orderState==='beginquoted'){]-->
+            | <button class="white_btn cancel" data-id="<!--[=list[i].goodId || '']-->" >取消报价</button>
+            | <!--[}else if(list[i].orderState==='issure'){]-->
+            | <button class="white_btn back" data-id="<!--[=list[i].goodId || '']-->" data-sb="<!--[=list[i].sendBy]-->" data-state="<!--[=list[i].orderState || '']-->">悔单</button>
+            | <!--[}]-->
+            | <!--[if(list[i].orderState==='issure'){]-->
+            | <button class="white_btn uploadimg" data-id="<!--[=list[i].goodId || '']-->" data-sb="<!--[=list[i].sendBy]-->" data-state="<!--[=list[i].orderState || '']-->">到货照片</button>
+            | <!--[}]-->
+
+            | <!--[if(list[i].invoiceStatus==='submitted'){]-->
+            | <button data-index="<!--[=i]-->" class="white_btn confirm-invoice">确认发票</button>
+            | <!--[}]-->
+
+            | <!--[if(list[i].orderState=='completed' || list[i].orderState=='issure'){]-->
+            | <button data-index="<!--[=i]-->" class="white_btn drvreceipt">回单回寄</button>
+            | <!--[}]-->
+
+            | <!--[if(list[i].orderState=='completed' || list[i].orderState=='issure'){]-->
+            | <button data-index="<!--[=i]-->" class="white_btn confirm-payment">付款</button>
+            | <!--[}]-->
+
+            | </p>
+            | </div>
+            | </div>
+            | </div>
+            | <div class="clearfix">
+            | <div class="fr"><!--[=list[i].createTime || '']--></div>
+            | </div>
+            | </li>
+            | <!--[}]-->
+

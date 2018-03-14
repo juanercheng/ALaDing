@@ -1,0 +1,215 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/my/my-info.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    span 个人中心
+
+                .content
+                    div.t-c
+                        form.reg_form#driver-form
+
+                            .input
+                                label 手机号码&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",readonly="readonly",name="cp")
+
+                            .input
+                                label 真实姓名&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="reallyName",data-rule="required;length[1~30];")
+
+                            .input.t-l
+                                label 起运地&nbsp;&nbsp;: &nbsp;
+                                select.select.province(name="fromProvinceId")
+                                select.select.city(name="fromCityId")
+                                select.select.area(name="fromAreaId")
+
+                            .input.t-l
+                                label 目的地&nbsp;&nbsp;: &nbsp;
+                                select.select.province(name="toProvinceId")
+                                select.select.city(name="toCityId")
+                                select.select.area(name="toAreaId")
+
+                            .input.t-l
+                                label 车辆性质&nbsp;&nbsp;: &nbsp;
+                                select.select#drvNature(name="drvNature",data-rule="length[1~30];")
+                            .input
+                                label 身份证号&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="identityCardId",data-rule="required;ID_card;")
+                            .input
+                                label 车牌号&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="drvVehicleLicenceNo",data-rule="required;length[1~30];")
+
+                            .input
+                                label 车型&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="drvVehicleType",data-rule="length[1~30];")
+
+                            .input
+                                label 载重&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="drvLoad",data-rule="number2;length[1~30];")
+
+                            .input
+                                label 车长(米)&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="drvVehicleLong",data-rule="number2;length[1~30];")
+
+                            .input
+                                label 车宽(米)&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="drvVehicleWidth",data-rule="number2;length[1~30];")
+
+                            .input
+                                label 车高(米)&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="drvVehicleHigh",data-rule="number2;length[1~30];")
+
+                            .input
+                                label 车辆业务&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="drvWork",data-rule="length[1~30];")
+
+                            .input
+                                label 停放地址&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="drvParkPlace",data-rule="length[1~30];")
+
+                            .input.t-l
+                                label 所属标签&nbsp;*&nbsp;: &nbsp;
+                                select.select#drvZoneProvince(name="zoneId")
+
+                            .input.t-l
+                                label.vhidden 所属标签&nbsp;*&nbsp;: &nbsp;
+                                div.provinceIds
+                                input(type="hidden",name="provinceIds",data-rule="required")
+
+                            .input
+                                label 驾驶证号&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="drvLicenseNum",data-rule="length[1~30];")
+
+                            .input.file
+                                label 头像&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img.userPhotoImg
+                                    input(type="file")
+                                    input(type="hidden",name="userPhotoImg")
+
+                            .input.file
+                                label 身份证号&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img.identityCardImg
+                                    input(type="file")
+                                    input(type="hidden",name="identityCardImg" ,data-rule="",value="")
+
+                            .input.file
+                                label 驾驶证号&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img.drvLicenseImg
+                                    input(type="file")
+                                    input(type="hidden",name="drvLicenseImg" value="")
+
+                            .input.file
+                                label 运&nbsp;&nbsp;营&nbsp;&nbsp;证&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img.drvOLicenseImg
+                                    input(type="file")
+                                    input(type="hidden",name="drvOLicenseImg" )
+
+                            .input.file
+                                label 车辆照片&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img.drvVehicleImg
+                                    input(type="file")
+                                    input(type="hidden",name="drvVehicleImg" value="")
+
+                            input(type="hidden",name="memberId" )
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+
+
+                        form.reg_form#ge-form
+
+                            .input
+                                label 手机号码&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",readonly="readonly",name="cp")
+
+                            .input
+                                label 真实姓名&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="reallyName",data-rule="required;length[1~20];")
+                            .input
+                                label 身份证号&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="identityCardId",data-rule="required;ID_card;")
+                            .input
+                                label 公司名称&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="cmpName",data-rule="length[1~20];")
+                            .input
+                                label 公司电话&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="cmpPhone",data-rule="")
+                            .input
+                                label 营业执照号&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="cmpLicenseId",data-rule="")
+
+                            .input
+                                label 地址&nbsp;&nbsp;: &nbsp;
+                                textarea(style="width: 360px;color: #000;height: 100px;",class="textarea",name="cmpDetailAdd",data-rule="length[1~200]")
+                            .input
+                                label 经营范围&nbsp;&nbsp;: &nbsp;
+                                textarea(style="width: 360px;color: #000;height: 100px;",class="textarea",name="cmpBusinessScope",data-rule="length[1~200]")
+
+                            .input.file
+                                label 头像&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img.userPhotoImg
+                                    input(type="file")
+                                    input(type="hidden",name="userPhotoImg")
+                                span.msg-box(for="userPhotoImg")
+
+                            .input.file
+                                label 身份证号&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img.identityCardImg
+                                    input(type="file")
+                                    input(type="hidden",name="identityCardImg",data-rule="")
+                                span.msg-box(for="identityCardImg")
+
+
+                            .input.file
+                                label 营业执照&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img.cmpLicenseImg
+                                    input(type="file")
+                                    input(type="hidden",name="cmpLicenseImg",data-rule="")
+                                span.msg-box(for="cmpLicenseImg")
+
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+        // footer
+        include ../com/footer
+
+        script(type="text/javascript") seajs.use("../assets/scripts/my/perfect-info.js");
+
+        script(type="text/html",id="drvNature-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="drvZoneProvince-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].zoneId]-->"><!--[=list[i].zoneName]--></option>
+            | <!--[}]-->
+

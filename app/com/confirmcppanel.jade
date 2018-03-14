@@ -1,0 +1,20 @@
+//
+   Created by haner on 15/6/29.
+.panelcp
+    .panel-content
+        .panel-cell
+            h3.panel-title 确认报价
+            p.panel-text
+                form#confrim-ordercp
+                    lable 请与承运方沟通后确认承运量
+                    input(type="text",name="loadMax",data-rule="required;number2;length[1~10]")
+                    input(type="hidden",name="goodId",value="")
+                    input(type="hidden",name="carrierId",value="")
+                    input(type="hidden",name="gpriceid",value="")
+                    p.c_pink 提示：
+                        label(name="goodmsg",value="")
+    .panel-buttons
+        .options
+            a.btn.btn-okcp(href="javascript:;") 确认
+            a.btn.btn-cancelcp(href="javascript:;") 取消
+.panel-bgcp

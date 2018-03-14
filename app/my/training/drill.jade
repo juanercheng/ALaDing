@@ -1,0 +1,60 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/drill.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        a(href="/my/training/training.html")
+                            span 培训
+                        span.splite >
+                            span 培训资料
+
+                .content
+                    div
+                        form.drillList
+                            ul#data-list
+                    div.text-center.noData 暂无培训资料！
+                    .t-c
+                        include ../../com/page
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/training/drill.js");
+
+        include ../../com/page-tmpl
+
+        script(type="text/html", id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li class="clearfix">
+            | <div class="imgBox fl">
+            | <video controls="controls"  preload="metadata">
+            | <source src="<!--[=list[i].VideoPath]-->" type="video/mp4">
+            | <source src="<!--[=list[i].VideoPath]-->" type="video/ogg">
+            | <source src="<!--[=list[i].VideoPath]-->" type="video/webm">
+            | <source src="<!--[=list[i].VideoPath]-->" type="video/mp4">
+            | </video>
+            | </div>
+            | <div class="infoBox fl">
+            | <h2><!--[=list[i].VideoName]--></h2>
+            | <div class="info"><p><!--[=list[i].VideoDesc]--></P></div>
+            | </div>
+            | </li>
+            | <!--[}]-->
+

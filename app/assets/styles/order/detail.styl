@@ -1,0 +1,33 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+
+.content
+  position relative
+  padding-bottom 30px
+
+
+.product
+  color #333333
+  height 284px
+  overflow hidden
+  padding 20px 0
+  padding-left 15px
+  & .product_info
+    width 726px
+    & .product_modal
+      padding 10px
+      color $GlobalBg
+      background #b7b7b7
+    & .product_title
+      font-size 16px
+      margin 10px 0
+    & .product_detail
+      line-height 16px
+      & >div
+        F_ellipsis(100%)
+
+
+.content .pager .splite
+  border-bottom none
+  margin 0

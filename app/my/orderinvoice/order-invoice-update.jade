@@ -1,0 +1,137 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/order-invoice-add.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/order/my-order.html") 我的订单
+                    span.splite >
+                    a(href="/my/order/order-detail.html",id="order-detail") 订单详情
+                    span.splite >
+                    span 修改发票
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            input(type="hidden",name="goodId" value="")
+                            input(type="hidden",name="invoiceId" value="")
+
+                            .input
+                                label 承运方信息&nbsp;&nbsp;: &nbsp;
+                                input(type="text",style="visibility: hidden;")
+
+                            .input
+                                label 公司名称&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="drvCompany",data-rule="required;length[1~50]")
+
+                            .input
+                                label 公司税号&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="drvTaxNum",data-rule="required;length[1~50]")
+
+                            .input
+                                label 开户行&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="drvBank",data-rule="required;length[1~50]")
+
+                            .input
+                                label 银行账号&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="drvBankNum",data-rule="required;length[1~50]")
+
+                            .input
+                                label 公司地址&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="drvAdd",data-rule="required;length[1~100]")
+
+                            .input
+                                label 公司电话&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="drvCellPhone",data-rule="required;length[1~30]")
+
+
+                            .input
+                                label 受票方信息&nbsp;&nbsp;: &nbsp;
+                                input(type="text",style="visibility: hidden;")
+
+                            .input
+                                label 公司名称&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="goodCompany",data-rule="required;length[1~50]")
+
+                            .input
+                                label 公司税号&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="goodTaxNum",data-rule="required;length[1~50]")
+
+                            .input
+                                label 开户行&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="goodBank",data-rule="required;length[1~50]")
+
+                            .input
+                                label 银行账号&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="goodBankNum",data-rule="required;length[1~50]")
+
+                            .input
+                                label 公司地址&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="goodAdd",data-rule="required;length[1~100]")
+
+                            .input
+                                label 公司电话&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="goodCellPhone",data-rule="required;length[1~30]")
+                                
+
+                            .input
+                                label 发票明细信息&nbsp;&nbsp;: &nbsp;
+                                input(type="text",style="visibility: hidden;")
+
+                            .input
+                                label 货物或应税劳务名称&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="invoiceName",data-rule="length[1~50]")
+
+                            .input
+                                label 规格型号&nbsp;&nbsp;: &nbsp;
+                                input(type="text",name="specificationType",data-rule="length[1~50]")
+
+                            .input
+                                label 单位&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="unit",data-rule="required;length[1~10]")
+
+                            .input
+                                label 数量&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="quantity",data-rule="required;number3;length[1~10]")
+
+                            .input
+                                label 单价(元)&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="unitPrice",data-rule="required;number5;length[1~10]")
+
+                            .input
+                                label 总价(元)&nbsp;&nbsp;*: &nbsp;
+                                input(class="readonly",type="text",name="money",readonly="readonly")
+
+                            .input
+                                label 税额(元)&nbsp;&nbsp;*: &nbsp;
+                                input(class="readonly",type="text",name="tax",readonly="readonly")
+
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/orderinvoice/order-invoice-update.js");

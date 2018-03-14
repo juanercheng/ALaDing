@@ -1,0 +1,74 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/order-carrierInfos.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/order/my-order.html") 我的订单
+                    span.splite >
+                    a(href="/my/order/order-detail.html",id="order-detail") 订单详情
+                    span.splite >
+                    span 查看物流
+
+                .content
+                    .order_list
+                        form#save-carrier
+                                input(type="hidden",name="goodId")
+                                p(style="display: none;")
+                                    label 负责人&nbsp;*: &nbsp;
+                                    input(name="drvReallyName",data-rule="required;length[1~20]",maxLength="20")
+                                    label(style="margin-left:80px") 手机号码&nbsp;*: &nbsp;
+                                    input(name="drvCellPhone",data-rule="required;mobile;length[11]",maxLength="11")
+                                    input(style="display:none",type="submit",class="button white_btn o-save-carrier",value="保存")
+                        .o_header
+                            span#count
+                                span#count1 共0条
+                                .fr.c_282828
+                                    button.white_btn.o-invoice 新增承运人
+                        ul.o_data#data-list
+                    .t-c
+                        include ../../com/page
+
+
+        // footer
+        include ../../com/footer
+        include ../../com/page-tmpl
+        script(type="text/javascript") seajs.use("/assets/scripts/my/carrierInfos/order-carrierInfos.js");
+        script(type="text/html",id="state-tmpl")
+            | <option value="">全部</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li class="clearfix> 
+
+            | <div class="fz-16 c_282828 clearfix">
+            | <p class="clearfix"><span class="fl"><!--[=list[i].drvReallyName || '']-->  <!--[=list[i].drvCellPhone || '']--></span>
+            | <button class="white_btn update" data-index="<!--[=i]-->" data-id="<!--[=list[i].goodDrvId]-->" data-goodId="<!--[=list[i].goodId || '']-->">修改</button>
+            | <button class="white_btn wuliu" data-index="<!--[=i]-->" data-id="<!--[=list[i].goodDrvId]-->" data-goodId="<!--[=list[i].goodId || '']-->">物流追踪</button></p>
+            | <p class="clearfix">车牌：<!--[=list[i].drvVehicleLicenceNo || '']--></p>
+            | </div>
+            | </li>
+            | <!--[}]-->
+
+

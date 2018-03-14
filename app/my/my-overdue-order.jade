@@ -1,0 +1,112 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/my/my-order.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 我的订单
+
+                .content
+                    .order_list
+                        form
+                            .o_header
+                                span#count 共0条
+                        ul.o_data#data-list
+                            //-var n = 0
+                            //while n < 10
+                            //    li
+                            //        div.clearfix
+                            //            .c_282828
+                            //                p.clearfix
+                            //                    a
+                            //                        span.fl 江苏省南京市白下区—>浙江省杭州市下城区
+                            //                    span.fr.c_ea7914 正在报价
+                            //
+                            //                .clearfix
+                            //                    .fl
+                            //                        a
+                            //                            p.c_6c6c6c 蔬菜水果、普通货物、普通业务、预估体积21m³、重量3吨、保证金：¥500、现付…
+                            //                        p 崔休民  18701735673
+                            //                    .fr
+                            //                        button.white_btn 刷新日期
+                            //
+                            //                .o_r_t.clearfix
+                            //                    ul.rating-level.fl
+                            //                        li
+                            //                            a.one-star(href="#")
+                            //                        li
+                            //                            a.two-stars.active(href="#")
+                            //                        li
+                            //                            a.three-stars(href="#")
+                            //                        li
+                            //                            a.four-stars(href="#")
+                            //                        li
+                            //                            a.five-stars(href="#")
+                            //
+                            //                    span 好评率：
+                            //                    span 87% &nbsp;&nbsp;
+                            //                    span 成交次数：1
+                            //                    span=n++
+                            //        div.clearfix
+                            //            .fr 2015-12-12 10:10
+
+                    .t-c
+                        include ../com/page
+
+
+        // footer
+        include ../com/footer
+        include ../com/page-tmpl
+
+        script(type="text/javascript") seajs.use("../assets/scripts/my/my-overorder.js");
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <div class="clearfix">
+            | <div class="c_282828">
+            | <p class="clearfix"><span class="fl"><!--[=list[i].loadPlacePro]--><!--[=list[i].loadPlaceCity]--><!--[=list[i].loadPlaceArea]-->—&gt;<!--[=list[i].unloadPlacePro]--><!--[=list[i].unloadPlaceCity]--><!--[=list[i].unloadPlaceArea]--></span><span class="fr c_ea7914"><!--[=list[i].orderStateName]--></span></p>
+            | <div class="clearfix">
+            | <div class="fl">
+            | <p class="c_6c6c6c"><!--[=list[i].goodName || '']-->、<!--[=list[i].goodKindName]-->、预估体积<!--[=list[i].cubage]-->m³、重量<!--[=list[i].weight]-->吨</p>
+            | <p><!--[=list[i].reallyName]--><!--[=list[i].cellPhone]--></p>
+            | </div>
+            | <div class="fr">
+            | <button class="white_btn" data-id="<!--[=list[i].goodId]-->">刷新日期</button>
+            | </div>
+            | </div>
+            | <div class="o_r_t clearfix">
+            | <ul class="rating-level fl" data-level="<!--[=$printStar(list[i].praiseRate)]-->">
+            | <li><a href="#" class="one-star"></a></li>
+            | <li><a href="#" class="two-stars"></a></li>
+            | <li><a href="#" class="three-stars"></a></li>
+            | <li><a href="#" class="four-stars"></a></li>
+            | <li><a href="#" class="five-stars"></a></li>
+            | </ul><span>好评率：</span><span><!--[=list[i].praiseRate || 0]-->% &nbsp;&nbsp;</span><span>成交次数：</span><span><!--[=list[i].doneNum || 0]--></span>
+            | </div>
+            | </div>
+            | </div>
+            | <div class="clearfix">
+            | <div class="fr"><!--[=list[i].createTime]--></div>
+            | </div>
+            | </li>
+            | <!--[}]-->
+
+

@@ -1,0 +1,120 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-car-publish.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 我要卖车
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            .input
+                                label 品牌&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="carBrand",data-rule="required;length[1~20]")
+
+                            .input
+                                label 马力(匹)&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="displacement",data-rule="required;number2;length[1~20]")
+
+                            .input
+                                label 预估卖价(元)&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="price",data-rule="required;number3;length[1~7]",placeholder="请输入整数")
+
+                            .input
+                                label 购车时间&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",id="end",class="datepicker",name="buyTime",readonly="readonly",data-rule="required;")
+
+                            .input
+                                label 行驶里程(km)&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="travelMileage",data-rule="required;number3;length[1~30]",placeholder="请输入整数")
+
+                            .input.t-l
+                                label 看车地点&nbsp;*&nbsp;: &nbsp;
+                                select.select.province(name="lookProvince")
+                                select.select.city(name="lookCity")
+                                select.select.area(name="lookArea",data-rule="required;")
+
+                            .input
+                                label(style="visibility:hidden") 看车详细地址&nbsp;*&nbsp;: &nbsp;
+                                input(type="text",name="lookPlace",data-rule="required;length[1~100]")
+
+                            .input
+                                label 配置亮点&nbsp;&nbsp;: &nbsp;
+                                textarea(class="textarea",name="configuration",data-rule="length[1~1000]")
+
+                            .input
+                                label 备注&nbsp;&nbsp;: &nbsp;
+                                textarea(class="textarea",name="remark",data-rule="length[1~1000]")
+
+                            .input.file
+                                label 行驶证&nbsp;&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="drvLicenseImg",value="")
+                                
+                            .input.file
+                                label 车辆照片&nbsp;*&nbsp;: &nbsp;
+                                .file_upload
+                                    img
+                                    input(type="file")
+                                    input(type="hidden",name="carImg",value="",data-rule="required")
+
+                            .t-c(style="margin-top: 40px;")
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+                            .t-c.readWarning
+                                br
+                                label *请注意填写卖车信息，以免发生纠纷
+
+
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/oldcar/my-car-publish.js");
+        script(type="text/javascript",src="/assets/scripts/laydate/laydate.js")
+
+        script(type="text/html",id="price-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="positionType-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="sex-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="drvLincese-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->

@@ -1,0 +1,73 @@
+@import './normalize'
+@import './common'
+@import './header'
+@import './footer'
+@import './../utils/fun'
+
+
+.progress
+  display inline-block
+  position relative
+  width 614px
+  height 45px
+  margin-top 50px
+
+.p_text,.p_line
+  position absolute
+
+.progress .p_line
+  width 95%
+  height 1px
+  background #bfbfbf
+  top 10px
+  left 5px
+
+.p_line >div
+  width: 50%
+  height: 1px
+  position: absolute
+  top: 0
+  background #e94546
+
+.p_line>div.active
+  width 100%
+
+.p_text .circle
+  F_borderRadius(100%)
+  width 20px
+  height 16px
+  background #afabac
+  padding-top 4px
+  margin-bottom 10px
+  display inline-block
+
+.p_text >div
+  display inline-block
+
+.p_text >div:nth-child(2)
+  margin 0 245px
+
+.p_text .circle.active
+  background #e94249
+
+.p_text .ok
+  background url("/assets/image/icons.png") 5px 7px no-repeat
+  height 25px
+
+.p_text .ok2
+  background url("/assets/image/icons.png") 20px 7px no-repeat
+  height 25px
+
+.p_text .ok.fail
+  background url("/assets/image/icons.png") 5px -62px no-repeat
+
+.p_text .ok2.fail2
+  background url("/assets/image/icons.png") 20px -62px no-repeat
+
+.reg_form
+  width 382px
+  margin 90px auto
+
+.reg_form .input_group
+  background $GlobalBg
+

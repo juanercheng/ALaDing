@@ -1,0 +1,125 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+
+.content
+  position relative
+  padding-bottom 30px
+  & .product
+    margin auto
+    width 830px
+    padding-top 20px
+    & p
+      margin 0
+      line-height 25px
+    & .rating-level
+      display inline-block
+    & .product_img
+      width 113px
+      height 113px
+      margin 0 10px
+
+
+.pay
+  border-top 1px solid #d3d3d3
+  width 830px
+  margin auto
+  margin-top 10px
+  padding 0 20px
+  padding-top 35px
+  margin-bottom 30px
+  & form
+    & textarea
+      width 96%
+      height 114px
+      resize none
+      @extends .gray_box
+      background $GlobalBg
+      padding 10px
+    & .t-r
+      text-align right
+      width 96%
+      & input[type="submit"]
+        width 100px
+        color $GlobalBg
+        margin-top 20px
+        display inline-block
+
+.pager .splite
+  border-bottom none
+
+.msg-list
+  & .title
+    padding 10px
+    background #E7E7E7
+    color #282828
+  & .list
+    padding 30px
+    padding-top 0
+    & >li
+      padding 10px
+      border-bottom 1px solid #D3D1D2
+    & .user_img_info img
+      F_borderRadius(100%)
+      border 1px solid #d3d3d3
+      width 50px
+      height 50px
+      margin-right 10px
+    & .user_img_info span
+      display block
+      line-height 25px
+
+.upload-imgs
+  & ul.imgs
+    width 800px
+    & li
+      float left
+      width 50px
+      height 50px
+      margin 5px
+    & img,a
+      width 100%
+      height 100%
+      display block
+
+
+form .file
+  & input[type="file"]
+    opacity 0
+    /* IE 8 */
+    -ms-filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=100)')
+    /* IE 5-7 */
+    filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=100)')
+    /* Netscape */
+    -moz-opacity: 0
+    /* Safari 1.x */
+    -khtml-opacity: 0
+    /* Good browsers */
+    font-size 100px
+    z-index 99
+    cursor pointer
+    position absolute
+    top 0
+    left 0
+  & .img-item
+    F_borderRadius(10px)
+    width 100px
+    height 100px
+    display inline-block
+    overflow: hidden
+    & img
+      width 100%
+      height 100%
+  & .file_upload
+    F_borderRadius(10px)
+    width 100px
+    height 100px
+    display inline-block
+    overflow: hidden
+    background gainsboro
+    position relative
+    &:hover
+      background #babdb6
+    & img
+      width 100%
+      height 100%

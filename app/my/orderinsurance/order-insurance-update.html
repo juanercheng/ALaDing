@@ -1,0 +1,169 @@
+<!DOCTYPE html><html><head><title>丁丁物流</title><mate charset="utf-8"></mate><mate came="description" content=""></mate><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><mate name="viewport" content="width=device-width, initial-scale=1"></mate><link type="text/css" rel="stylesheet" href="/assets/styles/my/order-insurance-add.min.css"><link type="text/css" rel="stylesheet" href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css"></head><body><!-- header--><div class="header"><div class="clearfix"><a href="/index.html" class="logo"></a><ul class="nav clearfix"><li>首页</li><li>货源信息</li><li>车源信息</li><li>物流信息</li><li>人员招聘</li><li>招投标</li><li>二手车</li><li>订单中心</li><li>联系我们</li></ul><div class="header_right"><div class="search_form"><div id="search_type" class="type"><span data-type="good" class="active">货源</span><span data-type="car">车源</span><span data-type="express">物流</span></div><form id="search_all"><input type="text" name="key" placeholder="货源、车源、物流公司" maxlength="10"><input type="submit" value=""></form></div><ul class="btn_group clearfix"><li><a id="l_u">登录</a></li><li class="line"><a>|</a></li><li><a id="r_l">注册</a></li></ul></div></div></div><!--containner--><div class="container clearfix"><div class="my_nav fl"><div class="article"><div class="article_head"><div class="article_title"><span>个人中心</span></div><div class="article_line"><span></span><!-- dri-司机  good-货主  logis-物流--></div></div><ul id="my_nav" class="nav my"><li class="dri good logis"><a href="/my/my-index.html">个人资料</a></li><li class="dri good logis"><a href="/my/information/information.html">认证信息</a></li><li class="dri good logis"><a href="/my/training/training.html">培训</a></li><li class="dri good logis"><a href="/my/my-recharge.html">充值</a></li><li class="dri good logis"><a href="/my/my-cash.html">提现申请</a></li><li class="dri good logis"><a href="/my/my-record.html">交易记录</a></li><li class="good logis"><a href="/my/order/my-order.html">我的订单</a></li><li class="good logis"><a href="/my/my-overdue-order.html">过期订单</a></li><li class="good logis"><a href="/my/order/order-publish.html">发布订单</a></li><li class="logis"><a href="/my/my-route.html">路线管理</a></li><li class="good logis"><a href="/my/recruitment/my-rec.html">招聘信息</a></li><li class="good logis"><a href="/my/recruitment/rec-publish.html">我要招人</a></li><li class="dri good logis"><a href="/my/oldcar/my-car.html">卖车信息</a></li><li class="dri good logis"><a href="/my/oldcar/my-car-publish.html">我要卖车</a></li><li class="good"><a href="/my/ownlogistics/ownlogistics-index.html">推荐物流公司</a></li><li class="dri logis"><a href="/my/owngoods/owngoods-index.html">推荐货源</a></li><li class="good logis"><a href="/my/owncars/owncars-index.html">推荐车源</a></li><li class="good logis"><a href="/my/tenders/tenders-publish.html">发布标书</a></li><li class="good logis"><a href="/my/tenders/my-tenders.html">我的招标</a></li><li class="dri good logis"><a href="/my/tenders/my-bid-tenders.html">我的竞标</a></li><li class="dri good logis"><a href="/my/loan/loan-publish.html">申请贷款</a></li><li class="dri good logis"><a href="/my/loan/my-loan.html">贷款信息</a></li><li class="dri good logis"><a href="/my/mytools/mytools.html">我的工具</a></li><li class="dri good logis"><a href="/my/my-suggest.html">意见反馈</a></li><li class="dri logis"><a href="/my/my-price.html">我的报价</a></li></ul></div></div><div class="my_right fr"><div><p class="local_nav">当前位置：<a href="/my/my-index.html">个人中心</a><span class="splite">></span><a href="/my/order/my-order.html">我的订单</a><span class="splite">></span><a href="/my/order/order-detail.html" id="order-detail">订单详情</a><span class="splite">></span><a href="/my/orderinsurance/order-insurance.html" id="order-insurance">保险</a><span class="splite">></span><span>修改保险</span></p></div><div class="content"><div class="t-c"><form id="publish-order" class="reg_form"><input type="hidden" name="goodId" value=""><input type="hidden" name="insuranceId" value=""><div class="input"><label>真实货主-货物名称&nbsp;&nbsp;*: &nbsp;</label><input type="text" name="goodName" data-rule="required;length[1~20]"></div><div class="input"><label>承运人&nbsp;&nbsp;*: &nbsp;</label><input type="text" name="insuranceName" data-rule="required;length[1~20]"></div><div class="input"><label>手机号码&nbsp;&nbsp;*: &nbsp;</label><input type="text" name="insurancePhone" maxLength="11" data-rule="required;mobile;length[11]"></div><div class="input"><label>身份证号&nbsp;*: &nbsp;</label><input type="text" name="identityCardId" data-rule="required;ID_card;length[15~18]"></div><div class="input"><label>车牌号&nbsp;*: &nbsp;</label><input type="text" name="drvVehicleLicenceNo" data-rule="required;length[1~30];"></div><div class="input"><label>行驶证号&nbsp;: &nbsp;</label><input type="text" name="drvLicenseNum" data-rule="length[1~30];"></div><div class="input"><label>驾驶证号&nbsp;: &nbsp;</label><input type="text" name="drvTLicenseNo" data-rule="length[1~130]"></div><div class="input file"><label>身份证照片&nbsp;&nbsp;*: &nbsp;</label><div class="file_upload"><img><input type="file"><input type="hidden" name="identityCardImg" value="" data-rule="required"></div></div><div class="input file"><label>行驶证照片&nbsp;&nbsp;*: &nbsp;</label><div class="file_upload"><img><input type="file"><input type="hidden" name="drvTLicenseNoImg" value="" data-rule="required"></div></div><div class="input file"><label>驾驶证照片&nbsp;&nbsp;*: &nbsp;</label><div class="file_upload"><img><input type="file"><input type="hidden" name="drvLicenseNumImg" value="" data-rule="required"></div></div><div class="input file"><label>货物清单照片&nbsp;&nbsp;*: &nbsp;</label><div class="file_upload"><img><input type="file"><input type="hidden" name="drvOLicenseImg" value="" data-rule="required"></div></div><div class="input"><label>保险承保范围&nbsp;&nbsp;: &nbsp;</label><textarea id="userprotocol" style="height:300px;width:380px;color:black;" readonly="readonly">
+     国内货物运输预约保险单
+保单号:AAAK0000SHE2016B100001
+险种         :	国内公路运输货运险
+甲方         :	南通阿拉丁网络科技有限公司
+地址         :	南通市小石桥花苑13幢305室
+被保险人      :	通过“丁丁物流网”平台注册，且完成业务的货主
+乙方（保险人） :	史带财产保险股份有限公司上海分公司
+地址         :	上海市浦东新区福山路500号城建国际中心25楼
+为了保证保险销售行为合法、公正、顺利进行，切实维护甲、乙双方的正当权益，现就保险产品推广合作关系,甲乙双方经协商一致并达成本协议。在本协议有效期间内，甲方提供网络服务平台，乙方提供保险产品。甲、乙双方应本着精诚合作、诚实信用、平等互利的原则，严格遵守协议的规定。
+保险期间      :2016年11月1日0：00：00时至2017年10月31日23:59:59时止
+通知取消      :甲乙双方在协议期限内一方因故终止合同，应提前30天书面通知对方。在此情况下，保险人应将按比例计算的自保险单注销之日起的未到期保险费退还给被保险人。
+保险限额      :  RMB 300,000.00元/每一运输工具；RMB 500,000.00元/每一运输工具；RMB 1,000,000.00元/每一运输工具
+*如果任一运输工具上装载被保货物的金额超过上述责任限额时，请在起运前一个工作日将有关的运输详细资料（被保险人名称、运输区域、货物名称、起运时间、车牌号等）告知保险人以得到其书面的确认；否则，由于在任一地点同一事件所引发的一个或一系列意外事故，保险公司所承担的责任不超过上述责任限额。
+保险标的      :	普通货物，百货，五金杂货机器设备，及零部件等相似商品但不包括下列货物：
+   1）工艺收藏品（包括各类雕刻、编织、刺绣、古董、字画、瓷器、玉石、玉器等）、金银、金银制品及其他稀有金属、现金、有价证券、邮票、珠宝、首饰、古化石、账本以及计算机软件等难以客观确定保险价值或保险期间内价值变化较大的货物；
+   2）鱼粉、豆粕、大豆等大宗农产品、原木、天然橡胶、原棉、冷冻、冷藏货物、易变质食品、药品、血液制品、疫苗、鲜活动植物等；
+   3）体积小价值高的货物（移动电话、笔记本电脑、平板电脑、摄像机、照相机及其他类似货物）；
+   4）特殊集装箱货物（非装载于20尺、40尺全封闭式标准集装箱的货物）；
+   5）精密设备或仪器；
+      如果满足以下条件之一，应视为精密设备或仪器：
+       a.运输过程中对平衡、稳定、防震、防尘、搬运倾斜角度、温度、湿度、包装、积载、绑扎、固定等有特殊严格要求的；
+       b.只能由原厂或原厂指定的售后服务单位修理的；
+       c.单件设备或仪器（无论是否拆分包装运输）价值超过RMB5,000,000（或等值其他币种）的。
+   6）易燃、易爆危险品（《危险货物品名表》GB12268中列明的货物）；
+   7）船舶、机动车辆、航空器、军用武器或装备；
+   8）各类散装矿产品，如煤矿、金属矿等。
+   9）私人物品；
+   10）退货或二手货、展览后之展品和陈列品等无法确定其价值的货品；
+   11）大型成套设备。
+       如果满足以下条件之一，应视为大型成套设备:
+       任何一件设备如在运输中受损，不可能在开工前3个月内被修复、再生产、再次运输、安装、测试并交付使用。包括以下部件：A、价值超过5,000,000美元并全部散件运输；B、任一部件由于体积或重量的原因必须由特殊运输工具运输的；C、任一部件包括包装不能放进40 英尺标准集装箱或公路平板车，即超过12 米长、2.5 米宽或2.5 米高；D、任一部件包括包装超过50 吨重；E、任一部件由于本身的特性必须特殊处理：（1）保持重心的平衡；（2）底部不规则；（3）要求特殊的绑扎固定。F、驳船运输；G、舱面运输。
+       包装方式    :	国家或行业发布的强制性或建议性标准包装
+       运输范围    :	中国大陆境内各地（自或至澳门、台湾、香港的航程除外）
+       运输工具    :	汽车
+       承保条件方案 :		责任限额/车    RMB 300,000
+*在本保险期间，被保险人在经营物流业务过程中，由于以下原因造成物流货物的损失，依法应由被保险人承担赔偿责任的，保险人根据本保险合同的约定负责赔偿。
+  1、因火灾、爆炸、雷电、冰雹、暴风、暴雨、洪水、地震、海啸、地陷、崖崩、滑坡、泥石流所造成的损失；
+  2、由于运输工具发生碰撞、搁浅、触礁、倾覆、沉没、出轨或隧道、码头坍塌所造成的损失；
+保费支付    :
+.保险人每月十五前根据投保人/被保险人上月申报的交易数据出具付款通知书，投保人/被保险人须在付款通知书签发后三十日内支付保险费。
+承保条款        :	国内水路、陆路货物运输保险条款-基本险
+除外责任条款     :	1.中国保监委的二千年问题责任除外条款
+                  2.协会放射性污染、化学、生物、生物化学及电磁武器除外责任条款
+                  3.协会电脑攻击除外条款；
+                  4.对于裸装原因所致的被保货物的腐蚀、褪色、生锈、氧化、刮擦、脆裂、凹瘪的风险除外。
+保证条款       :	甲方保证对物流服务供应商的资质进行核实，保证具备合法营运资格的专业的承运人进行运输。
+声明    :	兹声明乙方已对本报价单所附保险条款（包括责任免除条款）履行了明确说明义务，甲方已经知悉该保险条款（包括责任免除条款）的内容。
+司法管辖    :	本协议适用中华人民共和国法律，司法管辖中国
+  主险条款：
+     国内水路、陆路货物运输保险条款
+     （2009年版）
+      第一章 总   则
+第一条 为使保险货物在水路、铁路、公路和联合运输中，因遭受保险责任范围内的自然灾害或意外事故所造成的损失能够得到经济补偿，并加强货物运输的安全防损工作，以利商品生产和商品流通，特举办本保险。
+第二条  本保险合同由保险条款、投保单、保险单以及批单组成。凡涉及本保险合同的约定，均应采用书面形式。
+      第二章 保险责任
+第三条 本保险分为基本险和综合险两种。保险货物遭受损失时，保险人按承保险别的责任范围负赔偿责任。
+（一）基本险：
+  1、因火灾、爆炸、雷电、冰雹、暴风、暴雨、洪水、地震、海啸、地陷、崖崩、滑坡、泥石流所造成的损失；
+  2、由于运输工具发生碰撞、搁浅、触礁、倾覆、沉没、出轨或隧道、码头坍塌所造成的损失；
+  3、在装货、卸货或转载时，因遭受不属于包装质量不善或装卸人员违反操作规程所造成的损失；
+  4、按国家规定或一般惯例应分摊的共同海损的费用；
+  5、在发生上述灾害、事故时，因纷乱而造成货物的散失及因施救或保护货物所支付的直接合理费用。
+（二）综合险：本保险除包括基本险责任外，保险人还负责赔偿：
+  1、因受震动、碰撞、挤压而造成破碎、弯曲、凹瘪、折断、开裂或包装破裂致使货物散失的损失；
+  2、液体货物因受震动、碰撞或挤压致使所用容器（包括封口）损坏而渗漏的损失，或用液体保藏的货物因液体渗漏而造成保藏货物腐烂变质的损失；
+  3、遭受盗窃或整件提货不着的损失；
+  4、符合安全运输规定而遭受雨淋所致的损失。
+     第三章  责任免除
+第四条 由于下列原因造成保险货物的损失，保险人不负赔偿责任：
+  1、战争或军事行动；
+  2、核事件或核爆炸；
+  3、保险货物本身的缺陷或自然损耗，以及由于包装不善；
+  4、被保险人的故意行为或过失；
+  5、全程是公路货物运输的盗窃或整件提货不着的损失；
+  6、其他不属于保险责任范围内的损失。
+      第四章  保险金额与免赔额（率）
+第五条  保险金额由投保人参照保险价值自行确定，并在保险合同中载明。保险金额不得超过保险价值。超过保险价值的，超过部分无效，保险人应当退还相应的保险费。
+货物的保险金额可按货物价格或货价加运杂费计算，在保险有效期内，被保险人需要调整保险金额，应当向保险人申请办理批改。
+第六条  免赔额（率）由投保人与保险人在订立保险合同时协商确定，并在保险合同中载明。
+      第五章  责任起讫
+第七条  本保险责任自是自签发保险凭证和保险货物运离起运地发货人的最后一个仓库或储存处所时起，至该保险凭证上注明的目的地的收货人在当地的第一个仓库或储存处所时终止。但保险货物运抵目的地后，如果收货人未及时提货，则保险责任的终止期最多延长至以收货人接到《到货通知单》后的十五天为限（以邮戳日期为准）。
+      第六章  保险人义务
+第九条  本保险合同成立后，保险人应当及时向投保人签发保险单或其他保险凭证。
+第十条  保险人按照第十八条的约定，认为被保险人提供的有关索赔的证明和资料不完整的，应当及时一次性通知投保人、被保险人补充提供。
+第十一条  保险人收到被保险人的赔偿保险金的请求后，应当及时作出是否属于保险责任的核定。
+保险人应当将核定结果通知被保险人；对属于保险责任的，在与被保险人达成赔偿保险金的协议后十日内，履行赔偿保险金义务。保险合同对赔偿保险金的期限有约定的，保险人应当按照约定履行赔偿保险金的义务。保险人依照前款约定作出核定后，对不属于保险责任的，应当自作出核定之日起三日内向被保险人发出拒绝赔偿保险金通知书，并说明理由。
+第十二条  保险人自收到赔偿保险金的请求和有关证明、资料之日起六十日内，对其赔偿保险金的数额不能确定的，应当根据已有证明和资料可以确定的数额先予支付；保险人最终确定赔偿的数额后，应当支付相应的差额。
+       第七章  投保人、被保险人义务
+第十三条  订立保险合同，保险人就保险标的或者被保险人的有关情况提出询问的，投保人应当如实告知。
+投保人故意或者因重大过失未履行前款规定的如实告知义务，足以影响保险人决定是否同意承保或者提高保险费率的，保险人有权解除保险合同。
+前款规定的合同解除权，自保险人知道有解除事由之日起，超过三十日不行使而消灭。自合同成立之日起超过二年的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿保险金的责任。
+投保人故意不履行如实告知义务的，保险人对于合同解除前发生的保险事故，不承担赔偿保险金的责任，并不退还保险费。
+投保人因重大过失未履行如实告知义务，对保险事故的发生有严重影响的，保险人对于合同解除前发生的保险事故，不承担赔偿保险金的责任，但应当退还保险费。
+保险人在合同订立时已经知道投保人未如实告知的情况的，保险人不得解除合同；发生保险事故的，保险人应当承担赔偿保险金的责任。
+第十四条  除另有约定外，投保人应在保险合同成立时交清保险费，对于保险费交付之前发生的事故，保险人不负责赔偿。
+第十五条  被保险人应严格遵守国家及交通运输部门关于安全运输的各项规定，加强管理，采取合理的预防措施，尽力避免或减少责任事故的发生，维护保险标的的安全。还应当接受并协助保险人对保险货物进行的查验防损工作，货物包装必须符合国家和主管部门规定的标准。
+保险人可以对被保险人遵守前款约定的情况进行检查，向投保人、被保险人提出消除不安全因素和隐患的书面建议，投保人、被保险人应该认真付诸实施。
+投保人、被保险人未按照约定履行其对保险标的的安全应尽责任的，保险人有权要求增加保险费或者解除合同。
+第十六条  在合同有效期内，保险标的的危险程度显著增加的，被保险人应当按照合同约定及时通知保险人，保险人可以按照合同约定增加保险费或者解除合同。
+被保险人未履行前款约定的通知义务的，因保险标的的危险程度显著增加而发生的保险事故，保险人不承担赔偿保险金的责任。
+第十七条  知道保险事故发生后，被保险人应该：
+（一）尽力采取必要、合理的措施，防止或减少损失，否则，对因此扩大的损失，保险人不承担赔偿责任；
+（二）及时通知保险人，并书面说明事故发生的原因、经过和损失情况；故意或者因重大过失未及时通知，致使保险事故的性质、原因、损失程度等难以确定的，保险人对无法确定的部分，不承担赔偿保险金的责任，但保险人通过其他途径已经及时知道或者应当及时知道保险事故发生的除外；
+（三）保护事故现场，允许并且协助保险人进行事故调查。
+第十八条  被保险人请求赔偿时，应向保险人提供下列证明和资料：
+   1、保险单、运单（货票）、提货单、发货票；
+   2、承运部门签发的货运记录、普通记录、交接验收记录、鉴定书；
+   3、收货单位的入库记录、检验报告、损失清单及救护货物所支付的直接费用的单据；
+   4、投保人、被保险人所能提供的与确认保险事故的性质、原因、损失程度等有关的其他证明和资料。
+被保险人未履行前款约定的索赔材料提供义务，导致保险人无法核实损失情况的，保险人对无法核实的部分不承担赔偿责任。
+      第八章  货损检验及赔偿处理
+第十九条  保险事故发生时，被保险人对保险标的不具有保险利益的，不得向保险人请求赔偿保险金。
+第二十条  保险标的发生保险责任范围内的损失，保险人有权选择下列方式赔偿：
+  （一）货币赔偿：保险人以支付保险金的方式赔偿；
+  （二）实物赔偿：保险人以实物替换受损标的，该实物应具有保险标的出险前同等的类型、结构、状态和性能，或更好的状态、性能；
+  （三）实际修复：保险人自行或委托他人修理修复受损标的。
+  对保险标的在修复或替换过程中，被保险人进行的任何变更、性能增加或改进所产生的额外费用，保险人不负责赔偿。
+第二十一条  保险标的遭受损失后，如果有残余价值，应由双方协商处理。如折归被保险人，由双方协商确定其价值，并在保险赔款中扣除。
+第二十二条  货物发生保险责任范围内的损失时，按货价确定保险金额的，保险人根据实际损失按起运地货价计算赔偿；按货价加运杂费确定保险金额的，保险人根据实际损失按起运地货价加运杂费计算。但最高赔偿金额以保险金额为限。
+第二十三条  保险标的发生保险责任范围内的损失，保险人按以下方式计算赔偿：
+  （一）保险金额等于或高于保险价值时，按实际损失计算赔偿，最高不超过保险价值；
+  （二）保险金额低于保险价值时，按保险金额与保险价值的比例乘以实际损失计算赔偿，最高不超过保险金额；
+  （三）若本保险合同所列标的不止一项时，应分项按照本条约定处理。
+第二十四条  保险标的的保险金额大于或等于其保险价值时，被保险人为防止或减少保险标的的损失所支付的必要的、合理的费用，在保险标的损失赔偿金额之外另行计算，最高不超过被施救保险标的的保险价值。
+  保险标的的保险金额小于其保险价值时，上述费用按被施救标的的保险金额与其保险价值的比例在保险标的损失赔偿金额之外另行计算，最高不超过被施救保险标的的保险金额。
+  被施救的财产中，含有本保险合同未承保财产的，按被施救保险标的的保险价值与全部被施救财产价值的比例分摊施救费用。
+第二十五条  保险事故发生时，如果存在重复保险，保险人按照本保险合同的相应保险金额与其他保险合同及本保险合同相应保险金额总和的比例承担赔偿责任。
+   其他保险人应承担的赔偿金额，本保险人不负责垫付。若被保险人未如实告知导致保险人多支付赔偿金的，保险人有权向被保险人追回多支付的部分。
+第二十六条  发生保险责任范围内的损失，应由有关责任方负责赔偿的，保险人自向被保险人赔偿保险金之日起，在赔偿金额范围内代位行使被保险人对有关责任方请求赔偿的权利，被保险人应当向保险人提供必要的文件和所知道的有关情况，协助保险人共同向责任方追偿。
+   被保险人已经从有关责任方取得赔偿的，保险人赔偿保险金时，可以相应扣减被保险人已从有关责任方取得的赔偿金额。
+   保险事故发生后，在保险人未赔偿保险金之前，被保险人放弃对有关责任方请求赔偿权利的，保险人不承担赔偿责任；保险人向被保险人赔偿保险金后，被保险人未经保险人同意放弃对有关责任方请求赔偿权利的，该行为无效；由于被保险人故意或者因重大过失致使保险人不能行使代位请求赔偿的权利的，保险人可以扣减或者要求返还相应的保险金。
+第二十七条  被保险人向保险人请求赔偿保险金的诉讼时效期间为二年，自其知道或者应当知道保险事故发生之日起计算。
+       第九章  争议处理和法律适用
+第二十八条  因履行本保险合同发生的争议，由当事人协商解决。协商不成的，提交保险单载明的仲裁机构仲裁；保险单未载明仲裁机构且争议发生后未达成仲裁协议的，依法向人民法院起诉。
+第二十九条  与本保险合同有关的以及履行本保险合同产生的一切争议，适用中华人民共和国法律（不包括港澳台地区法律）。
+       中国保监委的二千年问题责任除外条款
+  本条款“2000年问题”系指，因涉及2000年日期变更，或此前、期间、其后任何其他日期变更，包括闰年的计算，直接或间接引起计算机硬件设备、程序、软件、芯片、媒介物、集成电路及其他电子设备中的类似装置的故障，进而直接或间接引起和导致保险财产的损失或损坏问题。
+  保险人对由于下列原因，无论计算机设备是否属于被保险人所有，直接或间接导致、构成或引起保险财产损失或损坏由此产生的直接损失或间接损失不负赔偿责任：
+       1)不能正确识别日期；
+       2)由于不能正确识别日期，以读取、存储、保留、检索、操作、判别、处理任何数据或信息，或执行命令和指令；
+       3)在任何日期或该日期之后，由于编程输入任何计算机软件的操作命令引起的数据丢失，或不能读取、储存、保留、检索、正确处理该类数据；
+       4)因涉及2000年日期变更，或任何其他日期变更，包括闰年的计算而不能正确进行计算、比较、识别、排序和数据处理；
+       5)因涉及2000年日期变更，或任何其他日期变更，包括闰年的计算，对包括计算机、硬件设备、程序、芯片、媒介物、集成电路及其他电子设备中的类似装置进行预防性的、治理性的、或其他性质的更换、改变、修改。
+   本保单所载其他条件不变。
+        协会放射性污染、化学、生物、生物化学及电磁武器除外责任条款
+   本条款是首要条款，如本保险其他条款与本条款不一致，应以本条款的规定为准。
+   1. 任何情况下，本保险不承保由于下述原因直接或间接引起或导致的灭失、损害、责任或费用：
+   1.1    任何原子核燃料、原子能工业废弃物、或原子核燃料燃烧产生的放射能所造成的离子放射或污染；
+   1.2    任何原子能装置、反应堆、其他原子能集群或原子能成分中的放射性、有毒的、爆炸性或其他危险或污染物质；
+   1.3    任何使用原子能、核裂变和/或聚变或其他类似的反应或放射性力量或物质的武器或装置；
+   1.4    任何放射性物质中的放射性、有毒的、爆炸性或其他危险或污染物质。本条款的除外责任不包括放射性同位素（非原子核燃料），若该放射性同位素为商业、农业、医疗、科学或其他类似和平目的而被准备、运送、存储或使用；
+   1.5    任何化学、生物、生化或电磁武器。
+          协会电脑攻击除外条款
+   1.1  除下述1.2条款的规定以外，本保险不承保为了造成破坏而使用或操作任何计算机、计算机系统、计算机软件程序、有毒代码、计算机病毒或程序或任何其他的电子系统所直接或间接产生或造成的任何灭失、损害、责任或费用。
+   1.2  如本条款作为承保如下风险，包括战争、内战、革命、造反、叛乱、或由此引起的内战、或任何交战方之间的敌对行为、或恐怖分子或出于政治动机而采取行动的人员，的保单的批单，则1.1条款的规定不应排除在任何武器或导弹的发射和/或导航系统和/或开火装置中使用计算机、计算机系统、计算机软件程序或任何其他电子系统所造成的损失（除非此种损失属于承保范围）。
+</textarea></div><div class="t-c"><input type="submit" value="保存" class="pink_btn save_btn"></div></form></div></div></div></div><!-- footer--><div class="footer"><div class="footer_content clearfix"><a href="/index.html" class="logo"></a><div class="copyright"><div class="footer_nav"><a href="/index.html">网站首页</a><a href="/ours/company-info.html">公司简介</a><a href="/ours/contact.html">联系我们</a><a href="/ours/help.html">使用帮助</a></div><div class="footer_com_name">南通阿拉丁网络科技有限公司</div><div class="footer_copyright"><div>备案号：苏ICP备10027778号-1</div><div>版权所有 ©2010-2014 dingding56.com</div></div></div><a href="#" class="android_app"></a></div></div><!-- seajs--><script type="text/javascript" src="/assets/scripts/module/sea/sea.js"></script><script type="text/javascript" src="/assets/scripts/module/sea/sea-config.js"></script><script type="text/javascript">seajs.use("/assets/scripts/my/orderinsurance/order-insurance-update.js");</script><script type="text/html" id="businesstype-tmpl"><option value="">---请选择---</option>
+<!--[for(i=0;i<list.length;i++){]-->
+<option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+<!--[}]--></script><script type="text/html" id="goodkind-tmpl"><option value="">---请选择---</option>
+<!--[for(i=0;i<list.length;i++){]-->
+<option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+<!--[}]--></script><script type="text/html" id="goodtype-tmpl"><option value="">---请选择---</option>
+<!--[for(i=0;i<list.length;i++){]-->
+<option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+<!--[}]--></script><script type="text/html" id="insurancetypeenum-tmpl"><label>保险&nbsp;*&nbsp;: &nbsp;</label>
+<!--[for(i=0;i<list.length;i++){]-->
+ <label><input type="radio" name="insuranceType" value="<!--[=list[i].code]-->" <!--[=i==0?'checked="checked"':'']--> /><span><!--[=list[i].name]--></span> </label>
+<!--[}]--></script></body></html>

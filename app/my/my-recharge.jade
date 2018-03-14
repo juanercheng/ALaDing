@@ -1,0 +1,141 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/my/my-recharge.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 充值
+
+                .content
+                    form#bank_form(method="post",action="/api/webunionpayapi.aspx")
+                        .recharge
+                            .platform.clearfix
+                                p 充值平台
+                                .gray_box
+                                    div
+                                        label.radio_area
+                                            input.radio(type="radio",name="replatForm",checked="checked",value="unionpay")
+                                            i.fr.visa
+                                        p.t-c 银联
+                                    div
+                                        label.radio_area
+                                            input.radio(type="radio",name="replatForm",value="alipay")
+                                            i.fr.ali
+                                        p.t-c 支付宝
+                                    div
+                                        label.radio_area
+                                            input.radio(type="radio",name="replatForm",value="wechat")
+                                            i.fr.wechat
+                                        p.t-c 微信支付
+                            .info
+                                p 绑定账号
+                                .gray_box#bank
+                                p.c_pink 首次使用必须绑定以上账号,开户行请务必填写清楚，供提现使用。例如：平安银行上海浦南支行 ，若记不清楚可咨询银行客服， 谢谢合作。
+                            .t-c
+                                input(type="hidden",name="accessToken",value="")
+                                input(type="hidden",name="memberId",value="")
+                                input#submit_btn(type="button",class="pink_btn save_btn",value="保存")
+        // footer
+        include ../com/footer
+        //
+           Created by haner on 15/6/29.
+        .panel
+            .panel-content
+                .panel-cell
+                    h3.panel-title 微信扫一扫
+                    p.panel-text#qr
+                    p.panel-text.
+                        若无法显示请尝试点击取消后重新保存
+
+            .panel-buttons
+                .options
+                    //a.btn.btn-ok(href="javascript:;") 确认
+                    a.btn.btn-cancel(href="javascript:;") 取消
+        .panel-bg
+
+        script(type="text/javascript") seajs.use("../assets/scripts/my/my-recharge.js");
+
+        script(type="text/html",id="unionpay-bank-tmpl").
+            <!--[if(!cardNo || !reallyName){]-->
+            <div class="input">
+            <label>银行卡号：</label>
+            <input type="text" name="cardNo" value="<!--[=cardNo]-->" data-rule="required;length[1~20];" />
+            </div>
+            <div class="input">
+            <label>开&nbsp;&nbsp;户&nbsp;&nbsp;行：</label>
+            <input type="text" name="bank" value="<!--[=bank]-->" data-rule="required;length[1~9]" />
+            </div>
+            <div class="input">
+            <label>开&nbsp;&nbsp;户&nbsp;&nbsp;人：</label>
+            <input type="text" name="reallyName" value="<!--[=reallyName]-->" data-rule="required;length[1~5];" />
+            </div>
+            <!--[}else{]-->
+            <input type="hidden" name="cardNo" value="<!--[=cardNo]-->"/>
+            <input type="hidden" name="bank" value="<!--[=bank]-->" />
+            <input type="hidden" name="reallyName" value="<!--[=reallyName]-->" />
+            <!--[}]-->
+            <div class="input">
+            <label>金额(￥)：</label>
+            <input type="text" name="money" data-rule="required;number3;length[1~9]" />
+            <input type="hidden" name="bandAccountId" value="<!--[=id]-->">
+            </div>
+
+        script(type="text/html",id="alipay-bank-tmpl").
+            <!--[if(!cardNo || !reallyName){]-->
+            <div class="input">
+            <label>支付宝账号：</label>
+            <input type="text" name="cardNo" value="<!--[=cardNo]-->" data-rule="required;length[1~20];" />
+            </div>
+            <div class="input">
+            <label>真实姓名：</label>
+            <input type="text" name="reallyName" value="<!--[=reallyName]-->" data-rule="required;length[1~5];" />
+            </div>
+            <!--[}else{]-->
+            <input type="hidden" name="cardNo" value="<!--[=cardNo]-->"/>
+            <input type="hidden" name="bank" value="<!--[=bank]-->" />
+            <input type="hidden" name="reallyName" value="<!--[=reallyName]-->" />
+            <!--[}]-->
+            <div class="input">
+            <label>金额(￥)：</label>
+            <input type="text" name="money" data-rule="required;number3;length[1~9]" />
+            <input type="hidden" name="bandAccountId" value="<!--[=id]-->">
+            </div>
+
+        script(type="text/html",id="wechat-bank-tmpl").
+            <!--[if(!cardNo || !reallyName){]-->
+            <div class="input">
+            <label>微信账号：</label>
+            <input type="text" name="cardNo" value="<!--[=cardNo]-->" data-rule="required;length[1~20];" />
+            </div>
+            <div class="input">
+            <label>真实姓名：</label>
+            <input type="text" name="reallyName" value="<!--[=reallyName]-->" data-rule="required;length[1~5];" />
+            </div>
+            <!--[}else{]-->
+            <input type="hidden" name="cardNo" value="<!--[=cardNo]-->"/>
+            <input type="hidden" name="bank" value="<!--[=bank]-->" />
+            <input type="hidden" name="reallyName" value="<!--[=reallyName]-->" />
+            <!--[}]-->
+            <div class="input">
+            <label>金额(￥)：</label>
+            <input type="text" name="money" data-rule="required;number3;length[1~9]" />
+            <input type="hidden" name="bandAccountId" value="<!--[=id]-->">
+            </div>

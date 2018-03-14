@@ -1,0 +1,67 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/my/my-recharge.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 卡号绑定
+
+                .content
+                    form#band_car
+                        .recharge
+                            .platform.clearfix
+                                p 平台
+                                .gray_box
+                                    div
+                                        label.radio_area
+                                            input.radio(type="radio",name="type",checked="checked")
+                                            i.fr.visa
+                                        p.t-c 银联
+                                    div(style="visibility:hidden;")
+                                        label.radio_area
+                                            input.radio(type="radio",name="type")
+                                            i.fr.ali
+                                        p.t-c 支付宝
+                                    div(style="visibility:hidden;")
+                                        label.radio_area
+                                            input.radio(type="radio",name="type")
+                                            i.fr.wechat
+                                        p.t-c 微信支付
+                            .info
+                                p 绑定账号
+                                .gray_box
+                                    .input
+                                        label 银行卡号：
+                                        input(type="text")
+                                    .input
+                                        label 开&nbsp;&nbsp;户&nbsp;&nbsp;行：
+                                        input(type="text")
+                                    .input
+                                        label 开&nbsp;&nbsp;户&nbsp;&nbsp;人：
+                                        input(type="text")
+                                p.c_pink 首次使用必须绑定以上账号，请谨慎填写。
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+        // footer
+        include ../com/footer
+
+        script(type="text/javascript") seajs.use("../assets/scripts/my/com.js");
+

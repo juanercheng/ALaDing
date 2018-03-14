@@ -1,0 +1,67 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+
+.content
+  position relative
+  padding-bottom 30px
+  & .product
+    margin auto
+    width 830px
+    padding-top 20px
+    & p
+      margin 0
+      line-height 25px
+    & .rating-level
+      display inline-block
+    & .product_img
+      width 113px
+      height 113px
+      margin 0 10px
+
+.pay
+  border-top 1px solid #d3d3d3
+  width 830px
+  margin auto
+  margin-top 10px
+  padding 0 20px
+  padding-top 35px
+  margin-bottom 30px
+  & form
+    & label
+      display inline-block
+      margin 15px
+      &:first-child,& .isNoName
+        margin-left 0
+    & .tag
+      margin 10px 0
+      & span
+        border: 1px solid #d3d3d3;
+        padding: 5px;
+        margin-right: 10px;
+        display: inline-block
+        cursor pointer
+        &.active
+          background grey
+          border 1px solid #CDCDCD
+          color #ffffff
+    & textarea
+      width 96%
+      height 114px
+      resize none
+      @extends .gray_box
+      background $GlobalBg
+      padding 10px
+    & .t-r
+      text-align right
+      width 96%
+      & input[type="submit"]
+        width 100px
+        color $GlobalBg
+        margin-top 20px
+        display inline-block
+    & .t-c input[type="button"]
+      width 100px
+      color $GlobalBg
+      margin-top 20px
+      display inline-block

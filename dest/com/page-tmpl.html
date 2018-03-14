@@ -1,0 +1,44 @@
+
+<!--    totalPage  //总页数-->
+<!--    cpage     //当前页-->
+<!--    pageStart //页码循环开始-->
+<!--    pageEnd   //页码循环结束-->
+<script type="text/html" id="page-tmpl">
+  <form id="page-form" action="<!--[=action]-->">
+  <input type="hidden" name="pageSize" value="<!--[=pageSize]-->"/>
+  <input type="hidden" name="lastRecordId" value="<!--[=lastRecordId || '']-->"/>
+   <!--[if(totalPage!=0){]-->
+   <!--[if(cPage > 1){]-->
+   <a class="pre">上一页</a>
+   <!--[}else{]-->
+    <a class="disable">上一页</a>
+   <!--[}]-->
+   <div class="p_center">
+   <!--[if(pageStart != 1){]-->
+   <a data-page-num="<!--[=i]-->">1</a>
+   <!--[if(pageStart-1 != 1){]-->
+   <a>...</a>
+   <!--[}]-->
+   <!--[}]-->
+   <!--[for(i=pageStart;i<=pageEnd;i++){]-->
+   <!--[if(i==cPage){]-->
+   <span class="current"><!--[=i]--></span>
+   <!--[}else{]-->
+   <a data-page-num="<!--[=i]-->"><!--[=i]--></a>
+   <!--[}]-->
+   <!--[}]-->
+   <!--[if(pageEnd!=totalPage){]-->
+   <!--[if(totalPage-pageEnd != 1){]-->
+   <a>...</a>
+   <!--[}]-->
+   <a data-page-num="<!--[=totalPage]-->"><!--[=totalPage]--></a>
+   <!--[}]-->
+   </div>
+   <!--[if(cPage<totalPage){]-->
+   <a class="next">下一页</a>
+   <!--[}else{]-->
+    <a class="disable">下一页</a>
+    <!--[}]-->
+   <!--[}]-->
+  </form>
+</script>

@@ -1,0 +1,50 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+
+$routeWidth = 812px;
+$routeLeftWidth = 140px;
+$routeHeight = 170px;
+
+.route
+  width $routeWidth
+  margin auto
+  & li
+    background $GlobalBg
+    font-size 0
+    margin 15px 0
+    & >div
+      display inline-block
+      height $routeHeight
+      font-size 16px
+      vertical-align middle
+    & .route_flag
+      width $routeLeftWidth
+      background #dcdcdc
+      line-height $routeHeight
+    & .p_c_a
+      width ($routeWidth - 2) - $routeLeftWidth
+      & form .select
+        display inline-block
+        & input
+          padding: 10px
+          width: 84px
+          color #000000
+          border 1px solid #e3e3e3
+      & form .t-l
+        padding 30px 0 0 30px
+      & form
+        position relative
+        margin-top 15px
+        & input[type="submit"]
+          position: absolute;
+          right: 0;
+          top: -15px;
+          color: #8C8C8C;
+          border: none;
+          background: #EAEAEA;
+          font-size: 13px
+          padding: 5px 15px
+          &:hover
+            color #ffffff
+            background #d3d3d3

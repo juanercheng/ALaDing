@@ -1,0 +1,104 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/order/order-comment.min.css")
+    body
+        // header
+        include ../../com/header
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        a(href="/my/my-price.html") 我的报价
+                        span.splite >
+                        span 订单评价
+                .content.c_282828
+                    .product#data-detail
+                        //.info.clearfix
+                        //    .product_img.fl
+                        //        img(src="http://frozenui.github.io/static/ui.png",width="100%",height="100%")
+                        //    p.fz-16 南京江苏。。。。
+                        //        span.fr.c_ea7914 已提交
+                        //    p.c_6c6c6c 蔬菜水果
+                        //    p 装货时间：2015-12-12
+                        //    ul.rating-level
+                        //        li
+                        //            a.one-star(href="#")
+                        //        li
+                        //            a.two-stars.active(href="#")
+                        //        li
+                        //            a.three-stars(href="#")
+                        //        li
+                        //            a.four-stars(href="#")
+                        //        li
+                        //            a.five-stars(href="#")
+                        //    span &nbsp;&nbsp;&nbsp;
+                        //    span 好评率：85%
+                        //    span &nbsp;&nbsp;&nbsp;
+                        //    span 成交次数：85%
+                        //
+                        //.clearfix
+                        //    .fr.c_6c6c6c 2015-12-12 10:11
+
+                    .pay
+                        form#comment-form(action="post")
+                            input(type="hidden",name="byAppraiseId")
+                            label
+                                input(type="radio",name="appraiseType",value="good",checked="checked")
+                                sapn 好评
+
+                            label
+                                input(type="radio",name="appraiseType",value="bad")
+                                sapn 差评
+
+                            .tag#data-list
+
+                            textarea(placeholder="请输入内容",name="appraiseContent")
+
+                            label
+                                input.isNoName(type="checkbox",name="isNoName")
+                                sapn 是否匿名
+
+                            .t-r
+                                input(type="submit",class="pink_btn login_btn",value="提交")
+
+        // footer
+        include ../../com/footer
+        script(type="text/javascript") seajs.use("/assets/scripts/my/order-comment.js");
+
+        script(type="text/html",id="data-detail-tmpl")
+            | <div class="info clearfix">
+            | <div class="product_img fl"><img src="<!--[=$absImg(goodImg,'good')]-->" width="100%" height="100%"></div>
+            | <p class="fz-16"><!--[=loadPlacePro || '']--><!--[=loadPlaceCity || '']--><!--[=loadPlaceArea || '']-->—&gt;<!--[=unloadPlacePro || '']--><!--[=unloadPlaceCity || '']--><!--[=unloadPlaceArea || '']--><span class="fr c_ea7914"></span></p>
+            | <p class="c_6c6c6c"><!--[=goodName || '']-->、<!--[=goodKindName]-->、预估体积<!--[=cubage]-->m³、重量<!--[=weight]-->吨</p>
+            | <p>装货时间：<!--[=loadTime || '']--></p>
+            | <ul class="rating-level" data-level="<!--[=$printStar(praiseRate)]-->">
+            | <li><a href="#" class="one-star"></a></li>
+            | <li><a href="#" class="two-stars"></a></li>
+            | <li><a href="#" class="three-stars"></a></li>
+            | <li><a href="#" class="four-stars"></a></li>
+            | <li><a href="#" class="five-stars"></a></li>
+            | </ul><span>&nbsp;&nbsp;&nbsp;</span><span>好评率：<!--[=praiseRate || 0]-->%</span><span>&nbsp;&nbsp;&nbsp;</span><span>成交次数：<!--[=doneNum || 0]--></span>
+            | </div>
+            | <div class="clearfix">
+            | <div class="fr c_6c6c6c"><!--[=createTime || '']--></div>
+            | </div>
+
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <span data-id="<!--[=list[i].appraiseTagId]-->" ><!--[=list[i].tagContent]--></span>
+            | <!--[}]-->
+
+
+

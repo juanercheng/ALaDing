@@ -1,0 +1,23 @@
+//
+   Created by haner on 15/6/29.
+.panel
+    .panel-content
+        .panel-cell
+            h3.panel-title 提示
+            p.panel-text
+                form#confrim-order
+                    label
+                        input(type="radio",name="orderState",value="completed",checked="checked")
+                        span 已到货
+                    label
+                        input(type="radio",name="orderState",value="failure")
+                        span 未到货
+                    input(type="hidden",name="goodId",value="")
+                    input(type="hidden",name="carrierId",value="")
+                    p.c_pink 提示：
+                        label.c_282828 如确认已到货则会直接解除您和对方的保证金，确认未到货会扣除对方的保证金至您的账户，同时解锁您的保证金
+    .panel-buttons
+        .options
+            a.btn.btn-ok(href="javascript:;") 确认
+            a.btn.btn-cancel(href="javascript:;") 取消
+.panel-bg

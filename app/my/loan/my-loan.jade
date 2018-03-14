@@ -1,0 +1,75 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/my-loan.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    span 贷款信息
+
+                .content
+                    .order_list
+                        form
+                            .select
+                                label 审核状态&nbsp;: &nbsp;
+                                select(id="state")
+                            .o_header
+                                span#count 共0条
+                        ul.o_data#data-list
+
+                    .t-c
+                        include ../../com/page
+
+
+        // footer
+        include ../../com/footer
+        include ../../com/page-tmpl
+        script(type="text/javascript") seajs.use("/assets/scripts/my/loan/my-loan.js");
+        script(type="text/html",id="state-tmpl")
+            | <option value="">全部</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="data-list-tmpl")
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <li>
+            | <div class="clearfix">
+            | <div class="c_282828"><a href="#" data-id="<!--[=list[i].loanId]-->">
+
+            | <div class="fl">
+            | <p class="clearfix"><span class="fl">车牌号：<!--[=list[i].licenceNo || '']--></span></p>
+
+            | <p class="clearfix"><span class="fl">姓名：<!--[=list[i].loanName || '']--></span></p>
+
+            | <p class="clearfix"><span class="fl">状态：<!--[=list[i].loanStatusName]--></span></p>
+           
+            | <p>贷款金额：<!--[=list[i].loanMoneyName || '']-->  贷款日期：<!--[=list[i].loanTime||'']-->   </p>
+
+            | <p>还款金额：<!--[=list[i].repayMoney || '']-->  还款日期：<!--[=list[i].repayTime||'']-->   </p>
+          
+            | </div>
+            
+            | </a></div>
+            | </div>
+            | </li>
+            | <!--[}]-->
+
+

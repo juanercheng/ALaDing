@@ -1,0 +1,46 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+
+.content
+  position relative
+  padding-bottom 30px
+  & .product,.pay
+    margin auto
+    width 830px
+  & .pay
+    margin-top 10px
+    //margin-bottom  30px
+
+.product
+  padding-top 20px
+  & p
+    margin 0
+    line-height 25px
+  & .rating-level
+    display inline-block
+  & .product_img
+    width 113px
+    height 113px
+    margin 0 10px
+
+.pay
+  border-top 1px solid #d3d3d3
+  padding-top 35px
+  & form input[type="submit"]
+    width 100px
+    color $GlobalBg
+    margin auto
+  & form .input
+    width 360px
+    margin auto
+    & label
+      width 100px
+      text-align right
+      display inline-block
+    & input
+      margin 10px 0
+      border 1px solid #C8C6C7
+      F_borderRadius(5px)
+      padding 14px 3px
+      width 233px

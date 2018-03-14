@@ -1,0 +1,45 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/ours/ours-notice.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../com/ours-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/ours/notice-list.html") 公告
+                    span.splite >
+                    span 公告详情
+
+                .content
+                    .notic-detail#data-detail
+
+        // footer
+        include ../com/footer
+
+        script(type="text/javascript") seajs.use("../assets/scripts/ours/notice-detail.js");
+        script(type="text/html",id="data-detail-tmpl")
+            |<div class="detail_title t-c">
+            |   <!--[= title]-->
+            |</div>
+            |<div class="detail_time t-c">
+            |   <span>时间：<!--[=modifyDate || '--']--></span>
+            |</div>
+            |<div class="detail_text">
+            |   <!--[== content]-->
+            |</div>
+
+

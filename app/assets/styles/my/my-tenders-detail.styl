@@ -1,0 +1,196 @@
+@import '../common/my-common'
+@import '../common/header'
+@import '../common/footer'
+
+.content
+  position relative
+  padding-bottom 30px
+
+
+.product
+  color #333
+  overflow hidden
+  padding 20px 0
+  padding-left 15px
+  & .product_info
+    width 726px
+    & .product_modal
+      padding 10px
+      color $GlobalBg
+      background #b7b7b7
+    & .product_title
+      font-size 16px
+      margin 10px 0
+    & .product_detail
+      line-height 16px
+      & >div
+        F_ellipsis(100%)
+
+.operate
+  text-align: center;
+
+.operate >button
+  display inline-block
+  width 130px
+  margin-right 15px
+  outline none
+  display none
+
+.order_list
+  margin-top 20px
+  & .o_header
+    background #e7e7e7
+    padding 10px
+    & .fl
+      color #333333
+    & .fr
+      color $LogoBg
+  & ul.o_data
+    padding 0 20px
+    & li
+      padding 20px
+      border-bottom 1px solid #d3d3d3
+      &:last-child
+        margin-bottom 40px
+    color #333333
+    & .user_img_info
+      width 300px
+    & .user_img
+      width 48px
+      height 48px
+      F_borderRadius(100%)
+      border 1px solid #d3d3d3
+      overflow hidden
+    & .o_phone
+      line-height 25px
+      padding-left 60px
+    & .rating-level
+      margin-right 30px
+    & .o_r_b button
+      width 86px
+      color $GlobalBg
+      margin 20px 0 15px 0
+      outline none
+
+section
+  & .title
+    padding 10px
+    position relative
+    background #E7E7E7
+    & .tab
+      position absolute
+      top 0
+      left 100px
+      & li
+        float: left
+        border: 1px solid#d3d3d3
+        padding: 9px 15px
+        background #ffffff
+        cursor pointer
+        &.active
+          color $LogoBg
+        &:first-child
+          border-right none
+        &:last-child
+          border-left none
+  & .info
+    padding 20px 25px
+    line-height 18px
+  & .list
+    padding 10px
+    & li
+      padding 10px
+      border-bottom 1px solid #D4D2D3
+      & .top
+        position relative
+        min-height 50px
+      & .user_img
+        display inline-block
+        F_center_v(50px)
+        & img
+          width: 48px;
+          height: 48px;
+          -webkit-border-radius: 100%;
+          -moz-border-radius: 100%;
+          border-radius: 100%;
+          border: 1px solid #d3d3d3;
+          overflow: hidden
+          display inline-block
+        & .user-info
+          padding-left 60px
+          line-height 25px
+      & .tags
+        max-width 60%
+        & span
+          display inline-block
+          background #E7E7E7
+          border 1px solid #D8D6D7
+          padding 5px
+          margin 5px
+      & .text
+        margin: 20px 0
+        text-indent: 25px
+
+.content .pager .splite
+  border-bottom none
+  margin 0
+
+.carImg{
+  height:auto;
+  max-height:200px;
+  margin-right: 10px;
+}
+
+div.hr{
+  height:1px;
+  border-bottom:1px solid #ccc;
+}
+.tlist{
+  width:100%;
+  color:#333;
+}
+
+.tlist>table{
+  width: 100%;
+  border:solid #ccc; 
+  border-width:1px 0px 0px 1px;
+}
+
+.tlist td{
+  width: 79px;
+  border:solid #ccc; 
+  border-width:0px 1px 1px 0px;
+  padding: 3px;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-align: center;
+}
+
+#lineInfoList{
+  width:100%;
+  padding: 6px;
+}
+.product .product_info {
+  width: 100%;
+}
+.product .product_info .fl {
+  width: 80%;
+  max-width:100%;
+}
+#o-auto-calc{
+  width: 120px;
+  margin: 20px 0 20px 50px;
+  color: white;
+}
+
+.tlist tr{
+  border-bottom: 1px solid #ccc;
+}
+.feibiao{
+  width: 50px;
+  color: white;
+  height: 30px;
+}
+.red{
+  color:red;
+}

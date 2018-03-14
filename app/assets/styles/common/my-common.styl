@@ -1,0 +1,44 @@
+@import './normalize'
+@import './common'
+@import './../utils/fun'
+
+.my_nav
+  width 195px
+  margin-top 25px
+
+.my_nav .article .nav.my li
+  display none
+
+.my_nav .article .nav
+  color #000
+  padding-bottom 30px
+
+.my_nav .nav li a
+  padding 18px 0
+  border-bottom 1px solid #9c9c9c
+  color #666666
+  display block
+  text-decoration none
+  &:hover
+    color $LogoBg
+  &.active
+    color $LogoBg
+
+.my_nav .nav li:first-child a
+  padding-top 5px
+
+.container .my_right
+  padding-top 10px
+
+.container .my_right .content
+  min-height 800px
+  @extends .gray_box
+  width 1046px
+
+.readWarning{
+  color:red;
+}
+
+.input.tal{
+  text-align: left;
+}

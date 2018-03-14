@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="../assets/styles/ours/ours-notice.min.css")
+
+    body
+        // header
+        include ../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../com/ours-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    span 联系我们
+
+                .content
+                    .notic-detail#data-detail
+                        p 客服电话：400668-7227工作时间（8:30-16:30）节假日不休。
+                        p 地址：上海市普陀区交通路4703弄23号楼205室。
+
+        // footer
+        include ../com/footer
+        script(type="text/javascript") seajs.use("../assets/scripts/ours/info-detail.js");
+

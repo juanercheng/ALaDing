@@ -1,0 +1,84 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/order-carrierInfos-add.min.css")
+        link(type="text/css", rel="stylesheet", href="/assets/scripts/module/plugin/jquery.datepicker/jquery-ui.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                   p.local_nav 当前位置：
+                    a(href="/my/my-index.html") 个人中心
+                    span.splite >
+                    a(href="/my/order/my-order.html") 我的订单
+                    span.splite >
+                    a(href="/my/order/order-detail.html",id="order-detail") 订单详情
+                    span.splite >
+                    a(href="/my/carrierInfos/order-carrierInfos.html",id="order-insurance") 承运人
+                    span.splite >
+                    span 修改承运人
+
+                .content
+                    div.t-c
+                        form.reg_form#publish-order
+
+                            input(type="hidden",name="goodId" value="")
+                            input(type="hidden",name="goodDrvId" value="")
+
+                            .input
+                                label 承运人&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="drvReallyName",data-rule="required;length[1~20]")
+
+                            .input
+                                label 手机号码&nbsp;&nbsp;*: &nbsp;
+                                input(type="text",name="drvCellPhone",maxLength="11",data-rule="required;mobile;length[11]")
+
+                            .input
+                                label 车牌号&nbsp;*: &nbsp;
+                                input(type="text",name="drvVehicleLicenceNo",data-rule="required;length[1~30];")
+
+                            .t-c
+                                input(type="submit",class="pink_btn save_btn",value="保存")
+
+
+        // footer
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/carrierInfos/order-carrierInfos-update.js");
+
+        script(type="text/html",id="businesstype-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+
+        script(type="text/html",id="goodkind-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+        script(type="text/html",id="goodtype-tmpl")
+            | <option value="">---请选择---</option>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            | <option value="<!--[=list[i].code]-->"><!--[=list[i].name]--></option>
+            | <!--[}]-->
+        script(type="text/html",id="insurancetypeenum-tmpl")
+            | <label>保险&nbsp;*&nbsp;: &nbsp;</label>
+            | <!--[for(i=0;i<list.length;i++){]-->
+            |  <label><input type="radio" name="insuranceType" value="<!--[=list[i].code]-->" <!--[=i==0?'checked="checked"':'']--> /><span><!--[=list[i].name]--></span> </label>
+            | <!--[}]-->
+
+

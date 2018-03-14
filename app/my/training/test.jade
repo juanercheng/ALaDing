@@ -1,0 +1,50 @@
+doctype html
+html
+    head
+        title 丁丁物流
+        mate(charset="utf-8")
+        mate(came="description" content="")
+        meta(content="text/html; charset=utf-8",http-equiv="Content-Type")
+        mate(name="viewport" content="width=device-width, initial-scale=1")
+        link(type="text/css", rel="stylesheet", href="/assets/styles/my/test.min.css")
+
+    body
+        // header
+        include ../../com/header
+
+        //containner
+        div.container.clearfix
+            .my_nav.fl
+                include ../../com/my-nav
+            .my_right.fr
+
+                div
+                    p.local_nav 当前位置：
+                        a(href="/my/my-index.html") 个人中心
+                        span.splite >
+                        a(href="/my/training/training.html")
+                            span 培训
+                        span.splite >
+                            span 正在考试
+
+                .content
+                    div
+                        form
+                            div.timeBox
+                                img.timeimg(src='/assets/image/time.png')
+                                div.timetext 
+                            div.exit
+                                button.btn.exit_btn 退出
+                            div.testList#testList
+                            div.btnBox
+                                //button.pre-btn.btn.gray_btn(disabled='disabled') 上一题
+                                //button.pre-btn.notFirstBtn.btn 上一题
+                                button.next-btn.orange_btn.btn 下一题
+                                button.pink_btn.send_btn.btn 提交试卷
+
+
+        include ../../com/footer
+
+        script(type="text/javascript") seajs.use("/assets/scripts/my/training/test.js");
+
+
